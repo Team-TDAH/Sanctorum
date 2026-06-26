@@ -8,11 +8,22 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 15f;
     public float gravity = -30f;
 
+    //variables de mejora de salto
+    public float jumpCutMultiplier = 0.5f;
+    public float coyoteTime = 0.1f;
+    public float jumpBufferTime = 0.1f;
+    //contadores de las mejoras de salto
+    private float coyoteCounter;
+    private float jumpBufferCounter;
+    private bool jumpReleaseFlag;
+
     [Header("Collision y raycast")]
     public LayerMask collisionMask;
     public int horizontalRayCount = 4;
     public int verticalRayCount = 4;
     public float skinWidth = 0.015f;
+
+
 
     //Forma mas limpia que encontre para usar el sistema de inputs actual
     private PlayerInput playerInput;
@@ -74,11 +85,30 @@ public class PlayerController : MonoBehaviour
         //mucho mas limpio con este sistema de inputs
         if (moveAction != null)
             moveInput = moveAction.ReadValue<Vector2>();
-
+        //jumpbuffer
         if (jumpAction != null && jumpAction.WasPressedThisFrame())
         {
-            jumpFlag = true;
+            jumpBufferCounter = jumpBufferTime;
         }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+        //coyoteTime
+        if (isGrounded)
+        {
+            coyoteCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteCounter -= Time.deltaTime;
+        }
+        //regulador de salto
+        if (jumpAction != null && jumpAction.WasReleasedThisFrame())
+        {
+            jumpReleaseFlag = true;
+        }
+
     }
 
     private void FixedUpdate()
@@ -92,13 +122,24 @@ public class PlayerController : MonoBehaviour
         currentVelocity.x = moveInput.x * moveSpeed;
         currentVelocity.y += gravity * Time.fixedDeltaTime;
 
-        if (jumpFlag)
+        //salto teniendo en cuenta coyote time y jumpbuffer
+        if (jumpBufferCounter > 0f && coyoteCounter > 0f)
         {
-            if (isGrounded)
+            currentVelocity.y = jumpForce;
+
+            //evito dobles saltos raros
+            jumpBufferCounter = 0f;
+            coyoteCounter = 0f;
+        }
+
+        //regulacion de salto
+        if (jumpReleaseFlag)
+        {
+            if (currentVelocity.y > 0f)
             {
-                currentVelocity.y = jumpForce;
+                currentVelocity.y *= jumpCutMultiplier;
             }
-            jumpFlag = false;
+            jumpReleaseFlag = false;
         }
 
         Vector2 deltaMovement = currentVelocity * Time.fixedDeltaTime;
