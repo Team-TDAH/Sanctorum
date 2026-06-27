@@ -4,24 +4,27 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movimiento")]
-    public float moveSpeed = 8f;
-    public float jumpForce = 15f;
-    public float gravity = -30f;
+    [SerializeField] private float moveSpeed = 8f;
+    [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float gravity = -30f;
 
     //variables de mejora de salto
-    public float jumpCutMultiplier = 0.5f;
-    public float coyoteTime = 0.1f;
-    public float jumpBufferTime = 0.1f;
+    [SerializeField] private float jumpCutMultiplier = 0.5f;
+    [SerializeField] private float coyoteTime = 0.1f;
+    [SerializeField] private float jumpBufferTime = 0.1f;
     //contadores de las mejoras de salto
     private float coyoteCounter;
     private float jumpBufferCounter;
     private bool jumpReleaseFlag;
+    //doble salto
+    [SerializeField] private int maxJumps = 1;
+    private int currentJumps;
 
     [Header("Collision y raycast")]
-    public LayerMask collisionMask;
-    public int horizontalRayCount = 4;
-    public int verticalRayCount = 4;
-    public float skinWidth = 0.015f;
+    [SerializeField] private LayerMask collisionMask;
+    [SerializeField] private int horizontalRayCount = 4;
+    [SerializeField] private int verticalRayCount = 4;
+    [SerializeField] private float skinWidth = 0.015f;
 
 
 
@@ -44,6 +47,8 @@ public class PlayerController : MonoBehaviour
     private float horizontalRaySpacing;
     private float verticalRaySpacing;
     private Bounds currentBounds;
+
+
 
     private void Awake()
     {
@@ -110,7 +115,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
+    /*
     private void FixedUpdate()
     {
         // Lógica de gravedad base
@@ -156,6 +161,70 @@ public class PlayerController : MonoBehaviour
         //Dar la posicion que calculamos directamente al rigibody kinematico que elegi
         rb.MovePosition(rb.position + deltaMovement);
     }
+    */
+
+
+    private void FixedUpdate()
+    {
+        //gravedad artificial
+        if (isGrounded)
+        {
+            if (currentVelocity.y < 0)
+            {
+                currentVelocity.y = 0f;
+            }
+            //devolvemos la cantidad maxima de saltos al tocar sujelo
+            currentJumps = maxJumps;
+        }
+        else if (coyoteCounter <= 0f && currentJumps == maxJumps)
+        {
+            //clave para que al tirarse de una plataforma, no siga dejandome hacer la misma cantidad de saltos
+            currentJumps = maxJumps - 1;
+        }
+
+        currentVelocity.x = moveInput.x * moveSpeed;
+        currentVelocity.y += gravity * Time.fixedDeltaTime;
+
+        //Coyote time y doble salto
+        if (jumpBufferCounter > 0f)
+        {
+            //permite saltar si hay coyotetime o hay saltos restantes
+            if (coyoteCounter > 0f || currentJumps > 0)
+            {
+                currentVelocity.y = jumpForce;
+                jumpBufferCounter = 0f;
+                coyoteCounter = 0f;
+
+                //restamos el salto que hicimos cada vez que saltamos con estas condiciones
+                currentJumps--;
+            }
+        }
+
+        //salto regulado
+        if (jumpReleaseFlag)
+        {
+            if (currentVelocity.y > 0f)
+            {
+                currentVelocity.y *= jumpCutMultiplier;
+            }
+            jumpReleaseFlag = false;
+        }
+
+        Vector2 deltaMovement = currentVelocity * Time.fixedDeltaTime;
+
+        //calcula los raycast complicados
+        UpdateRaycastBounds();
+        isGrounded = false;
+
+        //detecta colisiones en ambos ejes
+        if (deltaMovement.x != 0) HorizontalCollisions(ref deltaMovement);
+        if (deltaMovement.y != 0) VerticalCollisions(ref deltaMovement);
+
+        //aplicamos la posicion a la collision kinetica
+        rb.MovePosition(rb.position + deltaMovement);
+    }
+
+
 
 
 
