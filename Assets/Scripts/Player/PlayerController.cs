@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 dashDirection;
     private float lastFacingDirection = 1f; //para saber hacia donde mirar si no hay input
 
+
+    public Vector2 MoveInput => moveInput;
+    public float LastFacingDirection => lastFacingDirection;
+    public AbilityManager AbilityManager { get; private set; }
+
+
     [Header("Collision y raycast")]
     [SerializeField] private LayerMask collisionMask;
     [SerializeField] private int horizontalRayCount = 4;
@@ -57,7 +63,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
     private Vector2 currentVelocity;
     private bool jumpFlag;
-    public bool isGrounded { get; private set; }
+    public bool IsGrounded { get; private set; }
     public bool IsDashing => isDashing;
 
     //Variables necesarias para el sistema complejo de Raycasts
@@ -71,6 +77,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        AbilityManager = GetComponent<AbilityManager>();
 
         //Unica forma que encontre para referenciar a los inputs, no estoy seguro si es la forma mas correcta
         playerInput = GetComponent<PlayerInput>();
@@ -125,7 +132,7 @@ public class PlayerController : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
         //coyoteTime
-        if (isGrounded)
+        if (IsGrounded)
         {
             coyoteCounter = coyoteTime;
         }
@@ -158,7 +165,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //gravedad artificial
-        if (isGrounded)
+        if (IsGrounded)
         {
             if (currentVelocity.y < 0)
             {
@@ -205,7 +212,7 @@ public class PlayerController : MonoBehaviour
 
         //calcula los raycast complicados
         UpdateRaycastBounds();
-        isGrounded = false;
+        IsGrounded = false;
 
         //detecta colisiones en ambos ejes
         if (deltaMovement.x != 0) HorizontalCollisions(ref deltaMovement);
@@ -220,7 +227,7 @@ public class PlayerController : MonoBehaviour
 
     private void TryStartDash()
     {
-        bool dashAllowed = isGrounded || canDashInAir;
+        bool dashAllowed = IsGrounded || canDashInAir;
         if (!dashAllowed || dashCooldownCounter > 0f) return;
 
         //direccion del input actual, o la ultima direccion mirando si no hay input
@@ -255,7 +262,7 @@ public class PlayerController : MonoBehaviour
         Vector2 deltaMovement = dashDirection * speedThisFrame * Time.fixedDeltaTime;
 
         UpdateRaycastBounds();
-        isGrounded = false;
+        IsGrounded = false;
 
         //para respetar collisiones, tambien esta en el movimiento normal
         if (deltaMovement.x != 0) HorizontalCollisions(ref deltaMovement);
@@ -330,7 +337,7 @@ public class PlayerController : MonoBehaviour
                 rayLength = hit.distance;
                 if (directionY == -1)
                 {
-                    isGrounded = true;
+                    IsGrounded = true;
                 }
                 else
                 {
