@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eeaf0c766b47a446ad6e204c8913ee5, type: 3}
+  m_Name: ShieldInAreaSO
+  m_EditorClassIdentifier: Assembly-CSharp::ShieldInAreaSO
+  abilityName: ShieldInArea
+  description: Escudo para uso mas tactico con un gran cooldown.
+  icon: {fileID: 0}
+  inputActionName: Ability1
+  cooldown: 7
+  cooldownAfterEnd: 0
+  usableOnGround: 1
+  usableInAir: 1
+  usableDuringDash: 0
+  channel: {fileID: 11400000, guid: ebc7fe2f1d7268f40831730987ade623, type: 2}
+  shieldDuration: 3
+  shieldPrefab: {fileID: 724696793206543727, guid: 8e0cf9cd4c5d1004da9d1385a3c5d696, type: 3}
