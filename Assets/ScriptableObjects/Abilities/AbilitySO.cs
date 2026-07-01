@@ -66,6 +66,8 @@ public class AbilityContext
 {
     public PlayerController Player;
     public Rigidbody2D Rb;
+    //agregado al final para que las habilidades puedas acceder a la vida y al shield en caso de tenerlo activado
+    public PlayerHealth PlayerHealth;
     public Vector2 MoveInput;
     public float LastFacingDirection;
     public bool IsGrounded;

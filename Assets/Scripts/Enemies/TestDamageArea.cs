@@ -2,22 +2,24 @@ using UnityEngine;
 
 public class TestDamageArea : MonoBehaviour
 {
-    [SerializeField] private float damageAmount = 10f;
+
+
+    [SerializeField] private int damageAmount = 2;
     void OnTriggerStay2D(Collider2D collision)
     {
-        PlayerController player = collision.GetComponent<PlayerController>();
+        PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
 
-        if (player != null)
+        if (playerHealth != null)
         {
             //verifica si tiene puesto el escudo o no
-            if (player.IsShielded)
+            if (playerHealth.IsShielded)
             {
-                Debug.Log("<color=cyan><b>[ESCUDO]</b> ¡Ataque bloqueado por el escudo en área!</color>");
+                //podria luego agregar un efecto visual o de sonido para indiciar que el escudo esta protegiendo
                 return;
             }
 
             //aplica el daño en caso de no tener escudo, este es un test nada mas
-            player.TakeDamage(damageAmount);
+            playerHealth.TakeDamage(damageAmount);
         }
     }
 }

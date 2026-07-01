@@ -10,6 +10,8 @@ public class AbilityManager : MonoBehaviour
 
     private PlayerController playerController;
     private Rigidbody2D rb;
+    //ultima referencia que agregue para cachear y no tener que usar getcomponent innecesariamente
+    private PlayerHealth playerHealth;
     private PlayerInput playerInput;
 
     //mapa de InputAction por nombre para no buscar cada frame
@@ -24,7 +26,7 @@ public class AbilityManager : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
-
+        playerHealth = GetComponent<PlayerHealth>();
         BuildInputMap();
     }
 
@@ -83,6 +85,7 @@ public class AbilityManager : MonoBehaviour
         ctx.Rb = rb;
         ctx.IsGrounded = playerController.IsGrounded;
         ctx.IsDashing = playerController.IsDashing;
+        ctx.PlayerHealth = playerHealth;
         ctx.MoveInput = playerController.MoveInput;
         ctx.LastFacingDirection = playerController.LastFacingDirection;
     }

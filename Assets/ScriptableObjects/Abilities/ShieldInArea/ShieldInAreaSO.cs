@@ -1,12 +1,6 @@
 using UnityEngine;
 
 
-/// <summary>
-/// Escudo temporal: bloquea dano durante un tiempo limitado mientras el jugador
-/// se sigue moviendo normalmente. Habilidad defensiva con cooldown largo.
-/// Crear via: clic derecho en Project > Abilities > Shield
-/// </summary>
-
 [CreateAssetMenu(fileName = "ShieldInAreaSO", menuName = "Abilities/ShieldInAreaSO")]
 public class ShieldInAreaSO : AbilitySO
 {
@@ -23,10 +17,10 @@ public class ShieldInAreaSO : AbilitySO
  
     public override void Execute(AbilityContext ctx)
     {
+        //conseguimos la referencia directamente para no tener que buscarla cada vez que se recibe daño
+        ctx.PlayerHealth.IsShielded = true;
+
         shieldTimer = 0f;
- 
-        //le avisamos al jugador que esta protegido, IsShielded lo chequea quien recibe dano
-        ctx.Player.IsShielded = true;
  
         //instanciamos el visual como hijo del jugador para que lo siga sin logica extra
         if (shieldPrefab != null)
@@ -43,7 +37,7 @@ public class ShieldInAreaSO : AbilitySO
  
     public override void End(AbilityContext ctx)
     {
-        ctx.Player.IsShielded = false;
+        ctx.PlayerHealth.IsShielded = false;
  
         if (activeShieldInstance != null)
             Destroy(activeShieldInstance);

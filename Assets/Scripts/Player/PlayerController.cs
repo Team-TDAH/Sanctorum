@@ -35,8 +35,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 dashDirection;
     private float lastFacingDirection = 1f; //para saber hacia donde mirar si no hay input
 
-    //Variable del escudo en area, para que todos los sistemas esten al tanto de si se esta protegiendo o no
-    public bool IsShielded { get; set; }
+
 
     public Vector2 MoveInput => moveInput;
     public float LastFacingDirection => lastFacingDirection;
@@ -223,17 +222,6 @@ public class PlayerController : MonoBehaviour
         //aplicamos la posicion a la collision kinetica
         rb.MovePosition(rb.position + deltaMovement);
     }
-
-    
-    public void TakeDamage(float amount)
-    {
-        //solo de testeo, todavia no decido como hacer bien takeDamage
-        Debug.Log($"El player recibio {amount} de daño");
-        
-        //todavia sigo pensando si poner la vida aca, o en un script aparte 
-    }
-
-
 
     //Logica del movimiento del dash (mas compleja por el uso de movimiento kinematico, ahora no puedo arrepentirme de usar ese movimiento)
     private void TryStartDash()
