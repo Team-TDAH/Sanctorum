@@ -271,7 +271,7 @@ MonoBehaviour:
   jumpCutMultiplier: 0.5
   coyoteTime: 0.1
   jumpBufferTime: 0.1
-  maxJumps: 2
+  doubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}
   dashDistance: 15
   dashDuration: 0.15
   dashCooldown: 0.72
@@ -300,6 +300,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   canDashInAir: 1
+  dashUnlocked: {fileID: 11400000, guid: c6f8b58639de08140a8fc017e5fa4e17, type: 2}
   collisionMask:
     serializedVersion: 2
     m_Bits: 64
@@ -353,7 +354,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -474,6 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5596c67db8874bd458bddb01c4058184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  DoubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}
+  dashUnlocked: {fileID: 11400000, guid: c6f8b58639de08140a8fc017e5fa4e17, type: 2}
 --- !u!70 &58604783
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

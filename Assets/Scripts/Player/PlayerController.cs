@@ -16,9 +16,10 @@ public class PlayerController : MonoBehaviour
     private float coyoteCounter;
     private float jumpBufferCounter;
     private bool jumpReleaseFlag;
-    //doble salto
-    [SerializeField] private int maxJumps = 1;
+    //doble salto (tuve que cambiarlo, tenia antes cuantos saltos queria dar y restaba, pero no tenia sentido)
+    [SerializeField] private BoolVariable doubleJumpUnlocked;
     private int currentJumps;
+    private int MaxJumps => (doubleJumpUnlocked != null && doubleJumpUnlocked.Value) ? 2 : 1;
     //dash
     [SerializeField] private float dashDistance = 6f;
     [SerializeField] private float dashDuration = 0.15f;
@@ -27,19 +28,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AnimationCurve dashCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
     //era por si en algun momento usaba un desliz por el suelo, pero mejor no
     [SerializeField] private bool canDashInAir = true;
+    [SerializeField] private BoolVariable dashUnlocked;
 
     //variables para gestionar el dash
     private bool isDashing;
     private float dashTimer;
     private float dashCooldownCounter;
     private Vector2 dashDirection;
-    private float lastFacingDirection = 1f; //para saber hacia donde mirar si no hay input
-
-
+    private float lastFacingDirection = 1f; 
+    //para saber hacia donde mirar si no hay input
 
     public Vector2 MoveInput => moveInput;
     public float LastFacingDirection => lastFacingDirection;
-    public AbilityManager AbilityManager { get; private set; }
+    public AbilityManager AbilityManager { get; private set; } 
+    public bool IsShielded { get; set; } //no estoy seguro que tan necesario es aca, pero lo dejo por ahora
 
 
     [Header("Collision y raycast")]
@@ -172,13 +174,13 @@ public class PlayerController : MonoBehaviour
             {
                 currentVelocity.y = 0f;
             }
-            //devolvemos la cantidad maxima de saltos al tocar sujelo
-            currentJumps = maxJumps;
+            //devolvemos la cantidad maxima de saltos al tocar suelo
+            currentJumps = MaxJumps;
         }
-        else if (coyoteCounter <= 0f && currentJumps == maxJumps)
+        else if (coyoteCounter <= 0f && currentJumps == MaxJumps)
         {
             //clave para que al tirarse de una plataforma, no siga dejandome hacer la misma cantidad de saltos
-            currentJumps = maxJumps - 1;
+            currentJumps = MaxJumps - 1;
         }
 
         currentVelocity.x = moveInput.x * moveSpeed;
@@ -226,7 +228,8 @@ public class PlayerController : MonoBehaviour
     //Logica del movimiento del dash (mas compleja por el uso de movimiento kinematico, ahora no puedo arrepentirme de usar ese movimiento)
     private void TryStartDash()
     {
-        bool dashAllowed = IsGrounded || canDashInAir;
+        //eñ dashunlocked es para prevenir que si me olvido de asignar el SO de dash, no se rompa el game
+        bool dashAllowed = (IsGrounded || canDashInAir) && (dashUnlocked == null || dashUnlocked.Value);
         if (!dashAllowed || dashCooldownCounter > 0f) return;
 
         //direccion del input actual, o la ultima direccion mirando si no hay input
@@ -243,6 +246,7 @@ public class PlayerController : MonoBehaviour
         currentVelocity = Vector2.zero;
     }
 
+    //con del curva que todavia no siento que haga tanto cambio, luego con algunos ajustes de la curva vere si llego a un punto que me guste
     private void ProcessDash()
     {
         dashTimer += Time.fixedDeltaTime;
@@ -281,7 +285,7 @@ public class PlayerController : MonoBehaviour
 
 
     //----------------------------------------------------------------------------------------------
-    //Todo lo de raycast, muchas formulas y demas cosas de videos de youtube largos vistos a x1.5 :)
+    //Todo lo de raycast, muchas formulas y demas cosas de videos de youtube largos vistos a x1.5 :)   Creo que nunca hara falta cambiarle nada
     private void UpdateRaycastBounds()
     {
         currentBounds = boxCollider.bounds;
