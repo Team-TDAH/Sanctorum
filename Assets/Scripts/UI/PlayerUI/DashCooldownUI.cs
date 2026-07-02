@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class DashCooldownUI : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private BoolVariable dashUnlocked;
 
     //usar Slider o Image con fillAmount, no ambos a la vez
     [SerializeField] private Slider slider;
@@ -12,6 +13,17 @@ public class DashCooldownUI : MonoBehaviour
 
     private void Update()
     {
+        //para que cuando el dash se habilite, aparezca la ui del cooldown
+    bool unlocked = dashUnlocked == null || dashUnlocked.Value;
+    if (gameObject.transform.parent != null)
+    {
+        gameObject.transform.parent.gameObject.GetComponent<Image>().enabled = unlocked;
+    }
+
+    gameObject.GetComponent<Image>().enabled = unlocked;
+
+    if (!unlocked) return;
+
         float progress = playerController != null ? playerController.DashCooldownProgress : 1f;
 
         //era por si usaba un slider sobre el player, pero no creo usarlo
