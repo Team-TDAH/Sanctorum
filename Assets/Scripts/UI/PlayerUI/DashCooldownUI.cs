@@ -1,10 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// Muestra el cooldown del dash en la UI.
-/// Oculta el visual si el dash no esta desbloqueado todavia.
-/// </summary>
+//se me complico la vida queriendo poner un background al dash, para que quede mejor, y visible pero daba errores en itchio
 public class DashCooldownUI : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
