@@ -70,6 +70,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
+        //culpa de esto, el player se quedaba inmovil al respawnear por otros 5 segundos, esto solucionaria
+        if (currentHealth <= 0) return;
         //el escudo y los i-frames bloquean cualquier fuente de dano
         if (isInvulnerable) return;
         if (IsShielded) return;
@@ -89,6 +91,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         StartInvulnerability();
     }
 
+
+    //para curarme, todavia no cree nada que utilice esto, pero bueno
     public void Heal(int amount)
     {
         if (currentHealth <= 0) return;
@@ -96,10 +100,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
         healthChannel?.RaiseHealthChanged(currentHealth, maxHealth);
     }
-
+    //termine eligiendo que reviva, porque la idea es que respawnee luego de morir en vez de reiniciar la escena o poner un bonton de volver a comenzar, asi que tecnicamente nunca necesitaria la funcion "death"
+    //la idea es que cuando muera muestre el panel de muerte con un mensaje y luego de ciertos segundos aparezca en cierto punto de respawn
+    public void Respawn()
+    {
+        currentHealth = maxHealth;
+        healthChannel?.RaiseHealthChanged(currentHealth, maxHealth);
+    }
 
     //----------------------------------------------------------------------------------------------
-    //I-frames
+    //I-frames luego de recibir daño, asi no parece injusto cuando ungolpe te pega, luego ajustar el tiempo de invulnerabiliadd
 
     private void StartInvulnerability()
     {

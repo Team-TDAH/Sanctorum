@@ -4,7 +4,7 @@ public class TestDamageArea : MonoBehaviour
 {
 
 
-    [SerializeField] private int damageAmount = 2;
+    [SerializeField] private int damageAmount = 7;
     void OnTriggerStay2D(Collider2D collision)
     {
         PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();

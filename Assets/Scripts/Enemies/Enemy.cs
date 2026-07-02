@@ -17,7 +17,14 @@ public class Enemy : MonoBehaviour, IDamageable
 
     [SerializeField] private BoolVariable dashUnlocked;
 
-    private float healthEnemy = 30;
+    private float healthEnemy = 50;
+
+    //disparos basicos del enemigo para testear el daño al player y el parry
+    [SerializeField] private GameObject projectilePrefab;
+    private float fireTimer;
+
+
+
     
     public void TakeDamage(int amount)
     {
@@ -33,5 +40,24 @@ public class Enemy : MonoBehaviour, IDamageable
 
             Destroy(gameObject);
         }
+    }
+
+    
+    //todo hacia abajo es la logica del disparo basico, para testear
+        private void Update()
+    {
+        fireTimer -= Time.deltaTime;
+        if (fireTimer <= 0f)
+        {
+            Shoot();
+            fireTimer = 2f;
+        }
+    }
+    private void Shoot()
+    {
+        if (projectilePrefab == null) return;
+ 
+        var proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        proj.GetComponent<EnemyProjectile>()?.Initialize(Vector2.left, 8f, 4f, 20);
     }
 }

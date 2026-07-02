@@ -39,6 +39,23 @@ public class PlayerController : MonoBehaviour
     //para saber hacia donde mirar si no hay input
 
     public Vector2 MoveInput => moveInput;
+    //ya me canse de agregar variables publicas nuevas, pero esta es necesaria para que al momento de morir, desactive el control del player y no el playercontroller completo
+    //y otro cambio, para que al morir no se mueva en el ultimo input indefinidamente
+    public bool InputEnabled
+    {
+        get => inputEnabled;
+        set
+        {
+            inputEnabled = value;
+            if (!value)
+            {
+                moveInput = Vector2.zero;
+                currentVelocity = Vector2.zero;
+            }
+        }
+    }
+    private bool inputEnabled = true;
+
     public float LastFacingDirection => lastFacingDirection;
     public AbilityManager AbilityManager { get; private set; } 
     public bool IsShielded { get; set; } //no estoy seguro que tan necesario es aca, pero lo dejo por ahora
@@ -121,6 +138,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+    //literalmente puse esta verificacion de inputenabled porque es la unica solucion que encontre para que al morir, no puedas moverte pero si caigas al suelo
+    if (InputEnabled) 
+    {
         //mucho mas limpio con este sistema de inputs
         if (moveAction != null)
             moveInput = moveAction.ReadValue<Vector2>();
@@ -129,6 +149,20 @@ public class PlayerController : MonoBehaviour
         if (moveInput.x != 0f)
             lastFacingDirection = Mathf.Sign(moveInput.x);
 
+
+
+        //regulador de salto
+        if (jumpAction != null && jumpAction.WasReleasedThisFrame())
+        {
+            jumpReleaseFlag = true;
+        }
+
+
+
+        if (dashAction != null && dashAction.WasPressedThisFrame())
+        {
+            TryStartDash();
+        }
         //jumpbuffer
         if (jumpAction != null && jumpAction.WasPressedThisFrame())
         {
@@ -138,6 +172,8 @@ public class PlayerController : MonoBehaviour
         {
             jumpBufferCounter -= Time.deltaTime;
         }
+
+    }
         //coyoteTime
         if (IsGrounded)
         {
@@ -147,18 +183,8 @@ public class PlayerController : MonoBehaviour
         {
             coyoteCounter -= Time.deltaTime;
         }
-        //regulador de salto
-        if (jumpAction != null && jumpAction.WasReleasedThisFrame())
-        {
-            jumpReleaseFlag = true;
-        }
-
         //solo se inicia si el cooldown del dash termino y no estamos dasheando
         dashCooldownCounter -= Time.deltaTime;
-        if (dashAction != null && dashAction.WasPressedThisFrame())
-        {
-            TryStartDash();
-        }
     }
 
 

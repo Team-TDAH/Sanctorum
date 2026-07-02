@@ -20,6 +20,9 @@ public class AbilityManager : MonoBehaviour
     //contexto reutilizable
     private AbilityContext ctx = new();
 
+    public bool InputEnabled { get; set; } = true;
+    
+
 
     private void Awake()
     {
@@ -110,6 +113,7 @@ public class AbilityManager : MonoBehaviour
 
     private void CheckInputs()
     {
+        if (!InputEnabled) return;
         foreach (var ability in abilities)
         {
             if (!inputMap.TryGetValue(ability.inputActionName, out var action)) continue;
