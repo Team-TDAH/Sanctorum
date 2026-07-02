@@ -42,6 +42,10 @@ public class PlayerController : MonoBehaviour
     public float LastFacingDirection => lastFacingDirection;
     public AbilityManager AbilityManager { get; private set; } 
     public bool IsShielded { get; set; } //no estoy seguro que tan necesario es aca, pero lo dejo por ahora
+    //para que la UI acceda a la info del cooldown y lo transforme a valores entre 0 y 1, me agrada la propiedad muy simple pero util
+    public float DashCooldownProgress => dashCooldown > 0f
+    ? Mathf.Clamp01(1f - (dashCooldownCounter / dashCooldown))
+    : 1f;
 
 
     [Header("Collision y raycast")]
