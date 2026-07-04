@@ -144,4 +144,18 @@ public class AbilityManager : MonoBehaviour
         ability.End(ctx);
         ability.channel?.RaiseEnded(ability);
     }
+    //el parryhitbox llamaria a esto cuando detecta un proyectil enemigo
+    public void NotifyParry(Vector2 incomingDirection)
+    {
+        foreach (var ability in abilities)
+        {
+            if (ability is ParryAbilitySO parry && ability.IsActive)
+            {
+                parry.OnParrySuccess(ctx, incomingDirection);
+                return;
+            }
+        }
+    }
+
+
 }

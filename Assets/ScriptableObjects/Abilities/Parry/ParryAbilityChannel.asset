@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9e78fc9d8be4f146821ac0f7c98e1a2, type: 3}
-  m_Name: ParryChannel
+  m_Name: ParryAbilityChannel
   m_EditorClassIdentifier: Assembly-CSharp::AbilityChannel

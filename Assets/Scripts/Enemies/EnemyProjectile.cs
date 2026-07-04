@@ -9,7 +9,8 @@ public class EnemyProjectile : MonoBehaviour
     private float lifetime;
     private float lifeTimer;
     [SerializeField] private LayerMask playerMask;
-
+    //el parry necesita saber la direccion del proyectil
+    public Vector2 Direction => direction;
 
     public void Initialize(Vector2 dir, float spd, float life, int dmg)
     {

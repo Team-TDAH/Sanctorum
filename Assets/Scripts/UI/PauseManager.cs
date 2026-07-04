@@ -8,7 +8,6 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     private InputAction pauseAction;
     private bool isPaused;
-    [SerializeField] private GameObject settingsPanel;
 
     //necesario porque al pausar me estaba creando orbes de luz al apretar las opciones del menu de pausa
     //no me gusto para nada la solucion, pero es la unica forma de que el dash no se consuma mientras este en la pausa y aprete dash
@@ -48,17 +47,6 @@ public class PauseManager : MonoBehaviour
     public void Resume()
     {
         TogglePause();
-    }
-
-        public void OnSettingsPressed()
-    {
-        pausePanel.SetActive(false);
-        settingsPanel.SetActive(true);
-    }
-        public void OnSettingsBackPressed()
-    {
-        pausePanel.SetActive(true);
-        settingsPanel.SetActive(false);
     }
         public void BackToMainMenu()
     {
