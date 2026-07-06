@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy1 : MonoBehaviour, IDamageable
+public class Enemy2 : MonoBehaviour, IDamageable
 {
 
     /*
@@ -13,7 +13,7 @@ public class Enemy1 : MonoBehaviour, IDamageable
     DoubleJumpUnlocked.Value = true;
     Obvio luego hay que poner los respectivos SO en el inspector
     */
-    [SerializeField] private BoolVariable DoubleJumpUnlocked;
+    [SerializeField] private BoolVariable ShieldUnlocked;
 
     private float healthEnemy = 50;
 
@@ -31,8 +31,8 @@ public class Enemy1 : MonoBehaviour, IDamageable
         Debug.Log($"Health enemy: {healthEnemy}");
         if (healthEnemy <= 0)
         {
-            // desbloquea el doble salto
-            DoubleJumpUnlocked.Value = true; 
+            //cuando muere este enemigo, consigue escudo en area
+            ShieldUnlocked.Value = true;
 
             Destroy(gameObject);
         }
@@ -54,6 +54,6 @@ public class Enemy1 : MonoBehaviour, IDamageable
         if (projectilePrefab == null) return;
  
         var proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-        proj.GetComponent<EnemyProjectile>()?.Initialize(Vector2.right, 8f, 4f, 20);
+        proj.GetComponent<EnemyProjectile>()?.Initialize(Vector2.left, 8f, 4f, 20);
     }
 }

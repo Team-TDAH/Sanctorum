@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShieldInAreaSO
   m_EditorClassIdentifier: Assembly-CSharp::ShieldInAreaSO
   abilityName: ShieldInArea
-  description: Escudo para uso mas tactico con un gran cooldown.
+  UnlockSkill: 
   icon: {fileID: 0}
   inputActionName: Ability1
   cooldown: 7
@@ -21,6 +21,7 @@ MonoBehaviour:
   usableOnGround: 1
   usableInAir: 1
   usableDuringDash: 0
+  unlockedVariable: {fileID: 11400000, guid: 00a7374008375c04f9dc7b5e88a0b42a, type: 2}
   channel: {fileID: 11400000, guid: ebc7fe2f1d7268f40831730987ade623, type: 2}
   shieldDuration: 3
   shieldPrefab: {fileID: 724696793206543727, guid: 8e0cf9cd4c5d1004da9d1385a3c5d696, type: 3}

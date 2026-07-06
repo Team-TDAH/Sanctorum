@@ -4,48 +4,51 @@ using UnityEngine;
 
 public abstract class AbilitySO : ScriptableObject
 {
-    [Header("Identificacion")]
-    public string abilityName = "Nueva Habilidad";
-    [TextArea] public string description;
+    public string abilityName = "New Skill";
+    //para no perderme de como se obtiene la skill
+    [TextArea] public string UnlockSkill;
+    //icono para los cooldowns
     public Sprite icon;
 
-    [Header("Input")]
-    //debe coincidir exactamente con el nombre de la accion en el InputAction
+
+    //el nombre este debe ser IDENTICO al que ponga en el inputaction
     public string inputActionName = "Ability1";
 
-    [Header("Cooldown")]
+
     public float cooldown = 1f;
-    //para ver desde cuando quiero que inicie el cooldown, si desde que lanza la habilidad o desde que termina
+    //creo que es importante, asi no se complica mucho el cooldown para habilidades que duren cierto tiempo
     public bool cooldownAfterEnd = false;
 
-    [Header("Condiciones de uso")]
+    //condiciones para usar, mejor ponerlo aca que en cada uno, asi veo donde usarlo
     public bool usableOnGround = true;
     public bool usableInAir = true;
     public bool usableDuringDash = false;
+    //importante para desbloquear habilidades
+    public BoolVariable unlockedVariable;
 
-    [Header("Canal de eventos")]
+    //canal de eventos de la habilidad, todos deben tener uno propio
     public AbilityChannel channel;
-
+    //en runtime para que se reinicien siempre y no tener bugs futuros, no me adapto bien cuando usarlos
     [System.NonSerialized] public float CooldownRemaining;
     [System.NonSerialized] public bool IsActive;
-
-    //verificacion de condiciones basicas, entre ellas que este en el suelo o aire, y luego pondria alguna condicion de mana por ejemplo
+    //verifica las condiciones que ande pusimos
     public virtual bool CanUse(AbilityContext ctx)
     {
+        //importante para verificar que tenes desbloqueada la habilidad (fue mas facil de lo que pense)
+        if (unlockedVariable != null && !unlockedVariable.Value) return false;
+
         if (CooldownRemaining > 0f) return false;
         if (!usableOnGround && ctx.IsGrounded) return false;
         if (!usableInAir && !ctx.IsGrounded) return false;
         if (!usableDuringDash && ctx.IsDashing) return false;
         return true;
     }
-
-    //logica principal de la habilidad
+    //logica de la habilidad
     public abstract void Execute(AbilityContext ctx);
-
-    //llamado cada frame mientras la habilidad esta activa (si es que hace falta)
+    //se llama cada tik de habilidad si es que hace falta, ponele el escudo de area o algo estilo veneno, no crreo usarlo tanto
     public virtual void Tick(AbilityContext ctx, float deltaTime) { }
+    //llamar cuando la habilidad termina o se interrumpe, re importante
 
-    //llamado cuando la habilidad termina por duracion o interrupcion
     public virtual void End(AbilityContext ctx)
     {
         IsActive = false;
@@ -53,15 +56,14 @@ public abstract class AbilitySO : ScriptableObject
             CooldownRemaining = cooldown;
     }
 
-    //necesario para no arrastrar estado de la sesion anterior en el manager
+    //lo mismo de antes, para resetear y prevenir errores
     public void ResetRuntimeState()
     {
         CooldownRemaining = 0f;
         IsActive = false;
     }
 }
-
-//datos que le pasá el manager a la habilidad, que puedo expandir en caso de necesitar mas datos del player
+//LA MEJOR FUNCIONALODAD DE ESTO, pasa referencias y demas cosas para que la creacion de habilidades sea mas facil (en caso de necesitar mas datos, agregar aca)
 public class AbilityContext
 {
     public PlayerController Player;

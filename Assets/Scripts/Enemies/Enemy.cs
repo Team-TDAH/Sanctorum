@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour, IDamageable
     DoubleJumpUnlocked.Value = true;
     Obvio luego hay que poner los respectivos SO en el inspector
     */
-    [SerializeField] private BoolVariable DoubleJumpUnlocked;
 
     [SerializeField] private BoolVariable dashUnlocked;
 
@@ -33,10 +32,8 @@ public class Enemy : MonoBehaviour, IDamageable
         Debug.Log($"Health enemy: {healthEnemy}");
         if (healthEnemy <= 0)
         {
-            //cuando muere este enemigo, consigo el dash, y destruyo el enemigo
+            //cuando muere este enemigo, consigo el dash
             dashUnlocked.Value = true;
-            
-            DoubleJumpUnlocked.Value = true; // desbloquea el dash
 
             Destroy(gameObject);
         }

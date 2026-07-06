@@ -4,8 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ShieldInAreaSO", menuName = "Abilities/ShieldInAreaSO")]
 public class ShieldInAreaSO : AbilitySO
 {
-
-    [Header("Escudo")]
     public float shieldDuration = 3f;
     //prefab visual del escudo, debe tener el componente ShieldVisual
     public GameObject shieldPrefab;
