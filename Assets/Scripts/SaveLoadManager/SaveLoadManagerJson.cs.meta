@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b73dc12da6bf20249b52d578355ea766
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - dashUnlocked: {fileID: 11400000, guid: c6f8b58639de08140a8fc017e5fa4e17, type: 2}
+  - doubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}
+  - shieldUnlocked: {fileID: 11400000, guid: 00a7374008375c04f9dc7b5e88a0b42a, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

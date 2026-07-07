@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using System.IO;
 
 public class PlayerController : MonoBehaviour
 {
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
     private float verticalRaySpacing;
     private Bounds currentBounds;
 
-
+    //iba a probar el sistema de guardado con un boton, pero es 100 veces mas comodo poner un boton en pantalla
 
     private void Awake()
     {
@@ -120,6 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         CalculateRaySpacing();
     }
+
 
     //Necesarios para el sistema de inputs
     private void OnEnable()

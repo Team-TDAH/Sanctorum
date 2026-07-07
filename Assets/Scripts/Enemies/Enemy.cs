@@ -12,20 +12,22 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private BoolVariable DoubleJumpUnlocked;
     DoubleJumpUnlocked.Value = true;
     Obvio luego hay que poner los respectivos SO en el inspector
-    */
-    [SerializeField] private BoolVariable DoubleJumpUnlocked;
+    */  
 
-    [SerializeField] private BoolVariable dashUnlocked;
-
+    //ahora le implemente este bossRegister que lo que hace es administrar cuando muere el dar habilidades y registrar que el boss murio para que no vuelva a spawnear al reiniciar la partida
+    private BossRegister bossRegister;    
     private float healthEnemy = 50;
 
     //disparos basicos del enemigo para testear el daño al player y el parry
     [SerializeField] private GameObject projectilePrefab;
     private float fireTimer;
 
+    void Awake()
+    {
+        bossRegister = GetComponent<BossRegister>();
+    }
 
 
-    
     public void TakeDamage(int amount)
     {
         //test
@@ -33,10 +35,8 @@ public class Enemy : MonoBehaviour, IDamageable
         Debug.Log($"Health enemy: {healthEnemy}");
         if (healthEnemy <= 0)
         {
-            //cuando muere este enemigo, consigo el dash, y destruyo el enemigo
-            dashUnlocked.Value = true;
-            
-            DoubleJumpUnlocked.Value = true; // desbloquea el dash
+            //cuando muere este enemigo, consigo el dash
+            bossRegister?.RegisterDefeated();
 
             Destroy(gameObject);
         }
