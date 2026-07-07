@@ -1,4 +1,3 @@
-using System.IO;
 using UnityEngine;
 
 public class SaveLoadManagerJson : MonoBehaviour
@@ -7,7 +6,6 @@ public class SaveLoadManagerJson : MonoBehaviour
     [SerializeField] private BoolVariable dashUnlocked;
     [SerializeField] private BoolVariable doubleJumpUnlocked;
     [SerializeField] private BoolVariable shieldUnlocked;
-    private string filePath;
     //datos de la memoria, donde guardar y cargar la info
     private SaveData currentData;
      //No me gusta el sistema singleton, pero aca me agiliza mucho si los jefes pueden consultarlo sin referencia
@@ -16,7 +14,6 @@ public class SaveLoadManagerJson : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        filePath = Application.persistentDataPath + "/savefile.json";
         //lo que me faltaba, es que directamente cargue la partida al comenzar, antes tenia un boton para cargar, que carece de sentido en este tipo de juegos
         LoadGame();
     }
@@ -28,16 +25,21 @@ public class SaveLoadManagerJson : MonoBehaviour
         currentData.doubleJumpUnlocked = doubleJumpUnlocked != null && doubleJumpUnlocked.Value;
         currentData.shieldUnlocked = shieldUnlocked != null && shieldUnlocked.Value;
         string json = JsonUtility.ToJson(currentData, true);
-        File.WriteAllText(filePath, json);
+        //  Esto tenia antes, pero no guardaba las partidas en itchio WEB, solo en .exe, asi que cambie a playerprefs al final, una combinacion rara, File.WriteAllText(filePath, json);
+        PlayerPrefs.SetString("savefile", json);
+        PlayerPrefs.Save();
+
+
         //no hace falta pero para testear por las duads
-        Debug.Log("Save Game In: " + filePath);
+        Debug.Log("Save Game (PlayerPrefs)");
     }
     //no es necesaria su referencia nunca aparte de start, asi que lo dejo tal cual por ahora
     public void LoadGame()
     {
-        if (File.Exists(filePath))
+        if (PlayerPrefs.HasKey("savefile"))
         {
-            string json = File.ReadAllText(filePath);
+            string json = PlayerPrefs.GetString("savefile", "");
+
             currentData = JsonUtility.FromJson<SaveData>(json);
 
             if (dashUnlocked != null) dashUnlocked.Value = currentData.dashUnlocked;
@@ -76,8 +78,7 @@ public class SaveLoadManagerJson : MonoBehaviour
     [ContextMenu("Delete Save")]
     public void DeleteSave()
     {
-        if (File.Exists(filePath))
-            File.Delete(filePath);
+        PlayerPrefs.DeleteKey("savefile");
 
         currentData = new SaveData();
 
