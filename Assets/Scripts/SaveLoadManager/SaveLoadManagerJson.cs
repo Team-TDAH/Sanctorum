@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveLoadManagerJson : MonoBehaviour
 {
@@ -71,6 +72,19 @@ public class SaveLoadManagerJson : MonoBehaviour
     {
         return currentData.defeatedBosses.Contains(bossId);
     }
+    //checkpoints y escena
+    public void SetCheckpoint(string checkpointId)
+    {
+        //asi no guarda si pasa por el ultimo checkpoint
+        if (currentData.lastCheckpointId == checkpointId) return;
+    
+        currentData.lastCheckpointId = checkpointId;
+        currentData.currentScene = SceneManager.GetActiveScene().name;
+        SaveGame();
+    }
+    //para q al iniciar verifiquen que hay guardado
+    public string LastCheckpointId => currentData.lastCheckpointId;
+    public string SavedScene => currentData.currentScene;
 
 
 

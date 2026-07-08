@@ -44,7 +44,7 @@ public class RespawnManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         //luego de lols 5 seg, movemos al player al punto
-        playerController.transform.position = respawnPoint.position;
+        playerController.transform.position = GetRespawnPosition();
         //me olvide de esto, pero tambien hay que reiniciar tanto la vida como las animaciones y el control
         playerController.InputEnabled = true;
         playerController.AbilityManager.InputEnabled = true;
@@ -53,5 +53,25 @@ public class RespawnManager : MonoBehaviour
 
         if (deathPanel != null)
             deathPanel.SetActive(false);
+    }
+
+    //Para q busque el ultimo respawn point, pero en caos de que no tengo ningnuo guardado, puedo reutilizar el checkpoint que habia hecho al comienzo
+    private Vector3 GetRespawnPosition()
+    {
+        if (SaveLoadManagerJson.Instance != null)
+        {
+            string savedId = SaveLoadManagerJson.Instance.LastCheckpointId;
+            if (!string.IsNullOrEmpty(savedId))
+            {
+                Checkpoint[] checkpoints = FindObjectsByType<Checkpoint>();
+                foreach (var checkpoint in checkpoints)
+                {
+                    if (checkpoint.CheckpointId == savedId)
+                        return checkpoint.transform.position;
+                }
+            }
+        }
+        //al final temrine usandolo igualmente, perfecto
+        return respawnPoint.position;
     }
 }
