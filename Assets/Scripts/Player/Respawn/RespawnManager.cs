@@ -71,7 +71,8 @@ public class RespawnManager : MonoBehaviour
                 }
             }
         }
-        //al final temrine usandolo igualmente, perfecto
+
+        //sin checkpoint tocado todavia, usamos el punto fijo de siempre
         return respawnPoint.position;
     }
 }

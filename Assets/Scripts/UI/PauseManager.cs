@@ -51,7 +51,7 @@ public class PauseManager : MonoBehaviour
         public void BackToMainMenu()
     {
         TogglePause();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("MainMenu");
     }
 }
 
