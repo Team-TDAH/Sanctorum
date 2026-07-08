@@ -23,13 +23,13 @@ public class DebuffFragilidad : MonoBehaviour
 
     public void Aplicar(float porcentaje, float duracion)
     {
-        //si te embisten de nuevo con el debuff activo, se renueva la duracion
+        //si te embisten de nuevo con el debuff activo, se renueva la duracion.
         multiplicador = 1f + porcentaje;
         timer = duracion;
-        //TODO: icono del debuff en la ui
+        //TODO: icono del debuff en la ui.
     }
 
-    //helpers estaticos para que cada ataque del boss no repita el mismo codigo
+    //helpers estaticos para que cada ataque del boss no repita el mismo codigos
 
     public static void AplicarA(GameObject objetivo, float porcentaje, float duracion)
     {

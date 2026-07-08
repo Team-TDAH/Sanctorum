@@ -64,12 +64,12 @@ public class BossNavegante : MonoBehaviour, IDamageable
         }
     }
 
-    //el boss no se cura, pero lo dejo por si la interfaz crece
+    //el boss no se cura, pero lo dejo por si la interfaz crece.
     public void Heal(int amount) { }
 
     //----------------------------------------------------------------------------------------------
 
-    //basico: un orbe dirigido al player que sale de un farol random de la sala
+    //basico: un orbe dirigido al player que sale de un farol random de la sala.
     private void FarolesDelUmbral()
     {
         if (faroles == null || faroles.Length == 0 || orbeFarolPrefab == null) return;
