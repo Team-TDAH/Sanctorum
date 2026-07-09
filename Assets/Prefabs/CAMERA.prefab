@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6487098865100312064}
   - component: {fileID: 7927506221092284351}
   - component: {fileID: 7673429811196000320}
+  - component: {fileID: 6746429228999772704}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -120,6 +121,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1eab3e18ab16d41be516691cf1949d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraTargetAssigner
+--- !u!114 &6746429228999772704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82623605098743450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96d961e3589978459f76afccaff3349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFacingOffset
+  horizontalOffset: 2
+  smoothSpeed: 3
 --- !u!1 &3942563816542785489
 GameObject:
   m_ObjectHideFlags: 0
