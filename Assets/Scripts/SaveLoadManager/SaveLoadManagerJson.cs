@@ -13,11 +13,25 @@ public class SaveLoadManagerJson : MonoBehaviour
     public static SaveLoadManagerJson Instance { get; private set; }
 
     private void Awake()
-    {
-        Instance = this;
-        //lo que me faltaba, es que directamente cargue la partida al comenzar, antes tenia un boton para cargar, que carece de sentido en este tipo de juegos
-        LoadGame();
-    }
+        {
+            Instance = this;
+            //lo que me faltaba, es que directamente cargue la partida al comenzar, antes tenia un boton para cargar, que carece de sentido en este tipo de juegos
+            LoadGame();
+
+            // *** el Awake ya NO redirige. solo carga datos. ***
+            // *** el redirect lo dispara el boton del menu via ContinueGame(), asi no choca con los viajes en ferryman ***
+        }
+
+        // *** FIX: llamar esto desde el boton "Continuar" del menu principal ***
+        //carga la escena donde quedo la partida y ubica al player en su checkpoint (lo hace el PlayerSpawner)
+        public void ContinueGame()
+        {
+            if (!string.IsNullOrEmpty(currentData.currentScene)
+                && currentData.currentScene != SceneManager.GetActiveScene().name)
+            {
+                SceneManager.LoadScene(currentData.currentScene);
+            }
+        }
 
     //cada que quiera, puedo guardar la informacio, debo mejorar esto para que guarde mas que solo las habilidades por ahora
     public void SaveGame()
@@ -72,37 +86,36 @@ public class SaveLoadManagerJson : MonoBehaviour
     {
         return currentData.defeatedBosses.Contains(bossId);
     }
+
     //checkpoints y escena
     //complique mas este script culpta de agregar que guarde el ultimo checkpoint de la escena actual
     public void SetCheckpoint(string checkpointId)
     {
+
         string sceneName = SceneManager.GetActiveScene().name;
-    
+
+        // *** FIX CLAVE: la escena donde tocas un totem SIEMPRE pasa a ser la escena actual guardada ***
+        // *** este era el bug: currentScene quedaba vacio y el juego no sabia a que escena volver ***
+        currentData.currentScene = sceneName;
+
         //buscamos si esta escena ya tiene un checkpoint registrado y lo actualizamos
         foreach (var entry in currentData.sceneCheckpoints)
         {
             if (entry.sceneName == sceneName)
             {
-                //si ya es el checkpoint activo no hace falta reguardar
-                if (entry.checkpointId == checkpointId) return;
-    
                 entry.checkpointId = checkpointId;
-                currentData.currentScene = sceneName;
                 SaveGame();
                 return;
             }
         }
-        //primera vez que esta escena registra un checkpoint (lo mas important)
+        //primera vez que esta escena registra un checkpoint
         currentData.sceneCheckpoints.Add(new SceneCheckpoint
         {
             sceneName = sceneName,
             checkpointId = checkpointId
         });
-        currentData.currentScene = sceneName;
         SaveGame();
     }
-    //para q al iniciar verifiquen que hay guardado
-    public string SavedScene => currentData.currentScene;
 
         public string GetCheckpointForActiveScene()
     {

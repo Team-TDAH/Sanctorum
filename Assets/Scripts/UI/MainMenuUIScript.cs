@@ -3,10 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUIScript : MonoBehaviour
 {
-    public void OnNewGamePressed()
+    //escena de gameplay a cargar si es partida nueva o no hay guardado
+    [SerializeField] private string firstSceneName = "SceneTest2";
+    //lo llama el boton playgame
+    public void PlayGame()
     {
-        // TODO: limpiar/crear save data nuevo si aplica
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        string targetScene = firstSceneName;
+ 
+        //si hay guardado, leemos la escena donde quedo la partida
+        if (PlayerPrefs.HasKey("savefile"))
+        {
+            string json = PlayerPrefs.GetString("savefile", "");
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+ 
+            //si el guardado tiene una escena valida, vamos ahi en vez de la inicial
+            if (data != null && !string.IsNullOrEmpty(data.currentScene))
+                targetScene = data.currentScene;
+        }
+ 
+        SceneManager.LoadScene(targetScene);
     }
     public void OnContinuePressed()
     {
