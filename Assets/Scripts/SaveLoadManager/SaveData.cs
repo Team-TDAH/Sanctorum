@@ -21,6 +21,16 @@ public class SaveData
 
     //para que spawnee en el ultimo checkpoint y no en la posicion exacta donde guardo, sino podria dar errores y demas
     public string currentScene;
-    public string lastCheckpointId;
+    // lo cambie porque al ir y volver de la escena 1 y 2, me devolvia al comienzo.     public string lastCheckpointId;
+    
+    public List<SceneCheckpoint> sceneCheckpoints = new();
+
     
 }
+    //usamos pares porque no se puede serializar una lista (no se porque, siendo tan util)
+    [System.Serializable]
+    public class SceneCheckpoint
+    {
+        public string sceneName;
+        public string checkpointId;
+    }

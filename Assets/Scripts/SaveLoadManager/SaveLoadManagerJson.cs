@@ -9,7 +9,7 @@ public class SaveLoadManagerJson : MonoBehaviour
     [SerializeField] private BoolVariable shieldUnlocked;
     //datos de la memoria, donde guardar y cargar la info
     private SaveData currentData;
-     //No me gusta el sistema singleton, pero aca me agiliza mucho si los jefes pueden consultarlo sin referencia
+    //No me gusta el sistema singleton, pero aca me agiliza mucho si los jefes pueden consultarlo sin referencia
     public static SaveLoadManagerJson Instance { get; private set; }
 
     private void Awake()
@@ -73,18 +73,53 @@ public class SaveLoadManagerJson : MonoBehaviour
         return currentData.defeatedBosses.Contains(bossId);
     }
     //checkpoints y escena
+    //complique mas este script culpta de agregar que guarde el ultimo checkpoint de la escena actual
     public void SetCheckpoint(string checkpointId)
     {
-        //asi no guarda si pasa por el ultimo checkpoint
-        if (currentData.lastCheckpointId == checkpointId) return;
+        string sceneName = SceneManager.GetActiveScene().name;
     
-        currentData.lastCheckpointId = checkpointId;
-        currentData.currentScene = SceneManager.GetActiveScene().name;
+        //buscamos si esta escena ya tiene un checkpoint registrado y lo actualizamos
+        foreach (var entry in currentData.sceneCheckpoints)
+        {
+            if (entry.sceneName == sceneName)
+            {
+                //si ya es el checkpoint activo no hace falta reguardar
+                if (entry.checkpointId == checkpointId) return;
+    
+                entry.checkpointId = checkpointId;
+                currentData.currentScene = sceneName;
+                SaveGame();
+                return;
+            }
+        }
+        //primera vez que esta escena registra un checkpoint (lo mas important)
+        currentData.sceneCheckpoints.Add(new SceneCheckpoint
+        {
+            sceneName = sceneName,
+            checkpointId = checkpointId
+        });
+        currentData.currentScene = sceneName;
         SaveGame();
     }
     //para q al iniciar verifiquen que hay guardado
-    public string LastCheckpointId => currentData.lastCheckpointId;
     public string SavedScene => currentData.currentScene;
+
+        public string GetCheckpointForActiveScene()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+    
+        foreach (var entry in currentData.sceneCheckpoints)
+        {
+            if (entry.sceneName == sceneName)
+                return entry.checkpointId;
+        }
+        return "";
+    }
+    
+
+
+
+
 
 
 

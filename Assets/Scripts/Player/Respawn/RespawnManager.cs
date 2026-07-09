@@ -10,8 +10,14 @@ public class RespawnManager : MonoBehaviour
     //panel con el texto "you die!", empieza desactivado, al morir aparecera por unos segundos y luego respawn
     [SerializeField] private GameObject deathPanel;
     //lugar donde respawneara, todavia no tenemos claro si sera en un unico lugar estilo sala central o en distintos respawns (no debe tener nada el gameobject del point)
-    [SerializeField] private Transform respawnPoint;
+    private Vector3 initialPosition;
 
+    //con start deberia funciona bien, pero aveces daba error, asi que esperara un frame y me quito dramas
+    private IEnumerator Start()
+    {
+        yield return null;
+        initialPosition = playerController.transform.position;
+    }
 
     private void OnEnable()
     {
@@ -60,7 +66,7 @@ public class RespawnManager : MonoBehaviour
     {
         if (SaveLoadManagerJson.Instance != null)
         {
-            string savedId = SaveLoadManagerJson.Instance.LastCheckpointId;
+            string savedId = SaveLoadManagerJson.Instance.GetCheckpointForActiveScene();
             if (!string.IsNullOrEmpty(savedId))
             {
                 Checkpoint[] checkpoints = FindObjectsByType<Checkpoint>();
@@ -71,8 +77,7 @@ public class RespawnManager : MonoBehaviour
                 }
             }
         }
-
         //sin checkpoint tocado todavia, usamos el punto fijo de siempre
-        return respawnPoint.position;
+        return initialPosition;
     }
 }

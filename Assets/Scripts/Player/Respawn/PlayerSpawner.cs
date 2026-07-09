@@ -10,7 +10,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (SaveLoadManagerJson.Instance == null) return;
 
-        string savedId = SaveLoadManagerJson.Instance.LastCheckpointId;
+        string savedId = SaveLoadManagerJson.Instance.GetCheckpointForActiveScene();
         if (string.IsNullOrEmpty(savedId)) return;
 
         //buscamos entre todos los checkpoints de la escena el que coincida con el guardado
