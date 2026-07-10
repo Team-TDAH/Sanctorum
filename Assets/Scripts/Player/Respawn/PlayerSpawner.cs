@@ -26,7 +26,6 @@ public class PlayerSpawner : MonoBehaviour
                 //esperamos a que la fisica procese el nuevo lugar antes de reactivar
                 yield return new WaitForFixedUpdate();
                 yield return null;
-                Checkpoint.IgnoreTriggers = false;
                 yield break;
             }
         }
