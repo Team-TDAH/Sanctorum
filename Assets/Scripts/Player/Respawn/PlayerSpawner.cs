@@ -7,7 +7,7 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private PlayerController playerController;
 
 
-    // *** FIX: Start ahora es coroutine para poder apagar la bandera despues de que la fisica proceso el teletransporte ***
+    //corrutina necesaria para el tp
     private IEnumerator Start()
     {
         if (SaveLoadManagerJson.Instance == null) yield break;

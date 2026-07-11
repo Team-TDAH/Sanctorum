@@ -8401,27 +8401,27 @@ ScriptedImporter:
     spriteBone:
     - name: Hair.5
       guid: fca9378b1fd52174b98d97e6ae9fe493
-      position: {x: 90.3129, y: -0.00007198729, z: 0}
-      rotation: {x: 0, y: 0, z: 0.03738663, w: 0.99930096}
-      length: 65.22639
+      position: {x: 90.31308, y: 0.00014313846, z: 0}
+      rotation: {x: 0, y: 0, z: 0.037388977, w: 0.9993008}
+      length: 65.22663
       parentId: 1
       color:
         serializedVersion: 2
         rgba: 4278223103
     - name: Hair.4
       guid: 068e597d521b88a48b5aefc0988ee7a5
-      position: {x: 83.21452, y: -0.0000016379488, z: 0}
-      rotation: {x: 0, y: 0, z: -0.013202838, w: 0.99991286}
-      length: 90.312744
+      position: {x: 83.21467, y: 0.00001785362, z: 0}
+      rotation: {x: 0, y: 0, z: -0.013205052, w: 0.9999128}
+      length: 90.31286
       parentId: 2
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: Hair.3
       guid: 9f16d1db0964810489dab1cb92878be3
-      position: {x: 90.76722, y: -0.000009956486, z: 0}
-      rotation: {x: 0, y: 0, z: 0.12326617, w: 0.99237365}
-      length: 83.21468
+      position: {x: 90.767105, y: -0.00004308342, z: 0}
+      rotation: {x: 0, y: 0, z: 0.123267114, w: 0.9923735}
+      length: 83.21479
       parentId: 3
       color:
         serializedVersion: 2
@@ -8446,18 +8446,18 @@ ScriptedImporter:
         rgba: 4278255360
     - name: Hair.6
       guid: 9335694417edd1441925dd18a6a4223d
-      position: {x: 65.226425, y: 0.00007666924, z: 0}
-      rotation: {x: 0, y: 0, z: -0.023711732, w: 0.9997189}
-      length: 75.921844
+      position: {x: 65.22642, y: -0.00017351801, z: 0}
+      rotation: {x: 0, y: 0, z: -0.02371249, w: 0.9997189}
+      length: 75.92187
       parentId: 0
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: Hair.7
       guid: c17e11a4f20f0ed47ac229e3a7ba545d
-      position: {x: 75.92185, y: -0.00009140952, z: 0}
-      rotation: {x: 0, y: 0, z: 0.04200211, w: 0.99911755}
-      length: 55.530178
+      position: {x: 75.92168, y: -0.000058184676, z: 0}
+      rotation: {x: 0, y: 0, z: 0.042001743, w: 0.99911755}
+      length: 55.530174
       parentId: 5
       color:
         serializedVersion: 2
@@ -10736,7 +10736,7 @@ ScriptedImporter:
     - name: Arm.front.1
       guid: a130f2a19071eee4bb851285da466fe3
       position: {x: 48.12915, y: 61.386475, z: 0}
-      rotation: {x: 0, y: 0, z: -0.020349005, w: 0.999793}
+      rotation: {x: 0, y: 0, z: -0.02034909, w: 0.999793}
       length: 221.08528
       parentId: -1
       color:
@@ -10744,9 +10744,9 @@ ScriptedImporter:
         rgba: 4294902015
     - name: Arm.front.2
       guid: 67659c177c5b7f540a01fb73ef209f29
-      position: {x: 221.08516, y: 0.000014407444, z: 0}
-      rotation: {x: 0, y: 0, z: 0.062332913, w: 0.99805546}
-      length: 225.39601
+      position: {x: 221.08528, y: 0.000048745074, z: 0}
+      rotation: {x: 0, y: 0, z: 0.062333, w: 0.99805546}
+      length: 225.39603
       parentId: 0
       color:
         serializedVersion: 2
@@ -13995,9 +13995,9 @@ ScriptedImporter:
     spriteBone:
     - name: Staff
       guid: 3a10a442b6fda9f4299895e1cd2a1df9
-      position: {x: 52.76184, y: 740.60474, z: 0}
+      position: {x: 52.761963, y: 740.60486, z: 0}
       rotation: {x: 0, y: 0, z: 0.7192942, w: 0.69470555}
-      length: 125.04108
+      length: 125.041084
       parentId: -1
       color:
         serializedVersion: 2
@@ -20779,26 +20779,26 @@ ScriptedImporter:
     - name: Hair.3
       guid: 9f16d1db0964810489dab1cb92878be3
       position: {x: 90.76713, y: -0.000012448676, z: 0}
-      rotation: {x: 0, y: 0, z: 0.12326625, w: 0.99237365}
-      length: 83.21469
+      rotation: {x: 0, y: 0, z: 0.123267084, w: 0.9923735}
+      length: 83.21481
       parentId: 3
       color:
         serializedVersion: 2
         rgba: 4294901760
     - name: Hair.4
       guid: 068e597d521b88a48b5aefc0988ee7a5
-      position: {x: 83.21467, y: 0.00002973547, z: 0}
-      rotation: {x: 0, y: 0, z: -0.013202795, w: 0.99991286}
-      length: 90.31277
+      position: {x: 83.214714, y: -0.00001670638, z: 0}
+      rotation: {x: 0, y: 0, z: -0.013205052, w: 0.9999128}
+      length: 90.3129
       parentId: 4
       color:
         serializedVersion: 2
         rgba: 4294902015
     - name: Hair.5
       guid: fca9378b1fd52174b98d97e6ae9fe493
-      position: {x: 90.312744, y: -0.00012430424, z: 0}
-      rotation: {x: 0, y: 0, z: 0.037386615, w: 0.9993009}
-      length: 65.2264
+      position: {x: 90.312935, y: 0.00016705965, z: 0}
+      rotation: {x: 0, y: 0, z: 0.037389003, w: 0.9993008}
+      length: 65.226654
       parentId: 5
       color:
         serializedVersion: 2
@@ -20806,7 +20806,7 @@ ScriptedImporter:
     - name: Arm.front.1
       guid: a130f2a19071eee4bb851285da466fe3
       position: {x: 376.4888, y: 10.246283, z: 0}
-      rotation: {x: 0, y: -0, z: -0.71449196, w: 0.6996437}
+      rotation: {x: 0, y: -0, z: -0.714492, w: 0.6996436}
       length: 221.08524
       parentId: 0
       color:
@@ -20814,8 +20814,8 @@ ScriptedImporter:
         rgba: 4294902015
     - name: Arm.front.2
       guid: 67659c177c5b7f540a01fb73ef209f29
-      position: {x: 221.08524, y: -0.00002040586, z: 0}
-      rotation: {x: 0, y: 0, z: 0.062332913, w: 0.99805546}
+      position: {x: 221.08522, y: -0.0000008518109, z: 0}
+      rotation: {x: 0, y: 0, z: 0.062332995, w: 0.99805546}
       length: 225.39603
       parentId: 7
       color:
@@ -20868,17 +20868,17 @@ ScriptedImporter:
         rgba: 4278255488
     - name: Hair.6
       guid: 9335694417edd1441925dd18a6a4223d
-      position: {x: 65.22651, y: 0.00006210873, z: 0}
-      rotation: {x: 0, y: 0, z: -0.023711825, w: 0.99971884}
-      length: 75.921844
+      position: {x: 65.22662, y: -0.000040050116, z: 0}
+      rotation: {x: 0, y: 0, z: -0.023712454, w: 0.99971884}
+      length: 75.92186
       parentId: 6
       color:
         serializedVersion: 2
         rgba: 4294967040
     - name: Hair.7
       guid: c17e11a4f20f0ed47ac229e3a7ba545d
-      position: {x: 75.92185, y: -0.000037368256, z: 0}
-      rotation: {x: 0, y: 0, z: 0.042002127, w: 0.99911755}
+      position: {x: 75.92169, y: -0.00009958436, z: 0}
+      rotation: {x: 0, y: 0, z: 0.042001765, w: 0.99911755}
       length: 55.530178
       parentId: 14
       color:
@@ -20886,8 +20886,8 @@ ScriptedImporter:
         rgba: 4294901760
     - name: Hair.nub
       guid: 4ff205e9720ef3e42ac50a4f7e58c670
-      position: {x: 55.53019, y: -0.000016335747, z: 0}
-      rotation: {x: 0, y: 0, z: 0.6866945, w: 0.7269461}
+      position: {x: 55.530148, y: 0.00001246174, z: 0}
+      rotation: {x: 0, y: 0, z: 0.68669456, w: 0.7269461}
       length: 0.31152347
       parentId: 15
       color:
