@@ -25,7 +25,6 @@ public class DialogueUI : MonoBehaviour
     private DialogueSO currentDialogue;
     private int currentLineIndex;
     //por las dudas, para ignorar el primer "click" del dialogo, ya que seria el que apretas para empezsar la charla
-    private bool ignoreFirstPress;
     private void Awake()
     {
         var playerInput = FindAnyObjectByType<PlayerInput>();
@@ -48,12 +47,6 @@ public class DialogueUI : MonoBehaviour
 
         if (interactAction != null && interactAction.WasPressedThisFrame())
         {
-            //lo de antes, para ignorar el "click" que abrio el dialogo
-            if (ignoreFirstPress)
-            {
-                ignoreFirstPress = false;
-                return;
-            }
             AdvanceLine();
         }
     }
@@ -62,7 +55,6 @@ public class DialogueUI : MonoBehaviour
     {
         currentDialogue = dialogue;
         currentLineIndex = 0;
-        ignoreFirstPress = true;
         channel.IsDialogueActive = true;
         dialoguePanel.SetActive(true);
         //para asignas los sprites de cada uno, el de miharu ya esta en este script

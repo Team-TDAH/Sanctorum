@@ -10,13 +10,24 @@ public class DialogueChannel : ScriptableObject
     //esto para avisar que terminaron de hablar, asi activamos de vuelta el movimiento y lo demas
     public event Action OnDialogueClosed;
     //No creo que haga falta, pero para prevenir que haga mas dialogos
-    public bool IsDialogueActive { get; set; }
+    [System.NonSerialized] private bool isDialogueActive;
+    [System.NonSerialized] public int LastClosedFrame = -1;
+    public bool IsDialogueActive
+    {
+        get => isDialogueActive;
+        set => isDialogueActive = value;
+    }
+        private void OnEnable()
+    {
+        isDialogueActive = false;
+    }
     public void RequestDialogue(DialogueSO dialogue)
     {
         OnDialogueRequested?.Invoke(dialogue);
     }
     public void RaiseDialogueClosed()
     {
+        LastClosedFrame = Time.frameCount;
         OnDialogueClosed?.Invoke();
     }
 }

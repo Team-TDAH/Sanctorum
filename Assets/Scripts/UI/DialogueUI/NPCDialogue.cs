@@ -26,29 +26,31 @@ public class NPCDialogue : MonoBehaviour
     }
     private void Update()
     {
-        if (!playerInRange) return;
-
-        //frenar dialogos en caso de q empezar otra conversacion
+        if (!playerInRange)        
+        {
+            return;
+        }
+        //no abrimos si ya hay un dialogo en curso
         if (channel != null && channel.IsDialogueActive) return;
-
+        if (channel != null && Time.frameCount == channel.LastClosedFrame) return;
         if (interactAction != null && interactAction.WasPressedThisFrame())
         {
             if (channel != null && dialogue != null)
                 channel.RequestDialogue(dialogue);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.GetComponent<PlayerController>() == null) return;
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.GetComponent<PlayerController>() == null) return;
 
-        playerInRange = true;
-        if (interactPrompt != null) interactPrompt.SetActive(true);
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.GetComponent<PlayerController>() == null) return;
+            playerInRange = true;
+            if (interactPrompt != null) interactPrompt.SetActive(true);
+        }
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.GetComponent<PlayerController>() == null) return;
 
-        playerInRange = false;
-        if (interactPrompt != null) interactPrompt.SetActive(false);
+            playerInRange = false;
+            if (interactPrompt != null) interactPrompt.SetActive(false);
+        }
     }
-}
