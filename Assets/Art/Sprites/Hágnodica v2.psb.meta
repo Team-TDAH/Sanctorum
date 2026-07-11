@@ -323,7 +323,7 @@ ScriptedImporter:
     - {x: 16, y: 17}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4072}
-    spritePosition: {x: 1198, y: 2922}
+    spritePosition: {x: 876, y: 2706}
   - name: Capucga
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1429,7 +1429,7 @@ ScriptedImporter:
     - {x: 83, y: 84}
     tessellationDetail: 0
     uvTransform: {x: 1358, y: 4}
-    spritePosition: {x: 890, y: 2702}
+    spritePosition: {x: 568, y: 2486}
   - name: Ojos
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1711,7 +1711,7 @@ ScriptedImporter:
     - {x: 20, y: 21}
     tessellationDetail: 0
     uvTransform: {x: 221, y: 3879}
-    spritePosition: {x: 1147, y: 3044}
+    spritePosition: {x: 825, y: 2828}
   - name: Brazo derecha
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2816,7 +2816,7 @@ ScriptedImporter:
     - {x: 73, y: 74}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1561}
-    spritePosition: {x: 1511, y: 1596}
+    spritePosition: {x: 1189, y: 1380}
   - name: Brazo izquierda
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3923,7 +3923,7 @@ ScriptedImporter:
     - {x: 74, y: 75}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 2720}
-    spritePosition: {x: 343, y: 1596}
+    spritePosition: {x: 21, y: 1380}
   - name: Tabard
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4287,7 +4287,7 @@ ScriptedImporter:
     - {x: 25, y: 26}
     tessellationDetail: 0
     uvTransform: {x: 752, y: 999}
-    spritePosition: {x: 1116, y: 1104}
+    spritePosition: {x: 794, y: 888}
   - name: "Cintur\xF3n"
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5271,7 +5271,7 @@ ScriptedImporter:
     - {x: 72, y: 73}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 855, y: 1221}
+    spritePosition: {x: 533, y: 1005}
   - name: Cara
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5577,7 +5577,7 @@ ScriptedImporter:
     - {x: 23, y: 24}
     tessellationDetail: 0
     uvTransform: {x: 752, y: 1935}
-    spritePosition: {x: 1120, y: 2838}
+    spritePosition: {x: 798, y: 2622}
   - name: Cuello
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5933,7 +5933,7 @@ ScriptedImporter:
     - {x: 23, y: 24}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 3879}
-    spritePosition: {x: 1121, y: 2748}
+    spritePosition: {x: 799, y: 2532}
   - name: Piernas
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -6457,7 +6457,7 @@ ScriptedImporter:
     - {x: 42, y: 43}
     tessellationDetail: 0
     uvTransform: {x: 752, y: 4}
-    spritePosition: {x: 926, y: 265}
+    spritePosition: {x: 604, y: 49}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
