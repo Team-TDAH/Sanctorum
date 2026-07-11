@@ -1698,7 +1698,7 @@ ScriptedImporter:
     - {x: 5, y: 42}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1849}
-    spritePosition: {x: 767, y: 1846}
+    spritePosition: {x: 693, y: 1846}
   - name: Ojos
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2977,7 +2977,7 @@ ScriptedImporter:
     - {x: 27, y: 86}
     tessellationDetail: 0
     uvTransform: {x: 73, y: 1849}
-    spritePosition: {x: 850, y: 1846}
+    spritePosition: {x: 776, y: 1846}
   - name: Mano derecha
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -4904,7 +4904,7 @@ ScriptedImporter:
     - {x: 122, y: 123}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1526}
-    spritePosition: {x: 1323, y: 776}
+    spritePosition: {x: 1249, y: 776}
   - name: Mano izquierda
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -6438,7 +6438,7 @@ ScriptedImporter:
     - {x: 90, y: 91}
     tessellationDetail: 0
     uvTransform: {x: 247, y: 1526}
-    spritePosition: {x: 94, y: 776}
+    spritePosition: {x: 20, y: 776}
   - name: Cabeza
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7790,7 +7790,7 @@ ScriptedImporter:
     - {x: 79, y: 80}
     tessellationDetail: 0
     uvTransform: {x: 534, y: 793}
-    spritePosition: {x: 710, y: 1404}
+    spritePosition: {x: 636, y: 1404}
   - name: Brazo derecha
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -11729,7 +11729,7 @@ ScriptedImporter:
     - {x: 331, y: 332}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 945, y: 905}
+    spritePosition: {x: 871, y: 905}
   - name: Brazo izquierdo
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -14685,7 +14685,7 @@ ScriptedImporter:
     - {x: 263, y: 264}
     tessellationDetail: 0
     uvTransform: {x: 4, y: 765}
-    spritePosition: {x: 186, y: 905}
+    spritePosition: {x: 112, y: 905}
   - name: pecho
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -16272,7 +16272,7 @@ ScriptedImporter:
     - {x: 114, y: 115}
     tessellationDetail: 0
     uvTransform: {x: 978, y: 4}
-    spritePosition: {x: 578, y: 1087}
+    spritePosition: {x: 504, y: 1087}
   - name: Falda
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -17647,7 +17647,7 @@ ScriptedImporter:
     - {x: 82, y: 83}
     tessellationDetail: 0
     uvTransform: {x: 534, y: 4}
-    spritePosition: {x: 610, y: 370}
+    spritePosition: {x: 536, y: 370}
   - name: Pierna derecha
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -19225,7 +19225,7 @@ ScriptedImporter:
     - {x: 0, y: 52}
     tessellationDetail: 0
     uvTransform: {x: 534, y: 1358}
-    spritePosition: {x: 934, y: 0}
+    spritePosition: {x: 860, y: 0}
   - name: Pierna izquierda
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -20377,7 +20377,7 @@ ScriptedImporter:
     - {x: 0, y: 51}
     tessellationDetail: 0
     uvTransform: {x: 627, y: 1358}
-    spritePosition: {x: 709, y: 0}
+    spritePosition: {x: 635, y: 0}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
