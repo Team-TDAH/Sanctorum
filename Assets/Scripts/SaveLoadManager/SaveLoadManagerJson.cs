@@ -67,7 +67,11 @@ public class SaveLoadManagerJson : MonoBehaviour
         {
             //la primera vez tendras que crear el currentdata
             currentData = new SaveData();
-            Debug.Log("No savegame found, starting fresh");
+
+            if (dashUnlocked != null) dashUnlocked.Value = false;
+            if (doubleJumpUnlocked != null) doubleJumpUnlocked.Value = false;
+            if (shieldUnlocked != null) shieldUnlocked.Value = false;
+            Debug.Log("No save encontrado, empieza de 0");
         }
     }
 
@@ -147,7 +151,6 @@ public class SaveLoadManagerJson : MonoBehaviour
         if (dashUnlocked != null) dashUnlocked.Value = false;
         if (doubleJumpUnlocked != null) doubleJumpUnlocked.Value = false;
         if (shieldUnlocked != null) shieldUnlocked.Value = false;
-
         Debug.Log("Save deleted");
     }
 }
