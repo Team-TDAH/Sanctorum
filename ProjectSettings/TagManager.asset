@@ -41,6 +41,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Level -3
+    uniqueID: 1660725159
+    locked: 0
+  - name: Level -2
+    uniqueID: 2284021899
+    locked: 0
+  - name: Level -1
+    uniqueID: 165581561
+    locked: 0
+  - name: Level 1
+    uniqueID: 2942951767
+    locked: 0
+  - name: Level 2
+    uniqueID: 330625007
+    locked: 0
+  - name: Level 3
+    uniqueID: 1770950609
+    locked: 0
+  - name: Level 4
+    uniqueID: 2959079969
+    locked: 0
+  - name: Level 5
+    uniqueID: 1512412815
+    locked: 0
+  - name: Level 6
+    uniqueID: 1084454581
+    locked: 0
+  - name: Level 7
+    uniqueID: 12346215
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
