@@ -34,4 +34,10 @@ public class BossRegister : MonoBehaviour
         //logica barq
         if (ferryman != null) ferryman.SetActive(true);
     }
+    //para q sepa la ui si debe mostrar o no la barra del jefe
+    public bool IsAlreadyDefeated()
+    {
+        return SaveLoadManagerJson.Instance != null
+            && SaveLoadManagerJson.Instance.IsBossDefeated(bossId);
+    }
 }

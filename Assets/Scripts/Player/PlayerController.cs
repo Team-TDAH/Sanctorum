@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = -30f;
 
     //variables de mejora de salto
-    [SerializeField] private float jumpCutMultiplier = 0.5f;
-    [SerializeField] private float coyoteTime = 0.1f;
-    [SerializeField] private float jumpBufferTime = 0.1f;
+    private float jumpCutMultiplier = 0.5f;
+    private float coyoteTime = 0.1f;
+    private float jumpBufferTime = 0.1f;
     //contadores de las mejoras de salto
     private float coyoteCounter;
     private float jumpBufferCounter;
@@ -264,11 +264,9 @@ public class PlayerController : MonoBehaviour
         bool dashAllowed = (IsGrounded || canDashInAir) && (dashUnlocked == null || dashUnlocked.Value);
         if (!dashAllowed || dashCooldownCounter > 0f) return;
 
-        //direccion del input actual, o la ultima direccion mirando si no hay input
-        Vector2 inputDir = moveInput;
-        dashDirection = inputDir.sqrMagnitude > 0.01f
-            ? inputDir.normalized
-            : new Vector2(lastFacingDirection, 0f);
+        //saque la posibilidad de dashear hacia arriba, parecia un tercer salto
+        float dashX = moveInput.x != 0f ? Mathf.Sign(moveInput.x) : lastFacingDirection;
+        dashDirection = new Vector2(dashX, 0f);
 
         isDashing = true;
         dashTimer = 0f;

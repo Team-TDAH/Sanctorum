@@ -146,7 +146,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.84, y: -3.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7992829450006688332}
@@ -168,9 +168,6 @@ MonoBehaviour:
   moveSpeed: 12
   jumpForce: 30
   gravity: -56.3
-  jumpCutMultiplier: 0.5
-  coyoteTime: 0.1
-  jumpBufferTime: 0.1
   doubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}
   dashDistance: 15
   dashDuration: 0.15
