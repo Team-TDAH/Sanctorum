@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f1c3ac0e4bb524b9db04ffc6da360d, type: 3}
+  m_Name: Kamush.intro
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
+  npcPortrait: {fileID: 21300000, guid: a2bc90277531e994ea6a407f05455fb9, type: 2}
+  lines:
+  - speaker: 0
+    text: 
+    speakerName: 
+  - speaker: 1
+    text: "Soy Kamush, tu hijo ha sido maldecido y se han llevado su alma. Ninguna
+      madre deber\xEDa estar separada de su hijo. \r\n"
+    speakerName: Kamush
+  - speaker: 0
+    text: "\xBFPuedo reunirme con \xE9l?"
+    speakerName: Miharu
+  - speaker: 1
+    text: "Tendr\xE1s que llegar hasta la Prisi\xF3n de Almas para rescatarlo. "
+    speakerName: Kamush
+  - speaker: 0
+    text: "\xBFC\xF3mo recupero a mi hijo?"
+    speakerName: Miharu
+  - speaker: 0
+    text: "Necesitar\xE1s este collar lo bendije para que puedas usar magia; y este
+      b\xE1culo, te permitir\xE1 canalizar dicha magia. Ahora v\xE9 y que la buenaventura
+      te acompa\xF1e. \r\n"
+    speakerName: Kamush
