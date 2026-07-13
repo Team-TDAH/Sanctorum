@@ -32,10 +32,14 @@ public class BossFerryman : MonoBehaviour
     private void Update()
     {
         if (!playerInRange) return;
+        if (interactAction == null) return;
+        
+        // AHORA SI, 03:58 pude terminar este bug que no me dejaba tepearme porque npcdialogue del boss parece que desabilitaba el esta accion
+        if (!interactAction.enabled) interactAction.Enable();
 
-        if (interactAction != null && interactAction.WasPressedThisFrame())
+        if (interactAction.WasPressedThisFrame())
         {
-            //ANIMACION DE TRANSICION ACA!!!!!!!!!!!!!!!!!
+            //!!!!!!!!!!!!!!!transicion aca iria
             SceneManager.LoadScene(nextSceneName);
         }
     }

@@ -9,6 +9,7 @@ public class Boss1Controller : MonoBehaviour
     [SerializeField] private DialogueChannel dialogueChannel;
     //el objeto a donde ira el boss, aproveche el mismo objeto que esta traquando la cinemachine para que la vista sea de la sala completa
     [SerializeField] private Transform centerPoint;
+    [SerializeField] private GameObject dialogueObject;
     [SerializeField] private float moveToCenterSpeed = 40f;//subi mucho el valor porque aveces podias "empujarlo" y se tardaba bastante, ahora si lo empujas igual llega rapido
     //pausa entre ataques, lo estaremos cambiando bastante, no quiero que el personaje se quede "bobo" luego de un ataque, quizas agregamos una animacion de preparar el hechizo entre medio
     [SerializeField] private float pauseAttacks = 2.5f;
@@ -96,6 +97,14 @@ public class Boss1Controller : MonoBehaviour
     private IEnumerator StartFightSequence()
     {
         state = BossState.MovingToCenter;
+        //para que no se le pueda hablar mientras esta en transicion, bug encontrado a las 03:24 con katze
+        //no me gusto para nada la solucion, pero funciona, siento que puse en el lugar incorrecto el NPCDielogue, pero ahora no puedo pensar
+        var npcDialogue = GetComponent<NPCDialogue>();
+        if (npcDialogue != null) npcDialogue.enabled = false;
+        //la idea era q apagara todo el objeto del dialogo, pero tengo ese objeto en el mismo lugar que boss1controller, asi que problemas
+        if (dialogueObject != null) dialogueObject.SetActive(false);
+
+
         //se chocaba con objetos en la transicion, asi que mejor quitar colisiones mientras se transiciona(era la idea pero al final con dividir collisiones y poner trigger donde)
         
         //se mueve rapidamente al centro de la pantalla(aveces se mueve x el ataque de embestida)
