@@ -9,16 +9,16 @@ public class Boss1Controller : MonoBehaviour
     [SerializeField] private DialogueChannel dialogueChannel;
     //el objeto a donde ira el boss, aproveche el mismo objeto que esta traquando la cinemachine para que la vista sea de la sala completa
     [SerializeField] private Transform centerPoint;
+    [SerializeField] private GameObject dialogueObject;
     [SerializeField] private float moveToCenterSpeed = 40f;//subi mucho el valor porque aveces podias "empujarlo" y se tardaba bastante, ahora si lo empujas igual llega rapido
     //pausa entre ataques, lo estaremos cambiando bastante, no quiero que el personaje se quede "bobo" luego de un ataque, quizas agregamos una animacion de preparar el hechizo entre medio
     [SerializeField] private float pauseAttacks = 2.5f;
     [Header("Faroles del Umbral config")]
     //tengo que asignar lampara x lampara, estas deben tener el componente BossLamp que adminstra los proyectiles de ellas
     [SerializeField] private List<BossLamp> lamps = new();
-    //cambie de idea, antes era al azar entre 3-5 lamparas atacando, ahora es algo progresivo
-    [SerializeField] private int startingLamps = 2;
-    [SerializeField] private int maxLamps = 5;
-    private int lampAttackCount;
+    //cambie de idea, antes era al azar entre 3-5 lamparas atacando, ahora es algo progresivo(me retaron, volvera a ser entre 3-5 lamparas)
+    [SerializeField] private int minLampsActive = 3;
+    [SerializeField] private int maxLampsActive = 5;
     //termine dejando que dure tanto tiempo y no que dispare tanta cantidad de proyectiles
     [SerializeField] private float lampsDuration = 15f;
     //probabilidad de que salga este ataque, no es exactamente 40% pero da idea
@@ -48,9 +48,19 @@ public class Boss1Controller : MonoBehaviour
     private Transform playerTransform;
     //para no repetir el mismo ataque dos veces seguidas(pasa mucho sino)
     private int lastAttackIndex = -1;
+    //guarda la posi de donde arranca el boss para luego volver ahi
+    private Vector3 startPosition;
+    [SerializeField] private float returnSpeed = 40f; //tendre q cambiarlo, no se si sera igual que la ida
+    //--
+    //para desbloquear el dash cuando llegue a mitad d evida el boss
+    [SerializeField] private BoolVariable abilityToUnlock;
+
+    //para no desbloquear mas de una vez
+    private bool abilityUnlocked;
     private void Awake()
     {
         bossHealth = GetComponent<BossHealth>();
+        startPosition = transform.position;
     }
 
     private void OnEnable()
@@ -77,6 +87,16 @@ public class Boss1Controller : MonoBehaviour
             state = BossState.Dead;
             StopAllCoroutines();
             DeactivateAllLamps();
+            StartCoroutine(DeathSequence());
+        }
+        //desbloqueo de dash
+        if (!abilityUnlocked && bossHealth != null && !bossHealth.IsDead
+            && bossHealth.HealthPercent <= 0.5f)
+        {
+            abilityUnlocked = true;
+            if (abilityToUnlock != null) abilityToUnlock.Value = true;
+            //!!!! cuando muere el pj luego de conseguir la habilidad, no la pierde, consultar luego si se quedara asi
+            SaveLoadManagerJson.Instance?.SaveGame();
         }
     }
     //----------------------------------------------------------------------------------------------
@@ -92,6 +112,16 @@ public class Boss1Controller : MonoBehaviour
     private IEnumerator StartFightSequence()
     {
         state = BossState.MovingToCenter;
+        //para que no se le pueda hablar mientras esta en transicion, bug encontrado a las 03:24 con katze
+        //no me gusto para nada la solucion, pero funciona, siento que puse en el lugar incorrecto el NPCDielogue, pero ahora no puedo pensar
+        var npcDialogue = GetComponent<NPCDialogue>();
+        if (npcDialogue != null) npcDialogue.enabled = false;
+        //la idea era q apagara todo el objeto del dialogo, pero tengo ese objeto en el mismo lugar que boss1controller, asi que problemas
+        if (dialogueObject != null) dialogueObject.SetActive(false);
+
+
+        //se chocaba con objetos en la transicion, asi que mejor quitar colisiones mientras se transiciona(era la idea pero al final con dividir collisiones y poner trigger donde)
+        
         //se mueve rapidamente al centro de la pantalla(aveces se mueve x el ataque de embestida)
         while (centerPoint != null &&
                Vector2.Distance(transform.position, centerPoint.position) > 0.1f)
@@ -161,10 +191,10 @@ public class Boss1Controller : MonoBehaviour
     }
     private IEnumerator LampAttack()
     {
-        //calculo simple para determinear cuantas lamparas van, el contador lampAttackCount va agrandandose y agregando mas lamparas hasta llegar al max
-        int count = Mathf.Min(startingLamps + lampAttackCount, maxLamps);
+        //calculo simple para determinear cuantas lamparas van, el contador lampAttackCount va agrandandose y agregando mas lamparas hasta llegar al max (retrocedi, me retaron repito)
+        int count = Mathf.Min(minLampsActive, maxLampsActive + 1);
         count = Mathf.Min(count, lamps.Count);
-        lampAttackCount++;
+
         //para que elija verdaderamente al azar entre las lamparas
         List<BossLamp> shuffled = new List<BossLamp>(lamps);
         for (int i = 0; i < shuffled.Count; i++)
@@ -214,5 +244,25 @@ public class Boss1Controller : MonoBehaviour
         GameObject spectral = Instantiate(spectralPrefab, transform.position, Quaternion.identity);
         spectral.GetComponent<SpectralCharge>()?.Initialize(dir, spectralSpeed, spectralLifetime);
         yield return new WaitForSeconds(spectralLifetime * 0.5f);
+    }
+    //----
+    //secuencia de muerte en el q vuelve a donde arranco
+    private IEnumerator DeathSequence()
+    {
+        //sin colisiones durante el regreso, igual que en la ida al centro
+        var col = GetComponentInChildren<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        //!!! aca iria animacion de derrota (no lo veo mucho en este jefe pero bueno)
+
+        while (Vector2.Distance(transform.position, startPosition) > 0.1f)
+        {
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                startPosition,
+                returnSpeed * Time.deltaTime);
+            yield return null;
+        }
+        bossHealth.CompleteDeath();
     }
 }

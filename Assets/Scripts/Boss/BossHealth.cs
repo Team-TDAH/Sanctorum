@@ -56,10 +56,11 @@ public class BossHealth : MonoBehaviour, IDamageable
     {
         isDead = true;
         bossChannel?.RaiseDefeated();
-        //el BossRegister se encarga de desbloquear la habilidad, guardar y activar el ferryman
+    }
+    //lo llama el boss cuando temrina la secuencia d emuerte
+    public void CompleteDeath()
+    {
         bossRegister?.RegisterDefeated();
-        //el script de comportamiento del jefe deberia reaccionar a IsDead para su animacion de muerte
-        //por ahora lo destruimos directo
         Destroy(gameObject);
     }
 }
