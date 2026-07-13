@@ -51,6 +51,12 @@ public class Boss1Controller : MonoBehaviour
     //guarda la posi de donde arranca el boss para luego volver ahi
     private Vector3 startPosition;
     [SerializeField] private float returnSpeed = 40f; //tendre q cambiarlo, no se si sera igual que la ida
+    //--
+    //para desbloquear el dash cuando llegue a mitad d evida el boss
+    [SerializeField] private BoolVariable abilityToUnlock;
+
+    //para no desbloquear mas de una vez
+    private bool abilityUnlocked;
     private void Awake()
     {
         bossHealth = GetComponent<BossHealth>();
@@ -82,6 +88,15 @@ public class Boss1Controller : MonoBehaviour
             StopAllCoroutines();
             DeactivateAllLamps();
             StartCoroutine(DeathSequence());
+        }
+        //desbloqueo de dash
+        if (!abilityUnlocked && bossHealth != null && !bossHealth.IsDead
+            && bossHealth.HealthPercent <= 0.5f)
+        {
+            abilityUnlocked = true;
+            if (abilityToUnlock != null) abilityToUnlock.Value = true;
+            //!!!! cuando muere el pj luego de conseguir la habilidad, no la pierde, consultar luego si se quedara asi
+            SaveLoadManagerJson.Instance?.SaveGame();
         }
     }
     //----------------------------------------------------------------------------------------------
