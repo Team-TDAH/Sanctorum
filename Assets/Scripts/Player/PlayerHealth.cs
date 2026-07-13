@@ -1,32 +1,25 @@
 using UnityEngine;
-
-//tambien utiliza IDamageable para poder recibir daño de cualquier fuente que implemente esa interfaz(debo estudiar bien como funciona la herencia)
-
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [Header("Vida")]
     [SerializeField] private int maxHealth = 100;
-
-    [Header("I-frames")]
-    [SerializeField] private float invulnerabilityDuration = 1f;
-    //cada cuanto parpadea el sprite durante los i-frames (puramente visual)
-    [SerializeField] private float blinkInterval = 0.1f;
-
-    [Header("Canal de eventos")]
+    [SerializeField] private float invulnerabilityDuration = 1f;//funciona bien con este tiempo de invulnerabilidad
+    //parpadeo(no esta funcionando muy bien con el skin)
+    private float blinkInterval = 0.1f;
     [SerializeField] private HealthChannel healthChannel;
-
-    //Variable del escudo en area, para que todos los sistemas esten al tanto de si se esta protegiendo o no
+    //parece que no irá, pero lo dejare por ahora
     public bool IsShielded { get; set; }
-
-    //estado runtime
+    //estado runtime para guardado
     private int currentHealth;
     private bool isInvulnerable;
     private float invulnerabilityTimer;
     private float blinkTimer;
-
+    //debuff para el spectral charge de angevin pero se podra usar tambien a futuro para otros bosses
+    private float damageMultiplier = 1f;
+    private float debuffTimer;
     //referencia al sprite para el efecto de parpadeo, puede ser null si no hay sprite
     private SpriteRenderer spriteRenderer;
-
+    //para agregar un iconito o algo en la ui que diga que el efecto todavia esta activo(y capaz agregar un fill como en las habilidades)
+    public bool HasDamageDebuff => debuffTimer > 0f;
 
     private void Awake()
     {
@@ -42,6 +35,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Update()
     {
+        //contador basico para el debuff, q dure lo q tenga q durar -----------Aca hice cambio, luego comprobar si el tiempo sale bien
+        if (debuffTimer > 0f)
+        {
+            debuffTimer -= Time.deltaTime;
+            if (debuffTimer <= 0f)
+                damageMultiplier = 1f;
+        }
         if (!isInvulnerable) return;
 
         //contamos el tiempo de invulnerabilidad
@@ -51,7 +51,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             EndInvulnerability();
             return;
         }
-
         //efecto de parpadeo mientras duren los i-frames
         if (spriteRenderer != null)
         {
@@ -63,35 +62,27 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             }
         }
     }
-
-
     //----------------------------------------------------------------------------------------------
     //IDamageable
-
     public void TakeDamage(int amount)
     {
         //culpa de esto, el player se quedaba inmovil al respawnear por otros 5 segundos, esto solucionaria
         if (currentHealth <= 0) return;
-        //el escudo y los i-frames bloquean cualquier fuente de dano
+        //el escudo y iframes bloquean ataques
         if (isInvulnerable) return;
         if (IsShielded) return;
-
+        //aplico el debuf al daño recibido
+        int finalDamage = Mathf.RoundToInt(amount*damageMultiplier);
+        //para separar, luego veo si funciona
         currentHealth = Mathf.Max(0, currentHealth - amount);
         healthChannel?.RaiseHealthChanged(currentHealth, maxHealth);
-
         if (currentHealth <= 0)
         {
             healthChannel?.RaiseDeath();
-            //la logica de muerte (reiniciar escena, animacion, etc.) va en otro lado
-            //suscribirse a healthChannel.OnDeath desde donde corresponda
             return;
         }
-
-        //si sobrevivio al golpe, activamos los i-frames
         StartInvulnerability();
     }
-
-
     //para curarme, todavia no cree nada que utilice esto, pero bueno
     public void Heal(int amount)
     {
@@ -105,6 +96,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void Respawn()
     {
         currentHealth = maxHealth;
+        damageMultiplier = 1f;
+        debuffTimer = 0f;
         healthChannel?.RaiseHealthChanged(currentHealth, maxHealth);
     }
 
@@ -125,11 +118,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (spriteRenderer != null)
             spriteRenderer.enabled = true;
     }
-
-
     //----------------------------------------------------------------------------------------------
     //Propiedades de solo lectura para debug o UI sin canal
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
     public bool IsInvulnerable => isInvulnerable;
+    //-------------------------------
+    //para q lo llame la habilidad spectralchargue y cualquiera que aplique este tipo de debuff
+    public void ApplyDamageDebuff(float multiplier, float duration)
+    {
+        damageMultiplier = multiplier;
+        debuffTimer = duration;
+    }
 }

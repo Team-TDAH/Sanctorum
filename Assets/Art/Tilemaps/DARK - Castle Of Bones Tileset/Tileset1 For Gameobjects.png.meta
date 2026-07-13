@@ -1,0 +1,2485 @@
+fileFormatVersion: 2
+guid: ff4e76748077102458c668a52199c493
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2870143772410390703
+    second: Tileset1_0
+  - first:
+      213: 1644939726588251722
+    second: Tileset1_1
+  - first:
+      213: 7724290689761396270
+    second: Tileset1_2
+  - first:
+      213: -3995477275073983152
+    second: Tileset1_3
+  - first:
+      213: 7901823937690315267
+    second: Tileset1_4
+  - first:
+      213: 7997692744749058258
+    second: Tileset1_5
+  - first:
+      213: 7643183760616247997
+    second: Tileset1_6
+  - first:
+      213: 5878129920589472326
+    second: Tileset1_7
+  - first:
+      213: 8195979012739327139
+    second: Tileset1_8
+  - first:
+      213: -3010305434434470039
+    second: Tileset1_9
+  - first:
+      213: -8997036689895436410
+    second: Tileset1_10
+  - first:
+      213: 5206578344248036716
+    second: Tileset1_11
+  - first:
+      213: 1836532595285178768
+    second: Tileset1_12
+  - first:
+      213: -6906748727693913539
+    second: Tileset1_13
+  - first:
+      213: -5194950278651765180
+    second: Tileset1_14
+  - first:
+      213: 8457534629377244653
+    second: Tileset1_15
+  - first:
+      213: -9169824291460800576
+    second: Tileset1_16
+  - first:
+      213: -567572773171336444
+    second: Tileset1_17
+  - first:
+      213: 3937083617508734337
+    second: Tileset1_18
+  - first:
+      213: 8263071866097157816
+    second: Tileset1_19
+  - first:
+      213: 2839185224301018437
+    second: Tileset1_20
+  - first:
+      213: 3733694398605605581
+    second: Tileset1_21
+  - first:
+      213: -441140173182366112
+    second: Tileset1_22
+  - first:
+      213: -4586770242476713718
+    second: Tileset1_23
+  - first:
+      213: -1784190302113651218
+    second: Tileset1_24
+  - first:
+      213: -8766978566908779576
+    second: Tileset1_25
+  - first:
+      213: 5355695930943407728
+    second: Tileset1_26
+  - first:
+      213: 7149437324216308553
+    second: Tileset1_27
+  - first:
+      213: 1536625695810153065
+    second: Tileset1_28
+  - first:
+      213: -8827143937817406013
+    second: Tileset1_29
+  - first:
+      213: 5918241774501035200
+    second: Tileset1_30
+  - first:
+      213: 6963634402692000890
+    second: Tileset1_31
+  - first:
+      213: 8021413523713645929
+    second: Tileset1_32
+  - first:
+      213: 6456324618641698375
+    second: Tileset1_33
+  - first:
+      213: -664021781657510894
+    second: Tileset1_34
+  - first:
+      213: -3569188126070319226
+    second: Tileset1_35
+  - first:
+      213: 5125714379792182308
+    second: Tileset1_36
+  - first:
+      213: -3765686386048791679
+    second: Tileset1_37
+  - first:
+      213: 1082076590722343866
+    second: Tileset1_38
+  - first:
+      213: -982855079852580331
+    second: Tileset1_39
+  - first:
+      213: 9012973954793528951
+    second: Tileset1_40
+  - first:
+      213: 6814444157877847548
+    second: Tileset1_41
+  - first:
+      213: 3043913218237103177
+    second: Tileset1_42
+  - first:
+      213: 5751404578655947198
+    second: Tileset1_43
+  - first:
+      213: 4272402659918971624
+    second: Tileset1_44
+  - first:
+      213: 4043313693858740117
+    second: Tileset1_45
+  - first:
+      213: 1780167944426034672
+    second: Tileset1_46
+  - first:
+      213: 2438446133824273503
+    second: Tileset1_47
+  - first:
+      213: 1880878667951305685
+    second: Tileset1_48
+  - first:
+      213: 8094024702661448655
+    second: Tileset1_49
+  - first:
+      213: -355808510582094796
+    second: Tileset1_50
+  - first:
+      213: 571151705558787483
+    second: Tileset1_51
+  - first:
+      213: -7725366592679129615
+    second: Tileset1_52
+  - first:
+      213: 6249595782066046391
+    second: Tileset1_53
+  - first:
+      213: 2299605699918779750
+    second: Tileset1_54
+  - first:
+      213: -2054963270409538182
+    second: Tileset1_55
+  - first:
+      213: -4088741855965898743
+    second: Tileset1_56
+  - first:
+      213: 6873152189030369313
+    second: Tileset1_57
+  - first:
+      213: -6319877083806107785
+    second: Tileset1_58
+  - first:
+      213: -543166693092869067
+    second: Tileset1_59
+  - first:
+      213: -6385837194712664052
+    second: Tileset1_60
+  - first:
+      213: -4130172619439999174
+    second: Tileset1_61
+  - first:
+      213: 5515865379828058817
+    second: Tileset1_62
+  - first:
+      213: 4459652379068785322
+    second: Tileset1_63
+  - first:
+      213: -7585374182038476663
+    second: Tileset1_64
+  - first:
+      213: 999312663022411553
+    second: Tileset1_65
+  - first:
+      213: 683142549893957091
+    second: Tileset1_66
+  - first:
+      213: 8872557846375335829
+    second: Tileset1_67
+  - first:
+      213: -2592911003966829289
+    second: Tileset1_68
+  - first:
+      213: -877652495142908962
+    second: Tileset1_69
+  - first:
+      213: 7679472033359688652
+    second: Tileset1_70
+  - first:
+      213: -8169992833783908739
+    second: Tileset1_71
+  - first:
+      213: -5361735015502750195
+    second: Tileset1_72
+  - first:
+      213: -5078323182875207989
+    second: Tileset1_73
+  - first:
+      213: -2584183726031804203
+    second: Tileset1_74
+  - first:
+      213: -8534085211564174313
+    second: Tileset1_75
+  - first:
+      213: -6135344824538719422
+    second: Tileset1_76
+  - first:
+      213: 6700666404735987453
+    second: Tileset1_77
+  - first:
+      213: 7661048152305383577
+    second: Tileset1_78
+  - first:
+      213: 9118763071551427796
+    second: Tileset1_79
+  - first:
+      213: 7092731284600117691
+    second: Tileset1_80
+  - first:
+      213: 1185099580813000079
+    second: Tileset1_81
+  - first:
+      213: 2111269354440138291
+    second: Tileset1_82
+  - first:
+      213: -1686092743976264993
+    second: Tileset1_83
+  - first:
+      213: 768359378245276697
+    second: Tileset1_84
+  - first:
+      213: 1666625963184941829
+    second: Tileset1_85
+  - first:
+      213: -6421273063288351843
+    second: Tileset1_86
+  - first:
+      213: 3113101545163791902
+    second: Tileset1_87
+  - first:
+      213: 5725921495621751070
+    second: Tileset1_88
+  - first:
+      213: -6983984770956225136
+    second: Tileset1_89
+  - first:
+      213: -1564826936720002304
+    second: Tileset1_90
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 416
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90778f041b2fb045bc8ede5e466e962
+      internalID: 500509213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 432
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38254febf1727a241a4f5b0e1bff29ed
+      internalID: 304930836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 432
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b743612754b85144a271ae49cd0d228
+      internalID: -1580219494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 403
+        width: 8
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26038ebc399fb874e889b6fb042afca9
+      internalID: 1667366751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_4
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 417
+        width: 4
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b3d974f3566d94a93691475664bfcf
+      internalID: -979149746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_5
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 429
+        width: 4
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf036e51801e314ab99d0d59d68a9c3
+      internalID: 1614279726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_6
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 437
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ed1ec0a5d0fa742aacc6e000111e3e
+      internalID: 62237566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_7
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 418
+        width: 4
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acaaa1360acd5c2488ee8516cbaf415a
+      internalID: -939714314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_8
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 429
+        width: 4
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40bddb506eab90449add6e82e42806f8
+      internalID: 789759977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_9
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 420
+        width: 4
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edae51375f5e3d4da0c9785269e9546
+      internalID: 1494738208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 416
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37750aed8cf40c5468399cb1a6dc06d9
+      internalID: 1746402043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_11
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 416
+        width: 4
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81f3bed25a0a524aba16584a9b29217
+      internalID: 251546075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_12
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 416
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a0ff0c3b13f834eb392c75273d6cd1
+      internalID: -542916129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 416
+        width: 86
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a54ddb34a264a4186738709c7c324f
+      internalID: -1221772032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_14
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 416
+        width: 49
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6474dfa1ac34c4c99a12b4feba6524
+      internalID: -1809494105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_15
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 416
+        width: 128
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba6372de3d8b6e4589a0155fd71c0b1
+      internalID: 1666660082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_16
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 368
+        width: 34
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4101a17b23933418d66301c2b4a9fe
+      internalID: -887541397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_17
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 399
+        width: 64
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5788f65af8aece04586db2015dcab89e
+      internalID: -1104945326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 384
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c20c1ead4512a49be4c33c0cde0a27
+      internalID: 1634270219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_19
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 384
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431379851e2770d42b14bedceeffbc41
+      internalID: 980588409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_20
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 384
+        width: 4
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de631cbdfc7913f438687246d63bab56
+      internalID: -1052623036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_21
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 384
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d7ae6109767bc46a883faab30c142a
+      internalID: 1797667339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_22
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 400
+        width: 33
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191b72e80803dcd41ac377432d13a7ab
+      internalID: 1665269098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_23
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 400
+        width: 49
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6824c045cf2c428489814dd0bd7878e7
+      internalID: -141367247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_24
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 384
+        width: 40
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6240ba85ad31a4a40a2a2046354aa768
+      internalID: -891801241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 384
+        width: 90
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15fe80fd401a5c04a996d1ddf78d7217
+      internalID: -1698985812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_26
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 384
+        width: 54
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74600b31fbfbb9747b0976dbc9d40657
+      internalID: -1150559077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_27
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 287
+        width: 98
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f99afa0e45394488673a5d7ca2914d
+      internalID: 889474944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_28
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 386
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f37bc3b4ea8a9438ca5ff6b4d6241e
+      internalID: 2047176072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_29
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 336
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fa6f67f2060414b82cb41911a57606
+      internalID: -1994336357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_30
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 352
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df61b320a9e7c0488b364f64ad12b03
+      internalID: -1311267780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3c78285c096fb429a194770ce55608
+      internalID: 2084678276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_32
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 304
+        width: 14
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cebfc6b41fa2bf748a39b2d5377218de
+      internalID: -821943682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_33
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 304
+        width: 14
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3471cc1a2aed74a858576cc6f1396d
+      internalID: 492335477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_34
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 304
+        width: 28
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9945044517512d4f8a5b288b8059ed7
+      internalID: -1821903390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_35
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 288
+        width: 84
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a44b15089fa4734d9aaa6a5757e0663
+      internalID: -800368497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_36
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 288
+        width: 32
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e52c1b4357f1546ad5d6050b6d677c
+      internalID: 1029212257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_37
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 336
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bced878ccba9f114ebaea5a08d24f719
+      internalID: -336839283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_38
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 304
+        width: 13
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ff9c29c8a573d4faf73aa40ca7be84
+      internalID: 1017153815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_39
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 304
+        width: 13
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb3b85097f3d3824680b7376bdedc7db
+      internalID: 1004936909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_40
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 273
+        width: 31
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f41414422407f41867209c0beab07a
+      internalID: 1126188476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_41
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 288
+        width: 24
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c43ae1f3d3ca2b6499979bcfc4c83434
+      internalID: 186419368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_42
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 272
+        width: 66
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c840d437d978e3c43989334fa53ff869
+      internalID: 1350364252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_43
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 304
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bbfd9474e3ef948b06f16a2ea62bc5
+      internalID: -999489809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_44
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 224
+        width: 126
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2ae9f217c3a8142bd52f310461fc06
+      internalID: 612132142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_45
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 261
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9edbd848ffad084691bbe2fb00e1f69
+      internalID: -355219710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_46
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 261
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feef2d1dc0ef75d4eb4162f0cef9e5d9
+      internalID: -1847020459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_47
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 272
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55a5c41d5c25914fade5a9da9e337a6
+      internalID: -1918938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_48
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 224
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c4543017b09e724cbcf1bbe23c9d16a
+      internalID: 775897721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_49
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 224
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577f469dfa019274c827667484b28668
+      internalID: 911155210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_50
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 224
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b80f09187fdb27448137d0fbb63327e
+      internalID: -549763641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_51
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 209
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd43338d1a9be04cb80d3127e19e9dc
+      internalID: 1486212601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_52
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 224
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1049c7fb68e7e49965d25370de1721
+      internalID: 1663145104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_53
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 224
+        width: 19
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8f250cbeec00947b20b9bf1ab933a2
+      internalID: -770570574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_54
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 240
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03c917b9336b97479c720c6cc364e0a
+      internalID: 1959614041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_55
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 208
+        width: 116
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32abfcf0aa14ba44fbb8d04fd4c61735
+      internalID: -1212368141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_56
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 224
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314930e7609fd4d43893cfe05b286296
+      internalID: -2055786989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_57
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 193
+        width: 45
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2824f09a0ab22fe4b81dd732a818f7e1
+      internalID: 826346031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_58
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 180
+        width: 45
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1606b2aa543cffc4faa497bd769199be
+      internalID: 1494219420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_59
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 192
+        width: 105
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc726221d979ad4ea8a1b34af5ea0dc
+      internalID: 1940321274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 45
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f84bb7387afd8479548bf1b37bd4ab
+      internalID: 1220007246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_61
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 160
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de8384a2b9ea684eba28afbeac66bb0
+      internalID: 1033431450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_62
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 160
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3db6f1678743fd458bb7943e2984a71
+      internalID: -756293161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_63
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 160
+        width: 38
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd925e5b1d089e4f8a8de49d01b2990
+      internalID: 937412306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_64
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 128
+        width: 91
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef11f25a61274042b3918d9d02e4805
+      internalID: -872148861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_65
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 128
+        width: 54
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6474dc180f74ef54994121115e58da97
+      internalID: 2065249174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_66
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a989a8d9fead9045826b95ad99b4865
+      internalID: 942509761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_67
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95ab59d0838dec479858e790d6bdaae
+      internalID: -2052866396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_68
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 75
+        width: 96
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9a92d451fe7544580ad8bf9aa7d964
+      internalID: 2082120467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_69
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 148
+        width: 45
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ffd617e2f21864ea45d21283a84f8e
+      internalID: 1400369772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_70
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 70
+        width: 7
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06138f6ebd0418941bca5f11c5de6c6b
+      internalID: -102961622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_71
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 84
+        width: 5
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d0b37e58a143b47b1c1659801e1310
+      internalID: 7594833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_72
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 65
+        width: 7
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f177b2b09a3ca43924f8851a03f580
+      internalID: -1136843123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_73
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 76
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a72f39b0b53b44a8542fc886ab9062
+      internalID: -1055189934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_74
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 53
+        width: 5
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d199d936bf5283147a2daa8cf09c92c3
+      internalID: 122421014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_75
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 84
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018ac8e585a0e06449f4de8f6c2b04fa
+      internalID: 1689488778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_76
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 85
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0c92145de3ee44985256e92bc0c208
+      internalID: 1621006248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_77
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 90
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6ccb9553bbf8b43bc139925c5047dd
+      internalID: -748025314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_78
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 91
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22e91e2b6b70a8418beeaa5f4c27ba9
+      internalID: -2039413397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_79
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 70
+        width: 7
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e309878da8a4fb345a8368145f19bbe1
+      internalID: 903170864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_80
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 84
+        width: 5
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e790c7f5f0cfd4684145977169f47a
+      internalID: 2038818282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_81
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 65
+        width: 7
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4483c266047a76c45b60b8cbbc6fdcdf
+      internalID: -1616231274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_82
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 93
+        width: 8
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6b362a0e824a84baa6ff0c39b6f68f
+      internalID: -931769423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_83
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 53
+        width: 39
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7b0faff11a60448950d7c191dd34a2
+      internalID: 446672879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_84
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 84
+        width: 51
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cf4a5583c5968448335164a6473d95
+      internalID: -2134989358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_85
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 91
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbcfaa356fa7004a949343d34b691e6
+      internalID: -1713361997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_86
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 115
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0892ecbfaab924d97af40bfd929afd
+      internalID: 2128422072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_87
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 115
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e99f9f041684149ae945b4c6ac3535
+      internalID: -1118891609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_88
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d1cdf237c368e49ba7ac2008ee62d8
+      internalID: 640111607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_89
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127dfe58c04b3374da2ce0479533cf44
+      internalID: 2074395353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset1 For Gameobjects_90
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 0
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e89f5e279f43d4dac730553c8048f4
+      internalID: -386140949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d61ee4e1822ab9e4fbf373c200944a1e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Tileset1 For Gameobjects_0: 500509213
+      Tileset1 For Gameobjects_1: 304930836
+      Tileset1 For Gameobjects_10: 1746402043
+      Tileset1 For Gameobjects_11: 251546075
+      Tileset1 For Gameobjects_12: -542916129
+      Tileset1 For Gameobjects_13: -1221772032
+      Tileset1 For Gameobjects_14: -1809494105
+      Tileset1 For Gameobjects_15: 1666660082
+      Tileset1 For Gameobjects_16: -887541397
+      Tileset1 For Gameobjects_17: -1104945326
+      Tileset1 For Gameobjects_18: 1634270219
+      Tileset1 For Gameobjects_19: 980588409
+      Tileset1 For Gameobjects_2: -1580219494
+      Tileset1 For Gameobjects_20: -1052623036
+      Tileset1 For Gameobjects_21: 1797667339
+      Tileset1 For Gameobjects_22: 1665269098
+      Tileset1 For Gameobjects_23: -141367247
+      Tileset1 For Gameobjects_24: -891801241
+      Tileset1 For Gameobjects_25: -1698985812
+      Tileset1 For Gameobjects_26: -1150559077
+      Tileset1 For Gameobjects_27: 889474944
+      Tileset1 For Gameobjects_28: 2047176072
+      Tileset1 For Gameobjects_29: -1994336357
+      Tileset1 For Gameobjects_3: 1667366751
+      Tileset1 For Gameobjects_30: -1311267780
+      Tileset1 For Gameobjects_31: 2084678276
+      Tileset1 For Gameobjects_32: -821943682
+      Tileset1 For Gameobjects_33: 492335477
+      Tileset1 For Gameobjects_34: -1821903390
+      Tileset1 For Gameobjects_35: -800368497
+      Tileset1 For Gameobjects_36: 1029212257
+      Tileset1 For Gameobjects_37: -336839283
+      Tileset1 For Gameobjects_38: 1017153815
+      Tileset1 For Gameobjects_39: 1004936909
+      Tileset1 For Gameobjects_4: -979149746
+      Tileset1 For Gameobjects_40: 1126188476
+      Tileset1 For Gameobjects_41: 186419368
+      Tileset1 For Gameobjects_42: 1350364252
+      Tileset1 For Gameobjects_43: -999489809
+      Tileset1 For Gameobjects_44: 612132142
+      Tileset1 For Gameobjects_45: -355219710
+      Tileset1 For Gameobjects_46: -1847020459
+      Tileset1 For Gameobjects_47: -1918938
+      Tileset1 For Gameobjects_48: 775897721
+      Tileset1 For Gameobjects_49: 911155210
+      Tileset1 For Gameobjects_5: 1614279726
+      Tileset1 For Gameobjects_50: -549763641
+      Tileset1 For Gameobjects_51: 1486212601
+      Tileset1 For Gameobjects_52: 1663145104
+      Tileset1 For Gameobjects_53: -770570574
+      Tileset1 For Gameobjects_54: 1959614041
+      Tileset1 For Gameobjects_55: -1212368141
+      Tileset1 For Gameobjects_56: -2055786989
+      Tileset1 For Gameobjects_57: 826346031
+      Tileset1 For Gameobjects_58: 1494219420
+      Tileset1 For Gameobjects_59: 1940321274
+      Tileset1 For Gameobjects_6: 62237566
+      Tileset1 For Gameobjects_60: 1220007246
+      Tileset1 For Gameobjects_61: 1033431450
+      Tileset1 For Gameobjects_62: -756293161
+      Tileset1 For Gameobjects_63: 937412306
+      Tileset1 For Gameobjects_64: -872148861
+      Tileset1 For Gameobjects_65: 2065249174
+      Tileset1 For Gameobjects_66: 942509761
+      Tileset1 For Gameobjects_67: -2052866396
+      Tileset1 For Gameobjects_68: 2082120467
+      Tileset1 For Gameobjects_69: 1400369772
+      Tileset1 For Gameobjects_7: -939714314
+      Tileset1 For Gameobjects_70: -102961622
+      Tileset1 For Gameobjects_71: 7594833
+      Tileset1 For Gameobjects_72: -1136843123
+      Tileset1 For Gameobjects_73: -1055189934
+      Tileset1 For Gameobjects_74: 122421014
+      Tileset1 For Gameobjects_75: 1689488778
+      Tileset1 For Gameobjects_76: 1621006248
+      Tileset1 For Gameobjects_77: -748025314
+      Tileset1 For Gameobjects_78: -2039413397
+      Tileset1 For Gameobjects_79: 903170864
+      Tileset1 For Gameobjects_8: 789759977
+      Tileset1 For Gameobjects_80: 2038818282
+      Tileset1 For Gameobjects_81: -1616231274
+      Tileset1 For Gameobjects_82: -931769423
+      Tileset1 For Gameobjects_83: 446672879
+      Tileset1 For Gameobjects_84: -2134989358
+      Tileset1 For Gameobjects_85: -1713361997
+      Tileset1 For Gameobjects_86: 2128422072
+      Tileset1 For Gameobjects_87: -1118891609
+      Tileset1 For Gameobjects_88: 640111607
+      Tileset1 For Gameobjects_89: 2074395353
+      Tileset1 For Gameobjects_9: 1494738208
+      Tileset1 For Gameobjects_90: -386140949
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
