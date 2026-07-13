@@ -90,6 +90,8 @@ public class PlayerController : MonoBehaviour
     private bool jumpFlag;
     public bool IsGrounded { get; private set; }
     public bool IsDashing => isDashing;
+    //agregado casi al final, para que el animator distinga entre estar subiendo o bajando
+    public bool IsRising => currentVelocity.y > 0f;
 
     //Variables necesarias para el sistema complejo de Raycasts
     private float horizontalRaySpacing;

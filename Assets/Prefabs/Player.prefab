@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662da31411e0ca7419e1f9aebc4bd580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 12
+  moveSpeed: 17
   jumpForce: 37
   gravity: -65
   doubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}
@@ -951,6 +951,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 76efe7208f2496549a9ac0ee19287030, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4360408127486374829}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 76efe7208f2496549a9ac0ee19287030, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8362479791661467013}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 76efe7208f2496549a9ac0ee19287030, type: 3}
 --- !u!4 &371134765626651403 stripped
 Transform:
@@ -1023,6 +1026,24 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
+--- !u!114 &8362479791661467013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813715547573955983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c2ebc3ff21869d459bf3a97a5105914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerController: {fileID: 5534557296856602342}
+  animator: {fileID: 8041685799261712302}
+  attackAbility: {fileID: 11400000, guid: 368497383d6e47e4a97434a18e29f0d4, type: 2}
+  parryAbility: {fileID: 11400000, guid: fbc85d860a7fd2a4c82c3ce02a4278ca, type: 2}
+  minFallTimeForLand: 0.4
+  landDuration: 0.15
 --- !u!4 &1151175453767051486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 240065017853650156, guid: 76efe7208f2496549a9ac0ee19287030, type: 3}
