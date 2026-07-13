@@ -174,4 +174,3 @@ MonoBehaviour:
   playerHealth: {fileID: 0}
   playerController: {fileID: 0}
   deathPanel: {fileID: 0}
-  respawnPoint: {fileID: 0}

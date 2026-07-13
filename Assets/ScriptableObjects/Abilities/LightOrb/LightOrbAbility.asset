@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LightOrbAbility
   m_EditorClassIdentifier: Assembly-CSharp::LightOrbAbilitySO
   abilityName: LighOrbAbility
-  description: Ataque basico
+  UnlockSkill: 
   icon: {fileID: 0}
   inputActionName: Attack
   cooldown: 0.2
@@ -21,10 +21,11 @@ MonoBehaviour:
   usableOnGround: 1
   usableInAir: 1
   usableDuringDash: 0
+  unlockedVariable: {fileID: 0}
   channel: {fileID: 11400000, guid: 0d6289a5acd500b46be01c23807ab182, type: 2}
   orbPrefab: {fileID: 1533657016917203904, guid: c8c194ff43523e74caab5508ec1db21d, type: 3}
-  orbSpeed: 25
+  orbSpeed: 30
   orbLifetime: 3
   damage: 10
-  spawnOffset: {x: 0.5, y: 0.2}
-  aimWithInput: 1
+  spawnOffset: {x: 0.6, y: 2.42}
+  aimWithInput: 0
