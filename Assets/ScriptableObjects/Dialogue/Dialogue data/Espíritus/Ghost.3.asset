@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   npcPortrait: {fileID: 0}
   lines:
-  - speaker: 0
-    text: 
-    speakerName: 
-  - speaker: 0
+  - speaker: 1
     text: "Mi mami dice que no hable con extra\xF1os"
     speakerName: "Fantasma ni\xF1o"

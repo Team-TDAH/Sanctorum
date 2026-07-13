@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   npcPortrait: {fileID: 0}
   lines:
-  - speaker: 0
-    text: 
-    speakerName: 
   - speaker: 1
     text: "Ten cuidado se escuchan muchos ruidos extra\xF1os."
     speakerName: 

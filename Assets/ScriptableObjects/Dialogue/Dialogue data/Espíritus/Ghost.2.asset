@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   npcPortrait: {fileID: 0}
   lines:
-  - speaker: 0
-    text: 
-    speakerName: 
   - speaker: 1
     text: Estamos esperando a Angevin el barquero.
     speakerName: 

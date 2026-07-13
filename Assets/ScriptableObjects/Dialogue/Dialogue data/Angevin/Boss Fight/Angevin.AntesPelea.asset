@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   npcPortrait: {fileID: 21300000, guid: 334e488b26a4eec45a7790da69dc6fe4, type: 2}
   lines:
-  - speaker: 0
-    text: salta
-    speakerName: salta
   - speaker: 1
     text: "A\xFAn no ha llegado tu hora de cruzar este r\xEDo."
     speakerName: Angevin
