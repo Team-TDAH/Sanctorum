@@ -2172,6 +2172,10 @@ PrefabInstance:
       value: Miharu
       objectReference: {fileID: 0}
     - target: {fileID: 2961329148856679131, guid: 4eab9b8ff1e47f34d92e5fc6de06f569, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961329148856679131, guid: 4eab9b8ff1e47f34d92e5fc6de06f569, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -3651,6 +3655,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7808022fb7a9f949845aa694f4f20eb, type: 3}
+--- !u!1001 &4566511992759234035
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -84.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482310146477390164, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977965474390944951, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
+      propertyPath: m_Name
+      value: Angevin jefe
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e92069dc77c5be4499a04ddde2ef2db7, type: 3}
 --- !u!1001 &4924667850888500645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4070,3 +4131,4 @@ SceneRoots:
   - {fileID: 60043465}
   - {fileID: 1228733867}
   - {fileID: 6987899244724863734}
+  - {fileID: 4566511992759234035}
