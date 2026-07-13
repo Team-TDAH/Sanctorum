@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f1c3ac0e4bb524b9db04ffc6da360d, type: 3}
   m_Name: Angevin.AntesPelea
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  npcPortrait: {fileID: 21300000, guid: 334e488b26a4eec45a7790da69dc6fe4, type: 2}
+  npcPortrait: {fileID: -4908389164697428566, guid: fc3a95821aab6054796b5e04eb6771e1, type: 3}
   lines:
   - speaker: 1
     text: "A\xFAn no ha llegado tu hora de cruzar este r\xEDo."
