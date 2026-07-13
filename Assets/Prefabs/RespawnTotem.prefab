@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72d9f83b855d38479fbe0c99c0af75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Checkpoint
-  checkpointId: zone1_1
+  checkpointId: L4-1
 --- !u!61 &2101712892669286192
 BoxCollider2D:
   m_ObjectHideFlags: 0
