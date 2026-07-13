@@ -1333,6 +1333,10 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 5534557296821403049}
+    - target: {fileID: 6432183942983075000, guid: f38c30302754b4f4bb61f756ff55a2a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7303523685203445292, guid: f38c30302754b4f4bb61f756ff55a2a3, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -2628,6 +2632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 6993167672324010753, guid: 8cc4d72db54cad246977ec808853b560, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: de3966e46f82b194b9513d81f3ba5beb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
