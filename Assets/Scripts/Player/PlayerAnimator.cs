@@ -5,7 +5,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     //facil de entender, si coincide con el numero hace esa animacion, todas salen del anystaet
     private const int idle=0;
-    private const int run=1;//falta q lo haga seba(estaba pero vacio)
+    private const int run=1;//falta q lo haga seba(estaba pero vacio), agregado
     private const int jump=2;
     private const int falling=3;
     private const int land=4;//a futuro hay que fixearlo, queda raro al momento de caer

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //no me agrada el tener que poner otro gameeoject con un script para manejar el respawn, pero es la forma mas correcta
 //Queria hacer todo esto en el playerHealth.cs pero seria cargar el scripot con responsabilidades que no le corresponderian
 public class RespawnManager : MonoBehaviour
@@ -48,17 +49,8 @@ public class RespawnManager : MonoBehaviour
         //aca deberia poner la animacion de muerte en un futuro cuando tenga los assets
         //------
         yield return new WaitForSeconds(5f);
-
-        //luego de lols 5 seg, movemos al player al punto
-        playerController.transform.position = GetRespawnPosition();
-        //me olvide de esto, pero tambien hay que reiniciar tanto la vida como las animaciones y el control
-        playerController.InputEnabled = true;
-        playerController.AbilityManager.InputEnabled = true;
-
-        playerHealth.Respawn();
-
-        if (deathPanel != null)
-            deathPanel.SetActive(false);
+        //cambie todo esto porque al morir contra el jefe prefiero que cargue la escena
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     //Para q busque el ultimo respawn point, pero en caos de que no tengo ningnuo guardado, puedo reutilizar el checkpoint que habia hecho al comienzo
