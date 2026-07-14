@@ -9,6 +9,12 @@ public class BossFerryman : MonoBehaviour
     [SerializeField] private string nextSceneName;
     //el gameobject que debe tener algun mensaje como "E" o "Press E" avisando que se puede interactuar con el mismo, ya luego agregare los dialogos y demas
     [SerializeField] private GameObject interactPrompt;
+    //para el dialogo antes del tp, estbaa pensando en hacer otro script para las puertas o transportes pero al final me quedo con este para casi todo
+    [SerializeField] private DialogueChannel dialogueChannel;
+    [SerializeField] private DialogueSO dialogue;
+    //al cerrarse hace el viaje
+    private bool waitingForDialogueEnd;
+
     private InputAction interactAction;
     //para saber cuando mostrar el mensaje y cuando no, el de la E
     private bool playerInRange;
@@ -24,10 +30,13 @@ public class BossFerryman : MonoBehaviour
     private void OnEnable()
     {
         if (interactAction != null) interactAction.Enable();
+        if (dialogueChannel != null)
+            dialogueChannel.OnDialogueClosed += HandleDialogueClosed;
     }
     private void OnDisable()
     {
-        if (interactAction != null) interactAction.Disable();
+        if (dialogueChannel != null)
+            dialogueChannel.OnDialogueClosed -= HandleDialogueClosed;
     }
     private void Update()
     {
@@ -37,10 +46,25 @@ public class BossFerryman : MonoBehaviour
         // AHORA SI, 03:58 pude terminar este bug que no me dejaba tepearme porque npcdialogue del boss parece que desabilitaba el esta accion
         if (!interactAction.enabled) interactAction.Enable();
 
+        //obviamente, no abrir si ya hay dialogo
+        if (dialogueChannel != null && dialogueChannel.IsDialogueActive) return;
+
+        //ignorar input si el frame coincide
+        if (dialogueChannel != null && Time.frameCount == dialogueChannel.LastClosedFrame) return;
+
         if (interactAction.WasPressedThisFrame())
         {
-            //!!!!!!!!!!!!!!!transicion aca iria
-            SceneManager.LoadScene(nextSceneName);
+            //si hay dialogo se reproduce
+            if (dialogueChannel != null && dialogue != null)
+            {
+                waitingForDialogueEnd = true;
+                dialogueChannel.RequestDialogue(dialogue);
+            }
+            else
+            {
+                //sino viaja directo
+                Travel();
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -56,5 +80,17 @@ public class BossFerryman : MonoBehaviour
 
         playerInRange = false;
         if (interactPrompt != null) interactPrompt.SetActive(false);
+    }
+    private void HandleDialogueClosed()
+    {
+        if (!waitingForDialogueEnd) return;
+ 
+        waitingForDialogueEnd = false;
+        Travel();
+    }
+    private void Travel()
+    {
+        //!!!!!!!! aca va la animacion de transicion
+        SceneManager.LoadScene(nextSceneName);
     }
 }

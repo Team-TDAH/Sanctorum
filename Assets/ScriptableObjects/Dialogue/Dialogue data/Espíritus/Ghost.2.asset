@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f1c3ac0e4bb524b9db04ffc6da360d, type: 3}
   m_Name: Ghost.2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  npcPortrait: {fileID: 0}
+  npcPortrait: {fileID: -6231438509072843464, guid: db412032fa806fa4cacdcd3276f16db8, type: 3}
   lines:
-  - speaker: 0
-    text: 
-    speakerName: 
   - speaker: 1
     text: Estamos esperando a Angevin el barquero.
-    speakerName: 
+    speakerName: Ghost

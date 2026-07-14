@@ -12,6 +12,8 @@ public class DialogueChannel : ScriptableObject
     //No creo que haga falta, pero para prevenir que haga mas dialogos
     [System.NonSerialized] private bool isDialogueActive;
     [System.NonSerialized] public int LastClosedFrame = -1;
+    //buscando como arreglar el bug de que "AVECES" saltea el primer dialogo y aveces no
+    [System.NonSerialized] public int LastOpenedFrame = -1;
     public bool IsDialogueActive
     {
         get => isDialogueActive;
@@ -19,10 +21,12 @@ public class DialogueChannel : ScriptableObject
     }
         private void OnEnable()
     {
+        LastOpenedFrame = Time.frameCount;
         isDialogueActive = false;
     }
     public void RequestDialogue(DialogueSO dialogue)
     {
+        LastOpenedFrame = Time.frameCount;
         OnDialogueRequested?.Invoke(dialogue);
     }
     public void RaiseDialogueClosed()

@@ -44,6 +44,11 @@ public class DialogueUI : MonoBehaviour
     private void Update()
     {
         if (currentDialogue == null) return;
+        //SOLUCION AL FIN, al problema de que salteara el primer dialogo
+        if (channel != null && Time.frameCount == channel.LastOpenedFrame)
+        {
+            return;
+        }
 
         if (interactAction != null && interactAction.WasPressedThisFrame())
         {
