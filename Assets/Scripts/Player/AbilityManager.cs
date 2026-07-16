@@ -91,6 +91,7 @@ public class AbilityManager : MonoBehaviour
         ctx.PlayerHealth = playerHealth;
         ctx.MoveInput = playerController.MoveInput;
         ctx.LastFacingDirection = playerController.LastFacingDirection;
+        ctx.WeaponPoint = playerController.WeaponPoint;
     }
 
     private void TickCooldowns()

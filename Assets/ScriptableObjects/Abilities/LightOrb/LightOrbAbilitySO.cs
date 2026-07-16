@@ -22,26 +22,24 @@ public class LightOrbAbilitySO : AbilitySO
     {
         if (orbPrefab == null)
         {
-            Debug.LogWarning("[LightOrbAbility] Falta asignar el prefab del orbe");
+            Debug.LogWarning("te olvidaste asignar el prefab del orbe");
             ctx.Player.AbilityManager.EndAbility(this);
             return;
         }
-
-        //calculos de la direccion
+        //calc direccion donde mira
         Vector2 fireDirection = GetFireDirection(ctx);
 
-        //el offset sera dependiendo de hacia donde mire
-        Vector2 spawnPos = (Vector2)ctx.Player.transform.position
-            + new Vector2(spawnOffset.x * Mathf.Sign(fireDirection.x), spawnOffset.y);
+        //ahora si, usamos el punto del arma y no el off set que tenia que ajustar cada que cambiaba algo
+        Vector2 spawnPos = ctx.WeaponPoint != null
+            ? (Vector2)ctx.WeaponPoint.position
+            : (Vector2)ctx.Player.transform.position;
 
         GameObject orb = Instantiate(orbPrefab, spawnPos, Quaternion.identity);
 
-        //le pasamos los datos al proyectil
         var projectile = orb.GetComponent<LightOrbProjectile>();
         if (projectile != null)
             projectile.Initialize(fireDirection, orbSpeed, orbLifetime, damage);
 
-        //el disparo es instantaneo, no hay duracion que mantener
         ctx.Player.AbilityManager.EndAbility(this);
     }
 

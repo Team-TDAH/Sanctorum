@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool canDashInAir = true;
     [SerializeField] private BoolVariable dashUnlocked;
 
+
+    //no estaba centrado bien el pj, y acomodar por offset era un lio, termine agregando un gameobject vacio en el baston para disparar desde ahi lo que sea
+    [SerializeField] private Transform weaponPoint;
+    public Transform WeaponPoint => weaponPoint;
+
     //variables para gestionar el dash
     private bool isDashing;
     private float dashTimer;
@@ -66,11 +71,10 @@ public class PlayerController : MonoBehaviour
     : 1f;
 
 
-    [Header("Collision y raycast")]
     [SerializeField] private LayerMask collisionMask;
-    [SerializeField] private int horizontalRayCount = 4;
+    [SerializeField] private int horizontalRayCount = 8;
     [SerializeField] private int verticalRayCount = 4;
-    [SerializeField] private float skinWidth = 0.015f;
+    private float skinWidth = 0.015f;
 
 
 

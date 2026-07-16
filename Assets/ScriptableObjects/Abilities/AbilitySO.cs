@@ -74,4 +74,6 @@ public class AbilityContext
     public float LastFacingDirection;
     public bool IsGrounded;
     public bool IsDashing;
+    //punto de disparo compartido para las habilidades
+    public Transform WeaponPoint;
 }
