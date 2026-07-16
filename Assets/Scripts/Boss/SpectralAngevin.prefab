@@ -1179,8 +1179,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   damageMultiplier: 1.15
-  debuffDuration: 20
-  impactDamage: 15
+  debuffDuration: 10
+  impactDamage: 10
 --- !u!1 &7101754288587415466
 GameObject:
   m_ObjectHideFlags: 0
