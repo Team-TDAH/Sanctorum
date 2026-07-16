@@ -20,6 +20,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private SpriteRenderer spriteRenderer;
     //para agregar un iconito o algo en la ui que diga que el efecto todavia esta activo(y capaz agregar un fill como en las habilidades)
     public bool HasDamageDebuff => debuffTimer > 0f;
+    //para q la ui muestre el contador de cuanto falta
+    public float DebuffTimeRemaining => debuffTimer;
 
     private void Awake()
     {
@@ -73,8 +75,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (IsShielded) return;
         //aplico el debuf al daño recibido
         int finalDamage = Mathf.RoundToInt(amount*damageMultiplier);
-        //para separar, luego veo si funciona
-        currentHealth = Mathf.Max(0, currentHealth - amount);
+        //para separar, luego veo si funciona(puse amount en vez de finalDamage que ACABO de calcular)
+        currentHealth = Mathf.Max(0, currentHealth - finalDamage);
         healthChannel?.RaiseHealthChanged(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
