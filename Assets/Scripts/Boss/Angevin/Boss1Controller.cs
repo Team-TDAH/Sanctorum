@@ -58,6 +58,12 @@ public class Boss1Controller : MonoBehaviour
     [SerializeField] private BoolVariable abilityToUnlock;
     private bool waitDialogueClose;
 
+    //para que se entere cuando el player muera y no siga atacando(tuve un bug donde luego de morir el player aparecia el dialogo de la mitad de la pelea)
+    [Header("Health")]
+    [SerializeField] private HealthChannel playerHealthChannel;
+    //para que el jefe se congele si el player muere
+    private bool playerIsDead;
+
     private void Awake()
     {
         bossHealth = GetComponent<BossHealth>();
@@ -66,14 +72,27 @@ public class Boss1Controller : MonoBehaviour
 
     private void OnEnable()
     {
-        //cuando termina el dialogo con el jefe, arranca la pelea
         if (dialogueChannel != null)
             dialogueChannel.OnDialogueClosed += HandleDialogueClosed;
+
+        if (playerHealthChannel != null)
+            playerHealthChannel.OnDeath += HandlePlayerDeath;
     }
+
     private void OnDisable()
     {
         if (dialogueChannel != null)
             dialogueChannel.OnDialogueClosed -= HandleDialogueClosed;
+
+        if (playerHealthChannel != null)
+            playerHealthChannel.OnDeath -= HandlePlayerDeath;
+    }
+    //cuando el player muere detiene todo
+    private void HandlePlayerDeath()
+    {
+        playerIsDead = true;
+        StopAllCoroutines();
+        DeactivateAllLamps();
     }
     private void Start()
     {
@@ -146,9 +165,10 @@ public class Boss1Controller : MonoBehaviour
             yield return new WaitForSeconds(pauseAttacks);
             if (state == BossState.Dead) yield break;
 
-            //chequea entre ataques
+            //chequea entre ataques(agregue otra condicion por si el player muere)
             bool alreadyUnlocked = abilityToUnlock != null && abilityToUnlock.Value;
-            if (!alreadyUnlocked && bossHealth != null && !bossHealth.IsDead && bossHealth.HealthPercent <= 0.5f)
+            if (!playerIsDead && !alreadyUnlocked && bossHealth != null && !bossHealth.IsDead
+                && bossHealth.HealthPercent <= 0.5f)
             {
                 yield return StartCoroutine(MidFightDialogueSequence());
                 if (state == BossState.Dead) yield break;
