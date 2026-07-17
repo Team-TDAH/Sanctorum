@@ -49,6 +49,9 @@ public class DialogueUI : MonoBehaviour
         {
             return;
         }
+        //tengo miedo de agregar esto y q vuelva a haber problemas, pero tengo q probar para el dialogo entre medio de la pelea del boss
+        if (interactAction != null && !interactAction.enabled)
+            interactAction.Enable();
 
         if (interactAction != null && interactAction.WasPressedThisFrame())
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss1Controller : MonoBehaviour
 {
     //maquina de estaods compleja(para mi) pero bonita
-    private enum BossState { Neutral, MovingToCenter, Idle, Attacking, Dead }
+    private enum BossState { Neutral, MovingToCenter, Idle, Attacking, MidFightDialogue, Dead }
     [SerializeField] private DialogueChannel dialogueChannel;
     //el objeto a donde ira el boss, aproveche el mismo objeto que esta traquando la cinemachine para que la vista sea de la sala completa
     [SerializeField] private Transform centerPoint;
@@ -53,10 +53,11 @@ public class Boss1Controller : MonoBehaviour
     [SerializeField] private float returnSpeed = 40f; //tendre q cambiarlo, no se si sera igual que la ida
     //--
     //para desbloquear el dash cuando llegue a mitad d evida el boss
+    [Header("dialogo y habilidad q desbloquea")]
+    [SerializeField] private DialogueSO secondPhaseDialogue;
     [SerializeField] private BoolVariable abilityToUnlock;
+    private bool waitDialogueClose;
 
-    //para no desbloquear mas de una vez
-    private bool abilityUnlocked;
     private void Awake()
     {
         bossHealth = GetComponent<BossHealth>();
@@ -81,7 +82,6 @@ public class Boss1Controller : MonoBehaviour
     }
     private void Update()
     {
-        //si murio en medio de un ataque, cortamos todo
         if (bossHealth != null && bossHealth.IsDead && state != BossState.Dead)
         {
             state = BossState.Dead;
@@ -89,25 +89,23 @@ public class Boss1Controller : MonoBehaviour
             DeactivateAllLamps();
             StartCoroutine(DeathSequence());
         }
-        //desbloqueo de dash
-        if (!abilityUnlocked && bossHealth != null && !bossHealth.IsDead
-            && bossHealth.HealthPercent <= 0.5f)
-        {
-            abilityUnlocked = true;
-            if (abilityToUnlock != null) abilityToUnlock.Value = true;
-            //!!!! cuando muere el pj luego de conseguir la habilidad, no la pierde, consultar luego si se quedara asi
-            SaveLoadManagerJson.Instance?.SaveGame();
-        }
     }
     //----------------------------------------------------------------------------------------------
     //inicio de la pelea
 
     private void HandleDialogueClosed()
     {
-        //solo arranca si estaba en neuttro antes, es una variable global
-        if (state != BossState.Neutral) return;
-
-        StartCoroutine(StartFightSequence());
+        //solo arranca si estaba en neutro
+        if (state == BossState.Neutral)
+        {
+            StartCoroutine(StartFightSequence());
+            return;
+        }
+        //cuando llega  amitad de vida empieza el dialogo y no se vuelve a repetir
+        if (waitDialogueClose)
+        {
+            waitDialogueClose = false;
+        }
     }
     private IEnumerator StartFightSequence()
     {
@@ -148,6 +146,14 @@ public class Boss1Controller : MonoBehaviour
             yield return new WaitForSeconds(pauseAttacks);
             if (state == BossState.Dead) yield break;
 
+            //chequea entre ataques
+            bool alreadyUnlocked = abilityToUnlock != null && abilityToUnlock.Value;
+            if (!alreadyUnlocked && bossHealth != null && !bossHealth.IsDead && bossHealth.HealthPercent <= 0.5f)
+            {
+                yield return StartCoroutine(MidFightDialogueSequence());
+                if (state == BossState.Dead) yield break;
+            }
+
             state = BossState.Attacking;
             //se elija al azar con esa funcion entre los ataques, los prob influyen
             int attack = ChooseAttack();
@@ -166,6 +172,25 @@ public class Boss1Controller : MonoBehaviour
                     break;
             }
         }
+    }
+
+    //el dialogo, el boss se queda quieto mientras, quizas agregar algun efecto de luz que de a entender el tiempo frenado
+    private IEnumerator MidFightDialogueSequence()
+    {
+        state = BossState.MidFightDialogue;
+        waitDialogueClose = true;
+
+        if (dialogueChannel != null && secondPhaseDialogue != null)
+            dialogueChannel.RequestDialogue(secondPhaseDialogue);
+
+        while (waitDialogueClose)
+            yield return null;
+
+        //para q quede para siempre desbloqueada
+        if (abilityToUnlock != null) abilityToUnlock.Value = true;
+        SaveLoadManagerJson.Instance?.SaveGame();
+
+        state = BossState.Idle;
     }
     //calculo para elegir el ataque, teniendo en cuenta q no repita ataques, luego si agrego mas ataques tendria mas sentido los prob
     private int ChooseAttack()
