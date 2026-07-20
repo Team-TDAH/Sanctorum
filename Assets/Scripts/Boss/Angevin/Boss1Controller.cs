@@ -209,6 +209,8 @@ public class Boss1Controller : MonoBehaviour
         //para q quede para siempre desbloqueada
         if (abilityToUnlock != null) abilityToUnlock.Value = true;
         SaveLoadManagerJson.Instance?.SaveGame();
+        //pausa pequeña luego de recibir el dash, no seria justo que sea inmediato
+        yield return new WaitForSeconds(2f);
 
         state = BossState.Idle;
     }

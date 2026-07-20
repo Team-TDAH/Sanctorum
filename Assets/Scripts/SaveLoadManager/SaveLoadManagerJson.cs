@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//DEBO CAMBIAR EL NOMBRE DE ESTE SCRIPT, AHORA USO JSON COMO CONTENEDOR AL COMIENZO NADA MAS, LUEGO USO PLAYERPREFS
 
 public class SaveLoadManagerJson : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SaveLoadManagerJson : MonoBehaviour
     private SaveData currentData;
     //No me gusta el sistema singleton, pero aca me agiliza mucho si los jefes pueden consultarlo sin referencia
     public static SaveLoadManagerJson Instance { get; private set; }
+    //para que el respawnmanager nos devuelva a la ultima escena y no a la actual si el respawn no esta en la escena actual
+    public string SavedScene => currentData.currentScene;
 
     private void Awake()
         {

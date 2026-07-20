@@ -13,7 +13,7 @@ public class PauseManager : MonoBehaviour
     //no me gusto para nada la solucion, pero es la unica forma de que el dash no se consuma mientras este en la pausa y aprete dash
     [SerializeField] private AbilityManager abilityManager;
     [SerializeField] private PlayerController playerController;
- 
+    [SerializeField] private RespawnManager respawnManager;
  
     private void Awake()
     {
@@ -32,7 +32,12 @@ public class PauseManager : MonoBehaviour
     private void Update()
     {
         if (pauseAction != null && pauseAction.WasPressedThisFrame())
+        {
+            //no abrira el menu de pausa si el menu de muerte esta activo
+            if (respawnManager != null && respawnManager.IsDeathMenuActive) return;
+
             TogglePause();
+        }
     }
     private void TogglePause()
     {

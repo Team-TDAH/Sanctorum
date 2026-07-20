@@ -8,10 +8,14 @@ public class RespawnManager : MonoBehaviour
     [SerializeField] private HealthChannel healthChannel;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerController playerController;
-    //panel con el texto "you die!", empieza desactivado, al morir aparecera por unos segundos y luego respawn
+    //panel con el texto "you die!", empieza desactivado, al morir aparecera por unos segundos y luego respawn(ahora luego de aparecer unos segundos, aparece un menu de muerte)
     [SerializeField] private GameObject deathPanel;
+    //el menu q aparecera luego del text you die
+    [SerializeField] private GameObject deathMenuPanel;
     //lugar donde respawneara, todavia no tenemos claro si sera en un unico lugar estilo sala central o en distintos respawns (no debe tener nada el gameobject del point)
     private Vector3 initialPosition;
+    //porque aparecia el menu de pausa si lo abriamos en el menu de muerte, y no deberia
+    public bool IsDeathMenuActive => deathMenuPanel != null && deathMenuPanel.activeSelf;
 
     //con start deberia funciona bien, pero aveces daba error, asi que esperara un frame y me quito dramas
     private IEnumerator Start()
@@ -49,8 +53,12 @@ public class RespawnManager : MonoBehaviour
         //aca deberia poner la animacion de muerte en un futuro cuando tenga los assets
         //------
         yield return new WaitForSeconds(5f);
-        //cambie todo esto porque al morir contra el jefe prefiero que cargue la escena
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //en vez de respawnear directamente, mostramos el menu de muerte
+        if (deathPanel != null)
+            deathPanel.SetActive(false);
+ 
+        if (deathMenuPanel != null)
+            deathMenuPanel.SetActive(true);
     }
 
     //Para q busque el ultimo respawn point, pero en caos de que no tengo ningnuo guardado, puedo reutilizar el checkpoint que habia hecho al comienzo
@@ -72,4 +80,26 @@ public class RespawnManager : MonoBehaviour
         //sin checkpoint tocado todavia, usamos el punto fijo de siempre
         return initialPosition;
     }
+    //-------------
+    //para los botones del menu(deberia hacer otro script para el menu de muerte, pero no quiero otro script)
+    public void OnRevivePressed()
+    {
+        //para que al respawnear nos devuelva a la ultima escena y no a la actual si el respawn no esta en la escena actual
+        string targetScene = SceneManager.GetActiveScene().name;
+
+        if (SaveLoadManagerJson.Instance != null && !string.IsNullOrEmpty(SaveLoadManagerJson.Instance.SavedScene))
+            targetScene = SaveLoadManagerJson.Instance.SavedScene;
+
+        SceneManager.LoadScene(targetScene);
+    }
+    public void OnMainMenuPressed()
+    {
+        SceneManager.LoadScene("MainMenu");//no es buena practica, pero no quiero mas variables en respawnmanager
+    }
+    //no creo usarlo, seria raro tener esta opcion en el menu de muerte
+    public void OnQuitPressed()
+    {
+        Application.Quit();
+    }
+
 }
