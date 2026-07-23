@@ -170,6 +170,15 @@ MonoBehaviour:
   moveSpeed: 21
   jumpForce: 37
   gravity: -65
+  fallGravityMultiplier: 1.8
+  peakThreshold: 7
+  peakGravityMultiplier: 0.5
+  peakSpeed: 5
+  groundAcceleration: 100
+  groundDeceleration: 130
+  airAcceleration: 180
+  airDeceleration: 130
+  cornerCorrectionDistance: 0.25
   doubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}
   dashDistance: 20
   dashDuration: 0.17
@@ -198,7 +207,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  canDashInAir: 1
   dashUnlocked: {fileID: 11400000, guid: c6f8b58639de08140a8fc017e5fa4e17, type: 2}
   weaponPoint: {fileID: 2101748272898479676}
   collisionMask:
