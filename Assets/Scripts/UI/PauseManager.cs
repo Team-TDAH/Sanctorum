@@ -44,6 +44,9 @@ public class PauseManager : MonoBehaviour
         isPaused = !isPaused;
         pausePanel.SetActive(isPaused);
         Time.timeScale = isPaused ? 0f : 1f;
+        //para que se vea el cursor de nuevo, lo agregue luego de agregar el apuntado con mouse
+        Cursor.visible = isPaused;
+        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
         abilityManager.InputEnabled = !isPaused;
         playerController.InputEnabled = !isPaused; 
     }
