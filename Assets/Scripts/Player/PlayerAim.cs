@@ -1,42 +1,54 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-//ahora el apuntado dejo de ser por el "lugar" donde este el mouse, sino por su movimiento, asi no se siente raro
+//despues de muchos ajustes, quedo como me gusta, sin salto por abajo ni angulos raros que hacian que no siempre iba la mira a donde queria
 public class PlayerAim : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
-    [SerializeField] private float sensitivity = 0.017f; //deberia cambiar este valor en un futuro para cambiar la sensiblidad, aunque no creo que haga falta pensandolo
+    [SerializeField] private float sensitivity = 0.017f;
+    //para q tome de "0" el medio del pj
+    private float center = 90f;
+    //90+135=225 que seria el maximo de un lado, y del otro 90-135=-45, que es todo los angulos menos desde el 225 al 315 creo
+    private float angleArc = 135f;
     [SerializeField] private Transform aim;
     [SerializeField] private float aimDistance = 5f;
-    //punto "artificial" del mouse
-    private Vector2 aimOffset = Vector2.right;
-    //direccion final, para que la puedan utilizar las habilidades en un futuro para disparar en esas direcciones
-    public Vector2 AimDirection { get; private set; } = Vector2.right;
+    //punto virtual que el mouse mueve, siempre dentro del arco permitido
+    private Vector2 aimOffset;
+
+    //direccion final, la leen las habilidades de ataque
+    public Vector2 AimDirection { get; private set; }
+
+
     private void Awake()
     {
         if (playerController == null)
             playerController = GetComponent<PlayerController>();
 
-        //q no se vea el mouse y no se salga de la ventana al prog
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //comienza a la derceha
         aimOffset = Vector2.right * aimDistance;
+        AimDirection = Vector2.right;
     }
-
     private void Update()
     {
         if (Mouse.current == null || playerController == null) return;
 
         Vector2 delta = Mouse.current.delta.ReadValue();
-
         if (delta.sqrMagnitude > 0.0001f)
         {
-            //toma los movimiento del mouse, y no su lugar en la pantalla
             aimOffset += delta * sensitivity;
-            //para q este en un radio alrededor dle player
+            //para que no pueda girar completamente por abajo, sentia que era innecesario e incomodo, asi que es por arriba o nada
+            float angle = Mathf.Atan2(aimOffset.y, aimOffset.x) * Mathf.Rad2Deg;
+            float deltaFromCenter = Mathf.DeltaAngle(center, angle);
+            if (Mathf.Abs(deltaFromCenter) > angleArc)
+            {
+                float clampedAngle = center + Mathf.Sign(deltaFromCenter) * angleArc;
+                float rad = clampedAngle * Mathf.Deg2Rad;
+                aimOffset = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+            }
             aimOffset = aimOffset.normalized * aimDistance;
         }
         AimDirection = aimOffset.normalized;
-        //para que el player mire hacia donde este apuntadno
         if (Mathf.Abs(AimDirection.x) > 0.05f)
             playerController.SetFacingDirection(Mathf.Sign(AimDirection.x));
 
