@@ -8,12 +8,16 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     private InputAction pauseAction;
     private bool isPaused;
+    //no queria tener que tener estas referencias, pero no queda otra, tenia un bug donde al apretar escape teniendo el menu de settings este no se cerraba pero el game seguia andando
+    [SerializeField] private GameObject mainButtons;
+    [SerializeField] private GameObject settingsContent;
 
     //necesario porque al pausar me estaba creando orbes de luz al apretar las opciones del menu de pausa
     //no me gusto para nada la solucion, pero es la unica forma de que el dash no se consuma mientras este en la pausa y aprete dash
     [SerializeField] private AbilityManager abilityManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private RespawnManager respawnManager;
+    
  
     private void Awake()
     {
@@ -49,6 +53,15 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
         abilityManager.InputEnabled = !isPaused;
         playerController.InputEnabled = !isPaused; 
+        //mismo que en DeathSequence del respawnmanager, para que al pausar no siga moviendose la "mira"
+        var playerAim = playerController.GetComponent<PlayerAim>();
+        if (playerAim != null) playerAim.InputEnabled = !isPaused;
+        //ahora se cierra tmabien si apretamos escape
+        if (!isPaused)
+        {
+            if (settingsContent != null) settingsContent.SetActive(false);
+            if (mainButtons != null) mainButtons.SetActive(true);
+        }
     }
 
     
@@ -58,7 +71,11 @@ public class PauseManager : MonoBehaviour
     }
         public void BackToMainMenu()
     {
-        TogglePause();
+        //tenia un grave bug aca, porque llamaba a la pausa de nuevo
+        Time.timeScale = 1f;
+        //fix culpa de si vuelvo al menu no recuperaba el cursor en el menu
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("MainMenu");
     }
 }

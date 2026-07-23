@@ -46,9 +46,16 @@ public class RespawnManager : MonoBehaviour
         if (deathPanel != null)
             deathPanel.SetActive(true);
 
+        //fix de error que al abrir el menu de muerte seguia sin el cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         //como ya murio, desactivamos el control del player
         playerController.InputEnabled = false;
         playerController.AbilityManager.InputEnabled = false;
+
+        //congelamos la "mira" y quitamos su visibilidad tambien
+        var playerAim = playerController.GetComponent<PlayerAim>();
+        if (playerAim != null) playerAim.InputEnabled = false;
         //------
         //aca deberia poner la animacion de muerte en un futuro cuando tenga los assets
         //------

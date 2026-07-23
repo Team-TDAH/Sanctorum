@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 662da31411e0ca7419e1f9aebc4bd580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 17
+  moveSpeed: 21
   jumpForce: 37
   gravity: -65
   doubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}

@@ -16,7 +16,20 @@ public class PlayerAim : MonoBehaviour
 
     //direccion final, la leen las habilidades de ataque
     public Vector2 AimDirection { get; private set; }
-
+    // *** para que el RespawnManager y la pausa puedan congelar el apuntado ***
+    //al desactivarse tambien se oculta la mirilla
+    private bool inputEnabled = true;
+    //por un bug que al morir seguia moviendose la "mira"
+    public bool InputEnabled
+    {
+        get => inputEnabled;
+        set
+        {
+            inputEnabled = value;
+            if (aim != null)
+                aim.gameObject.SetActive(value);
+        }
+    }
 
     private void Awake()
     {
@@ -31,6 +44,7 @@ public class PlayerAim : MonoBehaviour
     }
     private void Update()
     {
+        if (!inputEnabled) return;
         if (Mouse.current == null || playerController == null) return;
 
         Vector2 delta = Mouse.current.delta.ReadValue();

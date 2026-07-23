@@ -73,7 +73,11 @@ public class DialogueUI : MonoBehaviour
         {
             playerController.InputEnabled = false;
             playerController.AbilityManager.InputEnabled = false;
+            //mismo que en DeathSequence del respawnmanager, para que al dialogar no siga moviendose la "mira"
+            var playerAim = playerController.GetComponent<PlayerAim>();
+            if (playerAim != null) playerAim.InputEnabled = false;
         }
+
         ShowLine(currentDialogue.lines[currentLineIndex]);
     }
     //para "avanzar" en la conversacion
@@ -115,6 +119,9 @@ public class DialogueUI : MonoBehaviour
         {
             playerController.InputEnabled = true;
             playerController.AbilityManager.InputEnabled = true;
+            //recuperar la movilidad y visibilidad de la "mira" al terminar de charlar
+            var playerAim = playerController.GetComponent<PlayerAim>();
+            if (playerAim != null) playerAim.InputEnabled = true;
         }
     }
 }
