@@ -76,4 +76,6 @@ public class AbilityContext
     public bool IsDashing;
     //punto de disparo compartido para las habilidades
     public Transform WeaponPoint;
+    //dirrecion de apuntado, ya "acotada" sacada del playeraim via abilitymanager(termine quitando lo del "acotado")
+    public Vector2 AimDirection;
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   UnlockSkill: 
   icon: {fileID: 0}
   inputActionName: Attack
-  cooldown: 0.2
+  cooldown: 0.6
   cooldownAfterEnd: 0
   usableOnGround: 1
   usableInAir: 1
@@ -27,5 +27,3 @@ MonoBehaviour:
   orbSpeed: 30
   orbLifetime: 3
   damage: 12
-  spawnOffset: {x: 1.4, y: 1.7}
-  aimWithInput: 1

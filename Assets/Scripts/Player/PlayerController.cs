@@ -43,6 +43,12 @@ public class PlayerController : MonoBehaviour
     private Vector2 dashDirection;
     private float lastFacingDirection = 1f; 
     //para saber hacia donde mirar si no hay input
+    //ahora playeraim controla la ultima direccion
+    public void SetFacingDirection(float sign)
+    {
+        lastFacingDirection = sign;
+    }
+ 
 
     public Vector2 MoveInput => moveInput;
     //ya me canse de agregar variables publicas nuevas, pero esta es necesaria para que al momento de morir, desactive el control del player y no el playercontroller completo
@@ -153,9 +159,7 @@ public class PlayerController : MonoBehaviour
         if (moveAction != null)
             moveInput = moveAction.ReadValue<Vector2>();
 
-        //guardamos la ultima direccion horizontal para usarla en el dash sin input
-        if (moveInput.x != 0f)
-            lastFacingDirection = Mathf.Sign(moveInput.x);
+        //ya no guardo la ultima input
 
 
 

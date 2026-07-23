@@ -13,6 +13,7 @@ public class AbilityManager : MonoBehaviour
     //ultima referencia que agregue para cachear y no tener que usar getcomponent innecesariamente
     private PlayerHealth playerHealth;
     private PlayerInput playerInput;
+    private PlayerAim playerAim;
 
     //mapa de InputAction por nombre para no buscar cada frame
     private Dictionary<string, InputAction> inputMap = new();
@@ -31,6 +32,7 @@ public class AbilityManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerHealth = GetComponent<PlayerHealth>();
         BuildInputMap();
+        playerAim = GetComponent<PlayerAim>();
     }
 
     private void Start()
@@ -92,6 +94,10 @@ public class AbilityManager : MonoBehaviour
         ctx.MoveInput = playerController.MoveInput;
         ctx.LastFacingDirection = playerController.LastFacingDirection;
         ctx.WeaponPoint = playerController.WeaponPoint;
+        //si hay playeraim usamos su direccion, sino hacia donde mira el player
+        ctx.AimDirection = playerAim != null
+        ? playerAim.AimDirection
+        : new Vector2(playerController.LastFacingDirection, 0f);
     }
 
     private void TickCooldowns()
