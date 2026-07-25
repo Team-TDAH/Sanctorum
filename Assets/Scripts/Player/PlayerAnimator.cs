@@ -11,12 +11,15 @@ public class PlayerAnimator : MonoBehaviour
     private const int land=4;//a futuro hay que fixearlo, queda raro al momento de caer
     private const int attack=5;
     private const int parry=6;
-    private const int dash=7;//falta q lo haga seba
+    // *** CAMBIO: saque el dash, todavia no existe el estado en el animator ***
     [SerializeField] private PlayerController playerController;
     [SerializeField] private Animator animator;
     //agregar cuando vaya agregando mas habilidades, es para conseguir sus activaciones
-    [SerializeField] private AbilitySO attackAbility;
     [SerializeField] private AbilitySO parryAbility;
+    //Canal del orbe para literlamente enterarnos si se activo o no, ya que solo es un frame
+    [SerializeField] private AbilityChannel attackChannel;
+    //duracion de la animacion, necesario por la estructura q estoy usando de animaciones
+    [SerializeField] private float attackDuration = 0.25f;
     //ajuste lindo para que land no se active siempre que se esta cayendo, sino que solamente cuando sea gran altuera, queda menos torpe pero igualmente hay que cambiar la animacion de land
     [SerializeField] private float minFallTimeForLand = 0.4f;
     //pense que con esto arreglaria la anim de caer pero no
@@ -24,6 +27,7 @@ public class PlayerAnimator : MonoBehaviour
     //runtime
     private float fallTimer;
     private float landTimer;
+    private float attackTimer;
     private bool wasGrounded;
     //cachea el ultimo estado para no setear el parametro cada frame al pedo
     private int currentState = -1;
@@ -31,6 +35,21 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (animator == null) animator = GetComponent<Animator>();
         if (playerController == null) playerController = GetComponentInParent<PlayerController>();
+    }
+    private void OnEnable()
+    {
+        if (attackChannel != null)
+            attackChannel.OnAbilityStarted += HandleAttackStarted;
+    }
+    private void OnDisable()
+    {
+        if (attackChannel != null)
+            attackChannel.OnAbilityStarted -= HandleAttackStarted;
+    }
+    //este canal es solo del orbe, asi que cualquier aviso es el ataque basico
+    private void HandleAttackStarted(AbilitySO ability)
+    {
+        attackTimer = attackDuration;
     }
     private void Update()
     {
@@ -62,6 +81,9 @@ public class PlayerAnimator : MonoBehaviour
         if (landTimer > 0f)
             landTimer -= Time.deltaTime;
 
+        if (attackTimer > 0f)
+            attackTimer -= Time.deltaTime;
+
         wasGrounded = grounded;
     }
     //prioridades de animaciones
@@ -69,9 +91,9 @@ public class PlayerAnimator : MonoBehaviour
     {
         //el parry y ataque prioridad 1 siempre, ver como queda con la anim de salto y tal
         if (parryAbility != null && parryAbility.IsActive) return parry;
-        if (attackAbility != null && attackAbility.IsActive) return attack;
+        // *** CAMBIO: el ataque ahora se decide por el timer, no por IsActive ***
+        if (attackTimer > 0f) return attack;
 
-        if (playerController.IsDashing) return dash;
 
         if (!playerController.IsGrounded)
         {

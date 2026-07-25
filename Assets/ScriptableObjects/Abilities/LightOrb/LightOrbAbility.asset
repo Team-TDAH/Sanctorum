@@ -16,7 +16,7 @@ MonoBehaviour:
   UnlockSkill: 
   icon: {fileID: 0}
   inputActionName: Attack
-  cooldown: 0.3
+  cooldown: 0.7
   cooldownAfterEnd: 0
   usableOnGround: 1
   usableInAir: 1
