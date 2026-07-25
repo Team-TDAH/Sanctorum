@@ -48,14 +48,16 @@ public class PauseManager : MonoBehaviour
         isPaused = !isPaused;
         pausePanel.SetActive(isPaused);
         Time.timeScale = isPaused ? 0f : 1f;
-        //para que se vea el cursor de nuevo, lo agregue luego de agregar el apuntado con mouse
-        Cursor.visible = isPaused;
-        Cursor.lockState = isPaused ? CursorLockMode.None : CursorLockMode.Locked;
         abilityManager.InputEnabled = !isPaused;
         playerController.InputEnabled = !isPaused; 
         //mismo que en DeathSequence del respawnmanager, para que al pausar no siga moviendose la "mira"
         var playerAim = playerController.GetComponent<PlayerAim>();
         if (playerAim != null) playerAim.InputEnabled = !isPaused;
+
+        var crosshair = FindAnyObjectByType<Crosshair>();
+        if (crosshair != null)
+            crosshair.SetVisible(!isPaused);
+            
         //ahora se cierra tmabien si apretamos escape
         if (!isPaused)
         {
@@ -69,11 +71,10 @@ public class PauseManager : MonoBehaviour
     {
         TogglePause();
     }
-        public void BackToMainMenu()
+    public void BackToMainMenu()
     {
-        //tenia un grave bug aca, porque llamaba a la pausa de nuevo
         Time.timeScale = 1f;
-        //fix culpa de si vuelvo al menu no recuperaba el cursor en el menu
+        //el menu principal no tiene crosshair(quizas luego agrego)
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("MainMenu");

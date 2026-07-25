@@ -174,10 +174,10 @@ MonoBehaviour:
   peakThreshold: 7
   peakGravityMultiplier: 0.5
   peakSpeed: 5
-  groundAcceleration: 100
-  groundDeceleration: 130
-  airAcceleration: 180
-  airDeceleration: 130
+  groundAcceleration: 90
+  groundDeceleration: 60
+  airAcceleration: 200
+  airDeceleration: 150
   cornerCorrectionDistance: 0.25
   doubleJumpUnlocked: {fileID: 11400000, guid: 56411be50b0c49542824308057c4aba3, type: 2}
   dashDistance: 20
@@ -361,9 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAim
   playerController: {fileID: 5534557296856602342}
-  sensitivity: 0.017
-  aim: {fileID: 2537645665259298477}
-  aimDistance: 5
+  aimCamera: {fileID: 0}
 --- !u!1 &5274970096789249337
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,8 +611,8 @@ Transform:
   m_GameObject: {fileID: 7884430290380023905}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 1.8, z: 0}
-  m_LocalScale: {x: 6, y: 25.13, z: 1}
+  m_LocalPosition: {x: 2.05, y: 1.8, z: 0}
+  m_LocalScale: {x: 8.4, y: 33.99, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8570060594702206114}
@@ -1191,8 +1189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   playerController: {fileID: 5534557296856602342}
   animator: {fileID: 8041685799261712302}
-  attackAbility: {fileID: 11400000, guid: 368497383d6e47e4a97434a18e29f0d4, type: 2}
   parryAbility: {fileID: 11400000, guid: fbc85d860a7fd2a4c82c3ce02a4278ca, type: 2}
+  attackChannel: {fileID: 11400000, guid: 0d6289a5acd500b46be01c23807ab182, type: 2}
+  attackDuration: 0.25
   minFallTimeForLand: 0.4
   landDuration: 0.15
 --- !u!4 &1151175453767051486 stripped

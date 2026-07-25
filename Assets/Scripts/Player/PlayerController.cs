@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
     public Transform WeaponPoint => weaponPoint;
     private float lastFacingDirection = 1f;
     //para saber hacia donde mirar si no hay input
-    //ahora playeraim controla la ultima direccion
     public void SetFacingDirection(float sign)
     {
         lastFacingDirection = sign;
@@ -162,9 +161,6 @@ public class PlayerController : MonoBehaviour
         //mucho mas limpio con este sistema de inputs
         if (moveAction != null)
             moveInput = moveAction.ReadValue<Vector2>();
-
-        //ya no guardo la ultima input
-
 
 
         //regulador de salto

@@ -49,9 +49,10 @@ public class RespawnManager : MonoBehaviour
         //fix de error que al abrir el menu de muerte seguia sin el cursor
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        //como ya murio, desactivamos el control del player
-        playerController.InputEnabled = false;
-        playerController.AbilityManager.InputEnabled = false;
+
+        var crosshair = FindAnyObjectByType<Crosshair>();
+        if (crosshair != null)
+            crosshair.SetVisible(false);
 
         //congelamos la "mira" y quitamos su visibilidad tambien
         var playerAim = playerController.GetComponent<PlayerAim>();
