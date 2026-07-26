@@ -7,6 +7,8 @@ public class AbilityManager : MonoBehaviour
 {
     //lista donde tengo que agregar cada habilidad nueva
     [SerializeField] private List<AbilitySO> abilities = new();
+    [SerializeField] private BossHealthChannel bossChannel;
+
 
     private PlayerController playerController;
     private Rigidbody2D rb;
@@ -22,7 +24,9 @@ public class AbilityManager : MonoBehaviour
     private AbilityContext ctx = new();
 
     public bool InputEnabled { get; set; } = true;
-    
+
+    //true si hay una pelea de jefe activa, lo setea el canal (para fixear bug con el dialogueUI y el crosshair)
+    public bool InFight { get; private set; }
 
 
     private void Awake()
@@ -33,6 +37,7 @@ public class AbilityManager : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
         BuildInputMap();
         playerAim = GetComponent<PlayerAim>();
+        InputEnabled = false;
     }
 
     private void Start()
@@ -46,12 +51,35 @@ public class AbilityManager : MonoBehaviour
     {
         foreach (var action in inputMap.Values)
             action.Enable();
+
+        if (bossChannel != null)
+        {
+            bossChannel.OnBossFightStarted += HandleFightStarted;
+            bossChannel.OnBossDefeated += HandleFightEnded;
+        }
     }
 
     private void OnDisable()
     {
         foreach (var action in inputMap.Values)
             action.Disable();
+
+        if (bossChannel != null)
+        {
+            bossChannel.OnBossFightStarted -= HandleFightStarted;
+            bossChannel.OnBossDefeated -= HandleFightEnded;
+        }
+    }
+    //para activar el ataque solo en pelea con bosses y no en la aventura, no me tengo q preocupar por el dash y doble salto xq van aparte
+    private void HandleFightStarted(string bossName, int maxHealth)
+    {
+        InFight = true;
+        InputEnabled = true;
+    }
+    private void HandleFightEnded()
+    {
+        InFight = false;
+        InputEnabled = false;
     }
 
     private void Update()

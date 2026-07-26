@@ -12,17 +12,10 @@ public class RespawnManager : MonoBehaviour
     [SerializeField] private GameObject deathPanel;
     //el menu q aparecera luego del text you die
     [SerializeField] private GameObject deathMenuPanel;
-    //lugar donde respawneara, todavia no tenemos claro si sera en un unico lugar estilo sala central o en distintos respawns (no debe tener nada el gameobject del point)
-    private Vector3 initialPosition;
     //porque aparecia el menu de pausa si lo abriamos en el menu de muerte, y no deberia
     public bool IsDeathMenuActive => deathMenuPanel != null && deathMenuPanel.activeSelf;
 
-    //con start deberia funciona bien, pero aveces daba error, asi que esperara un frame y me quito dramas
-    private IEnumerator Start()
-    {
-        yield return null;
-        initialPosition = playerController.transform.position;
-    }
+
 
     private void OnEnable()
     {
@@ -54,13 +47,17 @@ public class RespawnManager : MonoBehaviour
         if (crosshair != null)
             crosshair.SetVisible(false);
 
+        //faltaban estas dos por eso el player seguia moviendose y disparando al morir
+        playerController.InputEnabled = false;
+        playerController.AbilityManager.InputEnabled = false;
+
         //congelamos la "mira" y quitamos su visibilidad tambien
         var playerAim = playerController.GetComponent<PlayerAim>();
         if (playerAim != null) playerAim.InputEnabled = false;
         //------
         //aca deberia poner la animacion de muerte en un futuro cuando tenga los assets
         //------
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         //en vez de respawnear directamente, mostramos el menu de muerte
         if (deathPanel != null)
             deathPanel.SetActive(false);
@@ -69,25 +66,6 @@ public class RespawnManager : MonoBehaviour
             deathMenuPanel.SetActive(true);
     }
 
-    //Para q busque el ultimo respawn point, pero en caos de que no tengo ningnuo guardado, puedo reutilizar el checkpoint que habia hecho al comienzo
-    private Vector3 GetRespawnPosition()
-    {
-        if (SaveLoadManagerJson.Instance != null)
-        {
-            string savedId = SaveLoadManagerJson.Instance.GetCheckpointForActiveScene();
-            if (!string.IsNullOrEmpty(savedId))
-            {
-                Checkpoint[] checkpoints = FindObjectsByType<Checkpoint>();
-                foreach (var checkpoint in checkpoints)
-                {
-                    if (checkpoint.CheckpointId == savedId)
-                        return checkpoint.transform.position;
-                }
-            }
-        }
-        //sin checkpoint tocado todavia, usamos el punto fijo de siempre
-        return initialPosition;
-    }
     //-------------
     //para los botones del menu(deberia hacer otro script para el menu de muerte, pero no quiero otro script)
     public void OnRevivePressed()

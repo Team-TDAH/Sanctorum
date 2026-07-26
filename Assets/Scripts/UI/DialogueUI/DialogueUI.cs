@@ -118,8 +118,8 @@ public class DialogueUI : MonoBehaviour
         if (playerController != null)
         {
             playerController.InputEnabled = true;
-            playerController.AbilityManager.InputEnabled = true;
-            //recuperar la movilidad y visibilidad de la "mira" al terminar de charlar
+            //fix para que el ataque solo este disponible en pelea, y no luego del dialogo(y hubieron problemas con la charla en mitad de pelea)
+            playerController.AbilityManager.InputEnabled = playerController.AbilityManager.InFight;
             var playerAim = playerController.GetComponent<PlayerAim>();
             if (playerAim != null) playerAim.InputEnabled = true;
         }

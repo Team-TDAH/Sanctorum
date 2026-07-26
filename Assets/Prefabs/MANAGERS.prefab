@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Crosshair
   aimCamera: {fileID: 0}
   crosshairSprite: {fileID: 7357816671798909266}
+  bossChannel: {fileID: 11400000, guid: 36bc29027ec888c45a8ca3a5dd4fe1e5, type: 2}
   detectionRadius: 0.3
   targetMask:
     serializedVersion: 2
@@ -286,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RespawnManager
   healthChannel: {fileID: 11400000, guid: 0216886bde32c784183eca0a30c1b963, type: 2}
-  playerHealth: {fileID: 0}
   playerController: {fileID: 0}
   deathPanel: {fileID: 0}
   deathMenuPanel: {fileID: 0}

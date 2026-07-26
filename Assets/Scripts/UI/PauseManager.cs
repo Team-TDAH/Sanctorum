@@ -8,6 +8,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     private InputAction pauseAction;
     private bool isPaused;
+    //para saber si el ataque estaba o no activado antes de pausar, arregla fix q al despausar estabamos modo combate
+    private bool abilityWasEnabled;
     //no queria tener que tener estas referencias, pero no queda otra, tenia un bug donde al apretar escape teniendo el menu de settings este no se cerraba pero el game seguia andando
     [SerializeField] private GameObject mainButtons;
     [SerializeField] private GameObject settingsContent;
@@ -43,21 +45,30 @@ public class PauseManager : MonoBehaviour
             TogglePause();
         }
     }
-    private void TogglePause()
+private void TogglePause()
     {
         isPaused = !isPaused;
         pausePanel.SetActive(isPaused);
         Time.timeScale = isPaused ? 0f : 1f;
-        abilityManager.InputEnabled = !isPaused;
-        playerController.InputEnabled = !isPaused; 
+        //al pausar guardamos estado y al despausar restauramos etado de pelea o no
+        if (isPaused)
+        {
+            abilityWasEnabled = abilityManager.InputEnabled;
+            abilityManager.InputEnabled = false;
+        }
+        else
+        {
+            abilityManager.InputEnabled = abilityWasEnabled;
+        }
+        playerController.InputEnabled = !isPaused;
         //mismo que en DeathSequence del respawnmanager, para que al pausar no siga moviendose la "mira"
         var playerAim = playerController.GetComponent<PlayerAim>();
         if (playerAim != null) playerAim.InputEnabled = !isPaused;
 
         var crosshair = FindAnyObjectByType<Crosshair>();
         if (crosshair != null)
-            crosshair.SetVisible(!isPaused);
-            
+            crosshair.SetHiddenByMenu(isPaused);
+
         //ahora se cierra tmabien si apretamos escape
         if (!isPaused)
         {
@@ -65,8 +76,6 @@ public class PauseManager : MonoBehaviour
             if (mainButtons != null) mainButtons.SetActive(true);
         }
     }
-
-    
     public void Resume()
     {
         TogglePause();
