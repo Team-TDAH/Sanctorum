@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 21f;
     [SerializeField] private float jumpForce = 37f;
     [SerializeField] private float gravity = -65f;//termino siento valores altos culpa de cambiar de tamaño del player
+    //reduccion de velocidad al caminar hacia atras, vere si me agrada, sino se va
+    [SerializeField] private float backwardSpeedMultiplier = 0.75f;
     //variables de mejora de salto
     private float jumpCutMultiplier = 0.5f;
     private float coyoteTime = 0.1f;
@@ -225,8 +227,14 @@ public class PlayerController : MonoBehaviour
             ? 0f
             : Mathf.InverseLerp(peakThreshold, 0f, Mathf.Abs(currentVelocity.y));
 
-        //gradual la aceleracion, no instantanea
-        float targetSpeed = moveInput.x * (moveSpeed + peakSpeed * peakPoint);
+        //si se mueve en direccion contraria a donde apunta va mas lento (osea camina mas lentos yendo hacia atars)
+        //comparamos la direccion del input con el facing (que lo da el mouse via PlayerAim)
+        float speedForThisDirection = moveSpeed + peakSpeed * peakPoint;
+        bool movingBackward = moveInput.x != 0f && Mathf.Sign(moveInput.x) != lastFacingDirection;
+        if (movingBackward)
+            speedForThisDirection *= backwardSpeedMultiplier;
+
+        float targetSpeed = moveInput.x * speedForThisDirection;
         //si hay input aceleramos, si no hay frenamos, quizas con esto luego pueda crear superficies resbaladizas
         bool hasInput = Mathf.Abs(moveInput.x) > 0.01f;
         float accelRate = IsGrounded
