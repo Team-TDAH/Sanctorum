@@ -5,17 +5,30 @@ using System.Collections;
 public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
-
-
     //corrutina necesaria para el tp
     private IEnumerator Start()
     {
+        //ahora estan conectados x ID, pense q era mala idea pero es exageradamente util, asi tampoco hay confusiones y puedo usarlo tambien para puertas
+        if (!string.IsNullOrEmpty(BossFerryman.PendingConnectionId))
+        {
+            string targetId = BossFerryman.PendingConnectionId;
+            //prevenciones
+            BossFerryman.PendingConnectionId = null;
+            BossFerryman[] ferrymen = FindObjectsByType<BossFerryman>(FindObjectsInactive.Include);
+            foreach (var ferryman in ferrymen)
+            {
+                if (ferryman.ArrivalPoint == null) continue;
+                if (ferryman.ConnectionId != targetId) continue;
+                playerController.transform.position = ferryman.ArrivalPoint.position;
+                yield return new WaitForFixedUpdate();
+                yield return null;
+                yield break;
+            }
+        }
         if (SaveLoadManagerJson.Instance == null) yield break;
-
         string savedId = SaveLoadManagerJson.Instance.GetCheckpointForActiveScene();
         if (string.IsNullOrEmpty(savedId)) yield break;
-
-        //buscamos entre todos los checkpoints de la escena el que coincida con el guardado
+        //buscamos entre todos los checkpoints a el q coincida
         Checkpoint[] checkpoints = FindObjectsByType<Checkpoint>();
         foreach (var checkpoint in checkpoints)
         {
@@ -29,6 +42,6 @@ public class PlayerSpawner : MonoBehaviour
                 yield break;
             }
         }
-        //si no se encontro, el checkpoint es de otra escena y el player queda en su posicion inicial
+        //si no se encontro el player aparece en su posicion inicial del editor
     }
 }

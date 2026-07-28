@@ -7,6 +7,19 @@ public class BossFerryman : MonoBehaviour
 {
     //para que luego no me olvide donde esta el conetenedor de la escena a la que quiero ir (tambien habra 2 ferryman, uno que te lleve a la siguiente y otro que te traiga a la anterior)
     [SerializeField] private string nextSceneName;
+    //--- probando tps
+    
+    //conexion x medio de ids, es mas util, ambos deben tener el mismo nombre
+    [SerializeField] private string connectionId;
+    public string ConnectionId => connectionId;
+    //donde aparecera el player al tepearse, la idea es q esten cerca, asi da la sensacion de que cruza la puerta o demas 
+    [SerializeField] private Transform arrivalPoint;
+    public Transform ArrivalPoint => arrivalPoint;
+    //necesario q sea statica para saber desde q conexion estamos viajando
+    public static string PendingConnectionId;
+
+
+    //--probando
     //el gameobject que debe tener algun mensaje como "E" o "Press E" avisando que se puede interactuar con el mismo, ya luego agregare los dialogos y demas
     [SerializeField] private GameObject interactPrompt;
     //para el dialogo antes del tp, estbaa pensando en hacer otro script para las puertas o transportes pero al final me quedo con este para casi todo
@@ -14,6 +27,7 @@ public class BossFerryman : MonoBehaviour
     [SerializeField] private DialogueSO dialogue;
     //al cerrarse hace el viaje
     private bool waitingForDialogueEnd;
+
 
     private InputAction interactAction;
     //para saber cuando mostrar el mensaje y cuando no, el de la E
@@ -90,6 +104,8 @@ public class BossFerryman : MonoBehaviour
     }
     private void Travel()
     {
+        //le avisamos al spawner de la escena destino por que conexion llegamos
+        PendingConnectionId = connectionId;
         //!!!!!!!! aca va la animacion de transicion
         SceneManager.LoadScene(nextSceneName);
     }
