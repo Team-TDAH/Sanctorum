@@ -42,6 +42,8 @@ public class ZigzagProjectile : MonoBehaviour
         if (((1 << other.gameObject.layer) & playerMask) == 0) return;
 
         var playerHealth = other.GetComponent<PlayerHealth>();
+        //Si el player esta dasheando el proyectil lo atraviesa
+        if (playerHealth.IsInvulnerable) return;
         playerHealth?.TakeDamage(damage);
         Destroy(gameObject);
     }

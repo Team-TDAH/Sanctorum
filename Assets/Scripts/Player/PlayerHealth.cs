@@ -6,6 +6,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     //parpadeo(no esta funcionando muy bien con el skin)
     private float blinkInterval = 0.1f;
     [SerializeField] private HealthChannel healthChannel;
+    //para saber si esta dasheando y hacerlo invensible mientras esta la animacion del dash
+    [SerializeField] private PlayerController playerController;
+
     //parece que no irá, pero lo dejare por ahora
     public bool IsShielded { get; set; }
     //estado runtime para guardado
@@ -16,8 +19,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     //debuff para el spectral charge de angevin pero se podra usar tambien a futuro para otros bosses
     private float damageMultiplier = 1f;
     private float debuffTimer;
-    //referencia al sprite para el efecto de parpadeo, puede ser null si no hay sprite
-    private SpriteRenderer spriteRenderer;
+    //es necesario hacer parpadear cada parte de miharu ahora q esta dividida por partes, asi q se guardan en un array
+    private SpriteRenderer[] spriteRenderers;
     //para agregar un iconito o algo en la ui que diga que el efecto todavia esta activo(y capaz agregar un fill como en las habilidades)
     public bool HasDamageDebuff => debuffTimer > 0f;
     //para q la ui muestre el contador de cuanto falta
@@ -25,7 +28,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        // *** CAMBIO: la parte visual ahora son hijos (Miharu cuelga del VisualPivot), buscamos todos los sprites ***
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        playerController = GetComponent<PlayerController>();
     }
 
     private void Start()
@@ -53,13 +58,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             EndInvulnerability();
             return;
         }
-        //efecto de parpadeo mientras duren los i-frames
-        if (spriteRenderer != null)
+        //nuevo efecto de parpadeo al recibir daño, luego podria agregar q tambien se tiña de rojo al recibir daño
+        if (spriteRenderers != null && spriteRenderers.Length > 0)
         {
             blinkTimer -= Time.deltaTime;
             if (blinkTimer <= 0f)
             {
-                spriteRenderer.enabled = !spriteRenderer.enabled;
+                foreach (var sr in spriteRenderers)
+                    sr.enabled = !sr.enabled;
                 blinkTimer = blinkInterval;
             }
         }
@@ -73,6 +79,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         //el escudo y iframes bloquean ataques
         if (isInvulnerable) return;
         if (IsShielded) return;
+        //invencible mientras dashea
+        if (playerController != null && playerController.IsDashing) return;
         //aplico el debuf al daño recibido
         int finalDamage = Mathf.RoundToInt(amount*damageMultiplier);
         //para separar, luego veo si funciona(puse amount en vez de finalDamage que ACABO de calcular)
@@ -85,6 +93,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
         StartInvulnerability();
     }
+    
     //para curarme, todavia no cree nada que utilice esto, pero bueno
     public void Heal(int amount)
     {
@@ -116,15 +125,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private void EndInvulnerability()
     {
         isInvulnerable = false;
-        //nos aseguramos de que el sprite quede visible al terminar
-        if (spriteRenderer != null)
-            spriteRenderer.enabled = true;
+        //para asegurar de q se queden activados las partes al terminar
+        if (spriteRenderers != null)
+            foreach (var sr in spriteRenderers)
+                sr.enabled = true;
     }
     //----------------------------------------------------------------------------------------------
     //Propiedades de solo lectura para debug o UI sin canal
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
-    public bool IsInvulnerable => isInvulnerable;
+    public bool IsInvulnerable =>
+        isInvulnerable || (playerController != null && playerController.IsDashing);
     //-------------------------------
     //para q lo llame la habilidad spectralchargue y cualquiera que aplique este tipo de debuff
     public void ApplyDamageDebuff(float multiplier, float duration)

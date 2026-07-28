@@ -34,6 +34,8 @@ public class EnemyProjectile : MonoBehaviour
         //cuando colisione con algo que este en el layer que pongamos, hace el daño y se destruye
         if (((1 << other.gameObject.layer) & playerMask) == 0) return;
         var playerHealth = other.GetComponent<PlayerHealth>();
+        //Si el player esta dasheando el proyectil lo atraviesa
+        if (playerHealth.IsInvulnerable) return;
         playerHealth?.TakeDamage(damage);
         Destroy(gameObject);
     }
