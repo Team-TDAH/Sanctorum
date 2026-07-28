@@ -106,6 +106,7 @@ public class Boss1Controller : MonoBehaviour
             state = BossState.Dead;
             StopAllCoroutines();
             DeactivateAllLamps();
+            ClearAllProjectiles();//lo q borra los proyectiles sobrante al morir
             StartCoroutine(DeathSequence());
         }
     }
@@ -312,4 +313,19 @@ public class Boss1Controller : MonoBehaviour
         }
         bossHealth.CompleteDeath();
     }
+
+    //borra todos los proyectiles al morir el boss, asi no puedas morir por casualidad, es mejor solucion q hacer invencible al player
+    private void ClearAllProjectiles()
+    {
+        //buscamos todos los proyectiles activos de cada tipo y los destruimos
+        foreach (var orb in FindObjectsByType<ZigzagProjectile>())
+            Destroy(orb.gameObject);
+
+        foreach (var proj in FindObjectsByType<EnemyProjectile>())
+            Destroy(proj.gameObject);
+
+        foreach (var spectral in FindObjectsByType<SpectralCharge>())
+            Destroy(spectral.gameObject);
+    }
+
 }
