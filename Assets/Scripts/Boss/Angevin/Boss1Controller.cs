@@ -63,7 +63,9 @@ public class Boss1Controller : MonoBehaviour
     [SerializeField] private HealthChannel playerHealthChannel;
     //para que el jefe se congele si el player muere
     private bool playerIsDead;
-
+    //---
+    //para q la puerta este desactivada mientras se pelea con el boss
+    [SerializeField] private GameObject exitDoor;
     private void Awake()
     {
         bossHealth = GetComponent<BossHealth>();
@@ -136,7 +138,7 @@ public class Boss1Controller : MonoBehaviour
         if (npcDialogue != null) npcDialogue.enabled = false;
         //la idea era q apagara todo el objeto del dialogo, pero tengo ese objeto en el mismo lugar que boss1controller, asi que problemas
         if (dialogueObject != null) dialogueObject.SetActive(false);
-
+        if (exitDoor != null) exitDoor.SetActive(false);
 
         //se chocaba con objetos en la transicion, asi que mejor quitar colisiones mientras se transiciona(era la idea pero al final con dividir collisiones y poner trigger donde)
         
@@ -311,6 +313,7 @@ public class Boss1Controller : MonoBehaviour
                 returnSpeed * Time.deltaTime);
             yield return null;
         }
+        if (exitDoor != null) exitDoor.SetActive(true);
         bossHealth.CompleteDeath();
     }
 
