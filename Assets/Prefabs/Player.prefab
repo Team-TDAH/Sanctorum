@@ -350,7 +350,7 @@ MonoBehaviour:
   maxHealth: 100
   invulnerabilityDuration: 1
   healthChannel: {fileID: 11400000, guid: 0216886bde32c784183eca0a30c1b963, type: 2}
-  playerController: {fileID: 0}
+  playerController: {fileID: 5534557296856602342}
 --- !u!114 &658144829379755271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1112473125035988662
 Transform:
   m_ObjectHideFlags: 0
@@ -421,7 +421,7 @@ SpriteRenderer:
   m_SmallMeshCulling: 1
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 238b5d372548c4d488757b425c8c707c, type: 2}
@@ -445,7 +445,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5500
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -471,7 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneFader
   shadowRenderer: {fileID: 5153446587755707157}
   darknessProperty: _DarknessStrength
-  gameplayDarkness: 7
+  gameplayDarkness: 8
   closedDarkness: 60
   fadeDuration: 0.8
   fadeCurve:

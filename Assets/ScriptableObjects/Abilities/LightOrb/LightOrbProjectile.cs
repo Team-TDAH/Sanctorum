@@ -4,7 +4,15 @@ using UnityEngine;
 public class LightOrbProjectile : MonoBehaviour
 {
     [SerializeField] private LayerMask enemyMask;
+    //agregando gameFeel
+    //hitspot para q pause un poco al impactar 
+    [SerializeField] private HitStopChannel hitStopChannel;
+    //para que sacuda la camara al impactar(cinemachine trae esto que es muuuy comodo de usar con componentes)
+    [SerializeField] private Unity.Cinemachine.CinemachineImpulseSource impulseSource;
+    //fuerza del sacudon al impactar, se multiplica por el Default Velocity del componente
+    [SerializeField] private float shakeForce = 0.3f;
 
+    //fin de gameFeel
     private Vector2 direction;
     private float speed;
     private float lifetime;
@@ -29,6 +37,11 @@ public class LightOrbProjectile : MonoBehaviour
             transform.localScale = scale;
         }
     }
+    private void Awake()
+    {
+        if (impulseSource == null)
+            impulseSource = GetComponent<Unity.Cinemachine.CinemachineImpulseSource>();
+    }
 
     private void Update()
     {
@@ -48,7 +61,10 @@ public class LightOrbProjectile : MonoBehaviour
         //el enemigo debe implementar IDamageable para recibir dano
         var damageable = other.GetComponent<IDamageable>();
         damageable?.TakeDamage(damage);
-
+        //para agreagr el gamefeel de congelado al impactar 
+        hitStopChannel?.RequestHitStop();
+        //lo del mov de camara al impactar
+        impulseSource?.GenerateImpulse(shakeForce);
         Destroy(gameObject);
     }
 }

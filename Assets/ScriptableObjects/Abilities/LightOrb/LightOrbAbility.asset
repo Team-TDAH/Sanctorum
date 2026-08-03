@@ -16,7 +16,7 @@ MonoBehaviour:
   UnlockSkill: 
   icon: {fileID: 0}
   inputActionName: Attack
-  cooldown: 0.3
+  cooldown: 1
   cooldownAfterEnd: 0
   usableOnGround: 1
   usableInAir: 1
@@ -24,6 +24,6 @@ MonoBehaviour:
   unlockedVariable: {fileID: 0}
   channel: {fileID: 11400000, guid: 0d6289a5acd500b46be01c23807ab182, type: 2}
   orbPrefab: {fileID: 1533657016917203904, guid: c8c194ff43523e74caab5508ec1db21d, type: 3}
-  orbSpeed: 35
+  orbSpeed: 40
   orbLifetime: 3
-  damage: 12
+  damage: 22
