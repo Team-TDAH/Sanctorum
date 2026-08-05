@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 2784939931776401658}
   - component: {fileID: 9037036114735560190}
   - component: {fileID: 5170380023120673710}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Boss Plataform w_light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_ShadowMesh:
     m_Mesh: {fileID: 0}
     m_LocalBounds:
-      m_Center: {x: -0.0000076293945, y: 0, z: 0}
+      m_Center: {x: 0.0000076293945, y: 0, z: 0}
       m_Extent: {x: 1.3199997, y: 0.32000732, z: 0}
     m_EdgeProcessing: 1
     m_TrimEdge: 0.18

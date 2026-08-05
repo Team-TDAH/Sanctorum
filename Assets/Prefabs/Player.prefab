@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 21
-  jumpForce: 37
+  jumpForce: 38
   gravity: -65
   backwardSpeedMultiplier: 0.75
   fallGravityMultiplier: 1.8
@@ -212,7 +212,11 @@ MonoBehaviour:
   weaponPoint: {fileID: 2101748272898479676}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
+  layerPlatforms:
+    serializedVersion: 2
+    m_Bits: 1024
+  dropDuration: 0.25
   horizontalRayCount: 8
   verticalRayCount: 4
 --- !u!61 &7075653306134625214
@@ -382,7 +386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1112473125035988662
 Transform:
   m_ObjectHideFlags: 0
@@ -445,7 +449,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -471,7 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneFader
   shadowRenderer: {fileID: 5153446587755707157}
   darknessProperty: _DarknessStrength
-  gameplayDarkness: 8
+  gameplayDarkness: 9
   closedDarkness: 60
   fadeDuration: 0.8
   fadeCurve:
