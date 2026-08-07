@@ -15,8 +15,5 @@ MonoBehaviour:
   npcPortrait: {fileID: 0}
   lines:
   - speaker: 0
-    text: 
-    speakerName: 
-  - speaker: 0
     text: "hijo, \xBFQuien te hizo esto?\xBFQui\xE9n te hizo esa marca?"
     speakerName: Miharu
