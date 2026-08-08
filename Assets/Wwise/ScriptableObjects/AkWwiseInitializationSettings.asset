@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a0c56f1f1c31aa419240656f16b2378, type: 2}
   InvalidReferencePlatforms: []
   UserSettings:
-    m_BasePath: WwiseData/Bank
+    m_BasePath: Audio\GeneratedSoundBanks
     m_StartupLanguage: English(US)
     m_EngineLogging: 1
     m_IsDecodedBankEnabled: 0
