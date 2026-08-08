@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.audiokinetic.wwise.addressables": {
+      "version": "https://github.com/audiokinetic/WwiseUnityAddressables.git#main_25.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.addressables": "2.4.6"
+      },
+      "hash": "84391faf9596b30a090417ed43953d36b557e5f3"
+    },
     "com.unity.2d.animation": {
       "version": "14.0.3",
       "depth": 0,
@@ -101,7 +110,7 @@
     },
     "com.unity.addressables": {
       "version": "2.9.1",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.profiling.core": "1.0.2",
@@ -220,7 +229,7 @@
     },
     "com.unity.profiling.core": {
       "version": "1.0.3",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -258,7 +267,7 @@
     },
     "com.unity.scriptablebuildpipeline": {
       "version": "2.6.1",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.4.5",

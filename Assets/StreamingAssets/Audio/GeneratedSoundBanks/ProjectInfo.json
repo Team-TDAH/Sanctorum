@@ -12,28 +12,28 @@
     "GUID": "{3AAA38C0-EA43-405A-ADDA-4453016844B9}",
     "BasePlatform": "Linux",
     "BasePlatformGUID": "{BD0BDF13-3125-454F-8BFD-319537169F81}",
-    "Path": "Linux"
+    "Path": "../../../../Sanctorum_WwiseProject/GeneratedSoundBanks/Linux"
    },
    {
     "Name": "Mac",
     "GUID": "{3EA3446F-FBA2-4686-ABE3-09848BE231E4}",
     "BasePlatform": "Mac",
     "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
-    "Path": "Mac"
+    "Path": "../../../../Sanctorum_WwiseProject/GeneratedSoundBanks/Mac"
    },
    {
     "Name": "Web",
     "GUID": "{462D9FFE-F392-4739-83B4-45BB1A89CE0A}",
     "BasePlatform": "Web",
     "BasePlatformGUID": "{639AD233-23F2-4C0F-9127-79F44C15E1DA}",
-    "Path": "Web"
+    "Path": "../../../../Sanctorum_WwiseProject/GeneratedSoundBanks/Web"
    },
    {
     "Name": "Windows",
     "GUID": "{57BA2972-250E-448A-855E-83328E499D61}",
     "BasePlatform": "Windows",
     "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
-    "Path": "Windows"
+    "Path": "../../../../Sanctorum_WwiseProject/GeneratedSoundBanks/Windows"
    }
   ],
   "Languages": [
@@ -45,6 +45,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{325900F4-A877-B077-C4E5-462D26239E90}"
+  "FileHash": "{C79ACB1F-4716-7FE1-00FD-37EC067A2FCC}"
  }
 }
