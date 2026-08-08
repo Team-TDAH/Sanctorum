@@ -77,8 +77,9 @@ MonoBehaviour:
   - AdvancedSettings.m_MemoryMediaReservedLimit
   - AdvancedSettings.m_MemoryMediaAllocSizeHuge
   - AdvancedSettings.m_MemoryDebugLevel
+  - UserSettings.m_IsAutoBankEnabled
   UserSettings:
-    m_BasePath: Audio\GeneratedSoundBanks
+    m_BasePath: WwiseData/Bank
     m_StartupLanguage: English(US)
     m_EngineLogging: 1
     m_IsDecodedBankEnabled: 0

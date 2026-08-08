@@ -27,5 +27,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Maps/L6 - Cave.unity
     guid: 1b3cbfbbd1ba8a84986079e55f4fca59
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: c1c02f8d814c9b64289c5a1c85260b60, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: de91ed2012d4b1240bdf5045d179f6c4, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

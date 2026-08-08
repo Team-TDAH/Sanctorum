@@ -43,13 +43,13 @@
         <Property Name="SoundBankGeneratePrintGUID" Type="bool" Value="True" />
         <Property Name="SoundBankGeneratePrintPath" Type="bool" Value="True" />
         <Property Name="AutoSoundBankEnabled" Type="bool" Value="True" />
-        <Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\StreamingAssets\Audio\GeneratedSoundBanks\" />
+        <Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\WwiseData\Bank\" />
         <Property Name="SoundBankPaths" Type="string">
           <ValueList>
-            <Value Platform="Linux">GeneratedSoundBanks\Linux\</Value>
-            <Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
-            <Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
-            <Value Platform="Web">GeneratedSoundBanks\Web\</Value>
+            <Value Platform="Linux">..\Assets\WwiseData\Bank\Linux\</Value>
+            <Value Platform="Windows">..\Assets\WwiseData\Bank\Windows\</Value>
+            <Value Platform="Mac">..\Assets\WwiseData\Bank\Mac\</Value>
+            <Value Platform="Web">..\Assets\WwiseData\Bank\Web\</Value>
           </ValueList>
         </Property>
         <Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
@@ -1041,7 +1041,7 @@
             </Property>
             <Property Name="SoundBankPaths" Type="string">
               <ValueList>
-                <Value>GeneratedSoundBanks\</Value>
+                <Value>..\Assets\WwiseData\Bank\</Value>
               </ValueList>
             </Property>
             <Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
@@ -7002,7 +7002,7 @@
             </Property>
             <Property Name="SoundBankPaths" Type="string">
               <ValueList>
-                <Value>GeneratedSoundBanks\</Value>
+                <Value>..\Assets\WwiseData\Bank\</Value>
               </ValueList>
             </Property>
             <Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
