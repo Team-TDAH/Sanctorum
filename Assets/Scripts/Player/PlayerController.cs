@@ -100,6 +100,12 @@ public class PlayerController : MonoBehaviour
     //----------
     //RAYCAST Y COLISIONES DEL PLAYER
     [SerializeField] private LayerMask collisionMask;
+    //plataformas atravesables como el elden lilies
+    [SerializeField] private LayerMask layerPlatforms;
+    //cuanto se ignora de la plataforma
+    //LUEGO AJUSTAR SEGUN ANIMACION 
+    [SerializeField] private float dropDuration = 0.25f;
+    private float dropThroughTimer;
     //subir en caso de sentir que transpasamos objetos
     [SerializeField] private int horizontalRayCount = 8;
     [SerializeField] private int verticalRayCount = 4;
@@ -178,7 +184,16 @@ public class PlayerController : MonoBehaviour
         //jumpbuffer
         if (jumpAction != null && jumpAction.WasPressedThisFrame())
         {
-            jumpBufferCounter = jumpBufferTime;
+            //abajo + salto nos deja caer de la plataforma en vez de saltar
+            if (moveInput.y < -0.5f)
+            {
+                dropThroughTimer = dropDuration;
+                jumpBufferCounter = 0f;
+            }
+            else
+            {
+                jumpBufferCounter = jumpBufferTime;
+            }
         }
         else
         {
@@ -196,6 +211,7 @@ public class PlayerController : MonoBehaviour
         }
         //solo se inicia si el cooldown del dash termino y no estamos dasheando
         dashCooldownCounter -= Time.deltaTime;
+        dropThroughTimer -= Time.deltaTime;
     }
     //fisica o movimiento en el fixed, es la forma correcta de hacerlo, y en el update inputs y demas correciones
     private void FixedUpdate()
@@ -390,6 +406,9 @@ public class PlayerController : MonoBehaviour
 
             if (hit)
             {
+                //las one way no frenan de costado, se atraviesan
+                if (((1 << hit.collider.gameObject.layer) & layerPlatforms) != 0) continue;
+
                 deltaMovement.x = (hit.distance - skinWidth) * directionX;
                 rayLength = hit.distance;
             }
@@ -407,6 +426,10 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
             if (hit)
             {
+                //solo frena cuando caemos, sino atravieza
+                bool isOneWay = ((1 << hit.collider.gameObject.layer) & layerPlatforms) != 0;
+                if (isOneWay && (directionY == 1f || dropThroughTimer > 0f)) continue;
+                //fin plataforma atravesable
                 deltaMovement.y = (hit.distance - skinWidth) * directionY;
                 rayLength = hit.distance;
                 if (directionY == -1)

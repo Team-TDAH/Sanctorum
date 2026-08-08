@@ -57,16 +57,16 @@ public class SceneFader : MonoBehaviour
         yield return Animate(gameplayDarkness, closedDarkness);
     }
 
-    private IEnumerator Animate(float from, float to)
+private IEnumerator Animate(float from, float to)
     {
         if (shadowRenderer == null) yield break;
 
         IsFading = true;
         float timer = 0f;
-
         while (timer < fadeDuration)
         {
-            timer += Time.deltaTime;
+            //arreglo de bug que en el primer frame se comia todo el shader
+            timer += Mathf.Min(Time.deltaTime, 0.05f);
             float t = fadeCurve.Evaluate(Mathf.Clamp01(timer / fadeDuration));
             SetDarkness(Mathf.Lerp(from, to, t));
             yield return null;
