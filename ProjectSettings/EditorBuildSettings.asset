@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Maps/L4 - Bridge.unity
     guid: 2cfbb94454c40ab4b8761b82cddf3204
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Maps/L5 - Bossroom.unity
     guid: ce7b018261ad8e14f85ec0735accb930
   - enabled: 1

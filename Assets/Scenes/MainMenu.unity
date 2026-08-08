@@ -496,7 +496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QUIT
+  m_text: SALIR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
   m_sharedMaterial: {fileID: 3411540416743880911, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yes
+  m_text: "S\xED"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
   m_sharedMaterial: {fileID: 3411540416743880911, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
@@ -1022,7 +1022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SETTINGS
+  m_text: AJUSTES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
   m_sharedMaterial: {fileID: 3411540416743880911, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Are you sure you want to start a \nNew Game?"
+  m_text: "\xBFestas seguro de iniciar un nuevo juego?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
   m_sharedMaterial: {fileID: 3411540416743880911, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &842180594
@@ -2951,7 +2951,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BACK TO MENU
+  m_text: REGRESAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
   m_sharedMaterial: {fileID: 3411540416743880911, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CONTINUE
+  m_text: CONTINUAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
   m_sharedMaterial: {fileID: 3411540416743880911, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
@@ -3535,7 +3535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY GAME
+  m_text: Iniciar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
   m_sharedMaterial: {fileID: 3411540416743880911, guid: ec319f4c79c5ca940ba6f064a9d42cdd, type: 2}
