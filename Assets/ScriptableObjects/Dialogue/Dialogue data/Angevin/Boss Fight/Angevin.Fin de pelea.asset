@@ -12,19 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f1c3ac0e4bb524b9db04ffc6da360d, type: 3}
   m_Name: Angevin.Fin de pelea
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  npcPortrait: {fileID: -4908389164697428566, guid: fc3a95821aab6054796b5e04eb6771e1, type: 3}
+  participants:
+  - speakerName: Angevin
+    portrait: {fileID: -4908389164697428566, guid: fc3a95821aab6054796b5e04eb6771e1, type: 3}
+    side: 1
   lines:
-  - speaker: 1
+  - isMiharu: 0
+    participantIndex: 0
     text: "Veo que te protege un dios. Me has vencido en un duelo, te dejar\xE9 pasar."
-    speakerName: Angevin
-  - speaker: 1
+  - isMiharu: 0
+    participantIndex: 0
     text: "Ten cuidado mortal no te imaginas los que te esperan m\xE1s all\xE1 de
       esta orilla."
-    speakerName: Angevin
-  - speaker: 0
+  - isMiharu: 1
+    participantIndex: 0
     text: "Tengo que hacerlo, promet\xED a mi esposo que pase lo que pase proteger\xEDa
       a nuestro hijo."
-    speakerName: Miharu
-  - speaker: 1
+  - isMiharu: 0
+    participantIndex: 0
     text: "Entonces toma esta moneda. Ponla en agua y acudir\xE9 en tu ayuda."
-    speakerName: Angevin

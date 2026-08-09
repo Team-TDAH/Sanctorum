@@ -1,27 +1,31 @@
 using UnityEngine;
 
-//para ver quien resaltar, dependiendo de quien hable
-public enum DialogueSpeaker
+//ahora es algo mas confuso, porque es x indice, donde el 0 es el primer hablante y 1 el segundo, para miharu hay que marcar la casilla de miharu
+//aca se elije de q lado aparece, distinto a dead as disco pero mejor croe yo
+public enum PortraitSide
 {
-    Miharu, 
-    NPC     //cualquier npc o boss, o luego vere como seria con monologos
+    Left,
+    Right
 }
-//una linea individual del dialogo
+//los literalmente participantes de la conversacion
+[System.Serializable]
+public class DialogueParticipant
+{
+    public string speakerName;
+    public Sprite portrait;
+    public PortraitSide side = PortraitSide.Left;
+}
+//la linea individual de dialogo, que puede ser de miharu o de un participante
 [System.Serializable]
 public class DialogueLine
 {
-    public DialogueSpeaker speaker;
+    public bool isMiharu;
+    public int participantIndex;
     [TextArea] public string text;
-    //el nombre de quein sea con quien estemos hablamos
-    public string speakerName;
 }
-
-//igual q con abilitySo, click derecho en assets y vmaos a dialogue y luego conversacion
 [CreateAssetMenu(fileName = "Dialogue", menuName = "Dialogue/Conversation")]
 public class DialogueSO : ScriptableObject
 {
-    //la iamgen del que sea con quien hablemos, el de miharu no hace falta aca, luego lo deberia meter en algun lado asi siempre es el mismo
-    public Sprite npcPortrait;
-    //las lines en "total" orden para q funque
+    public DialogueParticipant[] participants;
     public DialogueLine[] lines;
 }

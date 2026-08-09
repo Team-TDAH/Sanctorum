@@ -147,7 +147,7 @@ MonoBehaviour:
     m_Bits: 8
   hitStopChannel: {fileID: 11400000, guid: 5f274bfbcb765704dabd0e250c5a5fc3, type: 2}
   impulseSource: {fileID: 4370216694185662105}
-  shakeForce: 0.11
+  shakeForce: 0.06
 --- !u!114 &4370216694185662105
 MonoBehaviour:
   m_ObjectHideFlags: 0
