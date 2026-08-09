@@ -15,9 +15,6 @@ MonoBehaviour:
   npcPortrait: {fileID: 0}
   lines:
   - speaker: 0
-    text: 
-    speakerName: 
-  - speaker: 0
     text: "No pareces muerta. Dime \xBFC\xF3mo llegaste hasta aqu\xED si est\xE1s
       viva? Est\xE1s sangrando, ven y deja que te ayude.\r\nTe ayudar\xE9 cuando
       necesites recuperarte. Solo ven y pidemelo."

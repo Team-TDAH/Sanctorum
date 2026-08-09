@@ -14,21 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   npcPortrait: {fileID: 0}
   lines:
-  - speaker: 0
-    text: 
-    speakerName: 
   - speaker: 1
-    text: Nanni, como te he dicho antes, no hago devoluciones.
+    text: "Gracias por salvarme, pens\xE9 que nunca terminar\xEDa esa tortura."
     speakerName: ???
-  - speaker: 1
-    text: "Perdona pens\xE9 que eras otra persona. Soy Ea-Nasir, el akadio. Ven y
-      tr\xE1eme las riquezas que encuentres; a cambio te dar\xE9 Objetos \xFAtiles.
-      Unas monedas de cobre es lo \xFAnico que te pido a cambio de los mejores objetos
-      que conseguir\xE1s de este lado de la vida."
-    speakerName: Ea-Nasir
   - speaker: 0
-    text: "\xBFEstas servir\xE1n?"
+    text: "\xBFQui\xE9n eres?"
     speakerName: Miharu
-  - speaker: 0
-    text: Si.
+  - speaker: 1
+    text: Soy Ea-Nasir, el acadio. Ven a buscarme a mi tienda cuando puedas.
     speakerName: Ea-Nasir
