@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f1c3ac0e4bb524b9db04ffc6da360d, type: 3}
   m_Name: Ghost.1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  npcPortrait: {fileID: -6231438509072843464, guid: db412032fa806fa4cacdcd3276f16db8, type: 3}
+  participants:
+  - speakerName: Ghost
+    portrait: {fileID: -6231438509072843464, guid: db412032fa806fa4cacdcd3276f16db8, type: 3}
+    side: 1
   lines:
-  - speaker: 1
+  - isMiharu: 0
+    participantIndex: 0
     text: "Ten cuidado se escuchan muchos ruidos extra\xF1os."
-    speakerName: Fantasma
