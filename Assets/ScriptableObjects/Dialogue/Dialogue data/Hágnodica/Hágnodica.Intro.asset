@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f1c3ac0e4bb524b9db04ffc6da360d, type: 3}
   m_Name: "H\xE1gnodica.Intro"
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  npcPortrait: {fileID: 0}
+  participants:
+  - speakerName: "H\xE1gnodica"
+    portrait: {fileID: 0}
+    side: 0
   lines:
-  - speaker: 0
+  - isMiharu: 0
+    participantIndex: 0
     text: "No pareces muerta. Dime \xBFC\xF3mo llegaste hasta aqu\xED si est\xE1s
       viva? Est\xE1s sangrando, ven y deja que te ayude.\r\nTe ayudar\xE9 cuando
       necesites recuperarte. Solo ven y pidemelo."
-    speakerName: "H\xE1gnodica"

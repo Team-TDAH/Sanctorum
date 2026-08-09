@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f1c3ac0e4bb524b9db04ffc6da360d, type: 3}
   m_Name: EaNasir.Intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  npcPortrait: {fileID: 0}
+  participants:
+  - speakerName: Ea-Nasir
+    portrait: {fileID: 0}
+    side: 0
   lines:
-  - speaker: 1
+  - isMiharu: 0
+    participantIndex: 0
     text: "Gracias por salvarme, pens\xE9 que nunca terminar\xEDa esa tortura."
-    speakerName: ???
-  - speaker: 0
+  - isMiharu: 1
+    participantIndex: 1
     text: "\xBFQui\xE9n eres?"
-    speakerName: Miharu
-  - speaker: 1
+  - isMiharu: 0
+    participantIndex: 0
     text: Soy Ea-Nasir, el acadio. Ven a buscarme a mi tienda cuando puedas.
-    speakerName: Ea-Nasir
