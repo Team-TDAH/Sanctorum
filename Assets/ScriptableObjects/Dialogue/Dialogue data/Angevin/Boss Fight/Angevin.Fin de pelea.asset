@@ -19,11 +19,7 @@ MonoBehaviour:
   lines:
   - isMiharu: 0
     participantIndex: 0
-    text: "Veo que te protege un dios. Me has vencido en un duelo, te dejar\xE9 pasar."
-  - isMiharu: 0
-    participantIndex: 0
-    text: "Ten cuidado mortal no te imaginas los que te esperan m\xE1s all\xE1 de
-      esta orilla."
+    text: Veo que estas dispuesta a hacer todo para rescatar a tu hijo.
   - isMiharu: 1
     participantIndex: 0
     text: "Tengo que hacerlo, promet\xED a mi esposo que pase lo que pase proteger\xEDa
@@ -31,3 +27,6 @@ MonoBehaviour:
   - isMiharu: 0
     participantIndex: 0
     text: "Entonces toma esta moneda. Ponla en agua y acudir\xE9 en tu ayuda."
+  - isMiharu: 0
+    participantIndex: 0
+    text: Pero te advierto una vez que alguien entra en Sanctorum no vuelve a salir.

@@ -19,20 +19,16 @@ MonoBehaviour:
   lines:
   - isMiharu: 0
     participantIndex: 0
-    text: "A\xFAn no ha llegado tu hora de cruzar este r\xEDo."
+    text: "A\xFAn no ha llegado tu hora de cruzar este r\xEDo, Miharu."
   - isMiharu: 1
     participantIndex: 0
-    text: Tengo que rescatar a mi hijo.
+    text: "\xBFSabes quien soy?"
   - isMiharu: 0
     participantIndex: 0
-    text: ' Lamento escuchar que una madre y su hijo sean separados por las vicisitudes
-      de la vida, pero a veces el destino de uno es sufrir los golpes y flechas de
-      la ultrajante fortuna.
-
-'
+    text: "Conozco a todos los que pasan por aqu\xED"
   - isMiharu: 1
     participantIndex: 0
-    text: "Mi destino es el que yo elija, cruzar\xE9 con tu bendici\xF3n o sin ella."
+    text: Entonces sabes que tengo que cruzar para rescatar a mi hijo, Tojiro.
   - isMiharu: 0
     participantIndex: 0
-    text: "Si esa es tu elecci\xF3n, derrotame en un duelo y te dejar\xE9 cruzar."
+    text: "Demuestrame que puedes hacerlo y te dejar\xE9 cruzar hasta Sanctorum."
