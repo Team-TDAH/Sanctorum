@@ -113,8 +113,6 @@ InitTestScene*.unity*
 /[Aa]ssets/[Rr]esources/[Pp]erformanceTestRunInfo.json*
 /[Aa]ssets/[Rr]esources/[Rr]un[Ss]ettings.json*
 
-/[Aa]ssets/[Rr]esources/[Rr]un[Ss]ettings.json*
-
 # Soluciones generadas por el IDE
 *.slnx
 
