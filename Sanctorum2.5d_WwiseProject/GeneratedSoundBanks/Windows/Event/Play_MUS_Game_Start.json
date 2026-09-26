@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1198003017",
+    "Type": "Event",
+    "GUID": "{DBD9925B-AFC9-494C-9ACF-C7FA19214B99}",
+    "Language": "SFX",
+    "Hash": "{BFF5A599-7621-7260-5FC1-E233AE897BB5}",
+    "ObjectPath": "Play_MUS_Game_Start",
+    "ShortName": "Play_MUS_Game_Start",
+    "Path": "Event/Play_MUS_Game_Start.bnk",
+    "Media": [
+     {
+      "Id": "923414512",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Sola_-Lejos.wav",
+      "Path": "Media/923414512.wem",
+      "CachePath": "76/{7662DCD1-8B9A-0B2E-DFA5-586B9E529606}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1198003017",
+      "Name": "Play_MUS_Game_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_MUS_Game_Start",
+      "GUID": "{DBD9925B-AFC9-494C-9ACF-C7FA19214B99}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "923414512"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{694E7B46-611B-345C-F415-B29B8B6E872F}"
+ }
+}

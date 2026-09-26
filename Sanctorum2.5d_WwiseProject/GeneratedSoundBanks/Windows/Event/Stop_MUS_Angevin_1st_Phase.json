@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3275593913",
+    "Type": "Event",
+    "GUID": "{6A34E9BD-C768-409E-9CB1-ED817BC09BEC}",
+    "Language": "SFX",
+    "Hash": "{EC2F5BC3-54A2-C3D3-9D31-63F6452583B9}",
+    "ObjectPath": "Stop_MUS_Angevin_1st_Phase",
+    "ShortName": "Stop_MUS_Angevin_1st_Phase",
+    "Path": "Event/Stop_MUS_Angevin_1st_Phase.bnk",
+    "Events": [
+     {
+      "Id": "3275593913",
+      "Name": "Stop_MUS_Angevin_1st_Phase",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_MUS_Angevin_1st_Phase",
+      "GUID": "{6A34E9BD-C768-409E-9CB1-ED817BC09BEC}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{5C884DA5-0DCA-22AA-9ABB-3CB2D8A02070}"
+ }
+}

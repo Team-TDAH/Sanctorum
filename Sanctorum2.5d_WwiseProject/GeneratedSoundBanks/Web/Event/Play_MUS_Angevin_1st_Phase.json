@@ -1,0 +1,65 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Web",
+  "BasePlatform": "Web",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2179593007",
+    "Type": "Event",
+    "GUID": "{1852A187-D678-4D99-94B9-506A2C6B7012}",
+    "Language": "SFX",
+    "Hash": "{99C9F6DB-E58A-ED35-822D-E0EA5F7760CB}",
+    "ObjectPath": "Play_MUS_Angevin_1st_Phase",
+    "ShortName": "Play_MUS_Angevin_1st_Phase",
+    "Path": "Event/Play_MUS_Angevin_1st_Phase.bnk",
+    "Media": [
+     {
+      "Id": "197270574",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Combate-contra-Angevin.wav",
+      "Path": "Media/197270574.wem",
+      "CachePath": "4B/{4BBEBD3A-7364-BD97-C328-2CE549C3C667}.wem"
+     }
+    ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "4269441574",
+       "Name": "Heavy_Metal",
+       "ObjectPath": "\\Effects\\Factory Effects\\Flanger\\Flanging\\Heavy_Metal",
+       "GUID": "{9104321C-9E54-4879-A29A-EF8D46BE9035}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "2179593007",
+      "Name": "Play_MUS_Angevin_1st_Phase",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_MUS_Angevin_1st_Phase",
+      "GUID": "{1852A187-D678-4D99-94B9-506A2C6B7012}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "197270574"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "4269441574"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D01D3A5A-BD0D-7767-92F6-15A3BAC309BC}"
+ }
+}

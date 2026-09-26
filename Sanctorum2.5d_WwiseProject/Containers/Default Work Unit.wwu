@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}" SchemaVersion="133">
+	<Containers>
+		<WorkUnit Name="Default Work Unit" ID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}" PersistMode="Standalone">
+			<ChildrenList>
+				<PropertyContainer Name="SFX" ID="{C7368EB8-32A1-4475-8C50-BA608285E404}" ShortID="276541613">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<PropertyContainer Name="Player" ID="{02489A77-D3EE-4E95-A3BB-3025BEE8AF7F}" ShortID="287649967">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<PropertyContainer Name="Footsteps" ID="{4BBE8713-C38B-4D3F-84A2-4755CA1D3A93}" ShortID="625537553">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="SFX_Player_Footstep_Stone" ID="{55B1770A-E3D9-4292-AC4F-573A0A4F4043}" ShortID="288623635">
+											<PropertyList>
+												<Property Name="AttenuationDistanceScaling" Type="Real32" Value="4"/>
+												<Property Name="Lowpass" Type="int16">
+													<ValueList>
+														<Value>37</Value>
+													</ValueList>
+												</Property>
+												<Property Name="OverrideEffect" Type="bool" Value="True"/>
+												<Property Name="Pitch" Type="int32">
+													<ValueList>
+														<Value>-100</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-15</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<Custom>
+														<Attenuation Name="Attenuation (Custom)" ID="{E525CA0E-8C07-483F-94FE-EE9AAE52CB34}" ShortID="294117534">
+															<CurveUsageInfoList>
+																<VolumeDryUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+																		<Curve Name="VolumeDry" ID="{9BA5508F-3B30-4BF3-912E-AF2329492CC9}">
+																			<PropertyList>
+																				<Property Name="Flags" Type="int32" Value="3"/>
+																			</PropertyList>
+																			<PointList>
+																				<Point>
+																					<XPos>0</XPos>
+																					<YPos>0</YPos>
+																					<Flags>5</Flags>
+																				</Point>
+																				<Point>
+																					<XPos>100</XPos>
+																					<YPos>-200</YPos>
+																					<Flags>37</Flags>
+																				</Point>
+																			</PointList>
+																		</Curve>
+																	</CurveUsageInfo>
+																</VolumeDryUsage>
+																<VolumeWetGameUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+																</VolumeWetGameUsage>
+																<VolumeWetUserUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+																</VolumeWetUserUsage>
+																<LowPassFilterUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+																</LowPassFilterUsage>
+																<HighPassFilterUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+																</HighPassFilterUsage>
+																<DualShelfUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+																</DualShelfUsage>
+																<SpreadUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+																</SpreadUsage>
+																<FocusUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+																</FocusUsage>
+																<ObstructionVolumeUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</ObstructionVolumeUsage>
+																<ObstructionLPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</ObstructionLPFUsage>
+																<ObstructionHPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</ObstructionHPFUsage>
+																<ObstructionDSFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</ObstructionDSFUsage>
+																<OcclusionVolumeUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</OcclusionVolumeUsage>
+																<OcclusionLPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</OcclusionLPFUsage>
+																<OcclusionHPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</OcclusionHPFUsage>
+																<OcclusionDSFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</OcclusionDSFUsage>
+																<DiffractionVolumeUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</DiffractionVolumeUsage>
+																<DiffractionLPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</DiffractionLPFUsage>
+																<DiffractionHPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</DiffractionHPFUsage>
+																<DiffractionDSFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</DiffractionDSFUsage>
+																<TransmissionVolumeUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</TransmissionVolumeUsage>
+																<TransmissionLPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</TransmissionLPFUsage>
+																<TransmissionHPFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</TransmissionHPFUsage>
+																<TransmissionDSFUsage>
+																	<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+																</TransmissionDSFUsage>
+															</CurveUsageInfoList>
+														</Attenuation>
+													</Custom>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SFX_Player_Footstep_Stone_01" ID="{589CCA21-F131-45BA-BF83-47B05B5C828A}" ShortID="504389786">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_01" ID="{9C952184-C237-4C99-9246-393813E56348}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10118"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="904926012"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_01" ID="{9C952184-C237-4C99-9246-393813E56348}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_02" ID="{9E980316-FEC5-4CB8-A267-0607E10D5386}" ShortID="579162110">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_02" ID="{47292961-9828-4B19-9FDD-94F407F89A77}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.09713"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="94408691"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_02" ID="{47292961-9828-4B19-9FDD-94F407F89A77}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_03" ID="{F1C2055A-ED90-4F33-B87E-3DD10961B6C4}" ShortID="18685878">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_03" ID="{FC23378F-FFD4-42C0-9E25-F8481803C893}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.1012"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="503900180"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_03" ID="{FC23378F-FFD4-42C0-9E25-F8481803C893}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_04" ID="{C147A442-79D7-4A55-BC51-F30CF4D1B387}" ShortID="754289164">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_04" ID="{D15737B2-BDE3-4834-BE64-478711E1B790}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.09285"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_04.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="734264734"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_04" ID="{D15737B2-BDE3-4834-BE64-478711E1B790}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_05" ID="{9BCEB268-B100-467B-97FE-8F59C99EF95F}" ShortID="587964863">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_05" ID="{89B359A8-B0A0-4625-981F-1C96F7C66D2E}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10031"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_05.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="643468274"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_05" ID="{89B359A8-B0A0-4625-981F-1C96F7C66D2E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_06" ID="{00B56B4A-2BEA-4E04-91D0-6AB48479A462}" ShortID="566727565">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_06" ID="{34A75985-B3D3-41FC-BE5B-9CBC61E81BE6}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.09969"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_06.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="304410991"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_06" ID="{34A75985-B3D3-41FC-BE5B-9CBC61E81BE6}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_07" ID="{05489754-CECF-4986-AAAC-F79EBF0CCE1D}" ShortID="718326751">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_07" ID="{87453424-E408-4FF4-A4FD-AFA9FCDA3F06}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10106"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_07.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="150194890"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_07" ID="{87453424-E408-4FF4-A4FD-AFA9FCDA3F06}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_08" ID="{705DA524-B0C6-4024-A9B9-CCFE013E1B3F}" ShortID="965863328">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_08" ID="{BEDE847A-9A22-4E00-BCCE-7422558DDDFD}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10052"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_08.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="193737524"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_08" ID="{BEDE847A-9A22-4E00-BCCE-7422558DDDFD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_09" ID="{356F69F1-6071-4FEA-AD50-6CB82A165ABE}" ShortID="983767738">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_09" ID="{28944165-87B4-4DE8-B394-F2A0CB4F08BC}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.1003"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_09.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="945762979"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_09" ID="{28944165-87B4-4DE8-B394-F2A0CB4F08BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Player_Footstep_Stone_10" ID="{F9986B64-4324-4E54-AEBB-6DB09D1DA86C}" ShortID="1014682916">
+													<PropertyList>
+														<Property Name="OverrideOutput" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="SFX" ID="{79DECA82-1165-41DD-A458-3D32384AD25D}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Player_Footstep_Stone_10" ID="{12D9E2DE-4F05-4ABA-A16A-0E1E0CDABA25}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.10046"/>
+																<Property Name="FadeInShape" Type="int16" Value="6"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Player_Footstep_Stone_10.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="209261723"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Player_Footstep_Stone_10" ID="{12D9E2DE-4F05-4ABA-A16A-0E1E0CDABA25}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</PropertyContainer>
+							</ChildrenList>
+						</PropertyContainer>
+					</ChildrenList>
+				</PropertyContainer>
+				<PropertyContainer Name="Ambience" ID="{5C7F0EBB-907C-4410-A766-3FB000E4A30B}" ShortID="299979401">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambience" ID="{F164595C-AE34-4EC7-AD8B-E5FF1550AC8A}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<PropertyContainer Name="Cave" ID="{34CFEBB3-9B04-4CD8-84AC-F1500D83A263}" ShortID="257106672">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="AMB_Cave" ID="{B7001BE6-4157-4BAC-8D4B-948F580CDF9E}" ShortID="1058816703">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>60</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideEffect" Type="bool" Value="True"/>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-100</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Ambience" ID="{F164595C-AE34-4EC7-AD8B-E5FF1550AC8A}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Caverna" ID="{8587686C-47A9-448D-A7DD-5C216725E241}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="7.54674"/>
+												<Property Name="FadeInShape" Type="int16" Value="6"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="10.36072"/>
+												<Property Name="LoopEnd" Type="Real64" Value="125.09924"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimEnd" Type="Real64" Value="125.09949"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Caverna.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="920687586"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<EffectSlot Name="" ID="{2519E094-2071-4D5C-87F3-9E5B74DA88DE}" ShortID="734593440">
+												<PropertyList>
+													<Property Name="Render" Type="bool" Value="True"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
+														<ObjectRef Name="Heavy_Metal" ID="{9104321C-9E54-4879-A29A-EF8D46BE9035}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+											<EffectSlot Name="" ID="{B21CBC0C-03A8-4035-8F92-7C6CFF027CB0}" ShortID="565727127">
+												<PropertyList>
+													<Property Name="Render" Type="bool" Value="True"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+														<ObjectRef Name="Medium" ID="{AEB3F175-958B-45F2-A4C2-3FBD4F456568}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</ObjectList>
+									</ObjectLists>
+									<ActiveSourceList>
+										<ActiveSource Name="Caverna" ID="{8587686C-47A9-448D-A7DD-5C216725E241}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</PropertyContainer>
+					</ChildrenList>
+				</PropertyContainer>
+				<PropertyContainer Name="Music" ID="{297E1ABE-146D-4B05-964D-647D8B739FD7}" ShortID="475062285">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{AE6189C2-2309-4474-9AE0-F180DC3558C7}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="MUS_Angevin_1st_Phase" ID="{B2969961-06E7-4DE1-BCDF-8FFCAE5699F2}" ShortID="861367937">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>55</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{AE6189C2-2309-4474-9AE0-F180DC3558C7}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Combate-contra-Angevin" ID="{8BE18CC5-94BA-4E2E-A912-1BA560DBF6DB}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="4.7424"/>
+										<Property Name="FadeInShape" Type="int16" Value="4"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="8.0256"/>
+										<Property Name="FadeOutShape" Type="int16" Value="4"/>
+										<Property Name="LoopEnd" Type="Real64" Value="125.12577"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Combate-contra-Angevin.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="197270574"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{3D993188-2E29-4666-9FC2-045F01ACF2C0}" ShortID="993146739">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
+												<ObjectRef Name="Heavy_Metal" ID="{9104321C-9E54-4879-A29A-EF8D46BE9035}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+							<ActiveSourceList>
+								<ActiveSource Name="Combate-contra-Angevin" ID="{8BE18CC5-94BA-4E2E-A912-1BA560DBF6DB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MUS_Game_Start" ID="{A3B35C87-AC1E-4582-81B4-56B2753CBAFA}" ShortID="911317926">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>62</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OutputBusDualshelf" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OutputBusLowpass" Type="int16">
+									<ValueList>
+										<Value>47</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+								<Property Name="OverridePositioning" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-20</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D57A54DE-E08E-4876-BB72-341B018CCB20}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music" ID="{AE6189C2-2309-4474-9AE0-F180DC3558C7}" WorkUnitID="{E1A4BCC0-0BB9-4406-B1AF-A2BD6B435F81}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sola_-Lejos" ID="{194B1601-1FB7-4D28-A469-43B3A9D51E7E}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="7.22202"/>
+										<Property Name="FadeInShape" Type="int16" Value="6"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="11.86431"/>
+										<Property Name="FadeOutShape" Type="int16" Value="6"/>
+										<Property Name="LoopEnd" Type="Real64" Value="150.89407"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Sola_-Lejos.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="923414512"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<PositioningInfo>
+								<Panner Name="" ID="{78D97B46-E986-4C0A-BFE8-8885E358307B}"/>
+							</PositioningInfo>
+							<ActiveSourceList>
+								<ActiveSource Name="Sola_-Lejos" ID="{194B1601-1FB7-4D28-A469-43B3A9D51E7E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</PropertyContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</Containers>
+</WwiseDocument>

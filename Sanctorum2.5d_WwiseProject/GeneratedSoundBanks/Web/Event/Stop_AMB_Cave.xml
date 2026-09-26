@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1551221296" Type="Event" GUID="{94446DFA-D643-4D82-8D92-1223E7337C01}" Language="SFX" Hash="{FF98B234-DA15-AB2B-52D5-3F29EC72854A}">
+			<ObjectPath>Stop_AMB_Cave</ObjectPath>
+			<ShortName>Stop_AMB_Cave</ShortName>
+			<Path>Event/Stop_AMB_Cave.bnk</Path>
+			<Events>
+				<Event Id="1551221296" Name="Stop_AMB_Cave" ObjectPath="\Events\Default Work Unit\Stop_AMB_Cave" GUID="{94446DFA-D643-4D82-8D92-1223E7337C01}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{BB1E8A83-910A-C96C-E0A8-DF8C797F5F30}</FileHash>
+</SoundBanksInfo>

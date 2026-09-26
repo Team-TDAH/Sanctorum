@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3992594791",
+    "Type": "Event",
+    "GUID": "{C11F114F-C21B-4B24-8458-7FE02A6DB232}",
+    "Language": "SFX",
+    "Hash": "{BC632266-3C0C-F527-8FD5-410507B15B65}",
+    "ObjectPath": "Stop_MUS_Game_Start",
+    "ShortName": "Stop_MUS_Game_Start",
+    "Path": "Event/Stop_MUS_Game_Start.bnk",
+    "Events": [
+     {
+      "Id": "3992594791",
+      "Name": "Stop_MUS_Game_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_MUS_Game_Start",
+      "GUID": "{C11F114F-C21B-4B24-8458-7FE02A6DB232}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{AA5710DD-19C1-9B86-552A-FF3FAC808EDB}"
+ }
+}

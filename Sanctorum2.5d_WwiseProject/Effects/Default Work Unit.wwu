@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A3FD4C21-B620-47D3-9DE1-83AC3B1081D0}" SchemaVersion="133">
+	<Effects>
+		<WorkUnit Name="Default Work Unit" ID="{A3FD4C21-B620-47D3-9DE1-83AC3B1081D0}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="New_iZotope_Trash_Distortion" ID="{5DD3ADF7-CC6F-4CA0-B11E-F3CAB5DD5FAE}" PluginName="iZotope Trash Distortion" CompanyID="259" PluginID="3" PluginType="3">
+					<PropertyList>
+						<Property Name="Distortion1OutputGain" Type="Real32" Value="2"/>
+						<Property Name="Distortion1Trash" Type="Real32" Value="1"/>
+						<Property Name="Distortion1Type" Type="int32" Value="19"/>
+						<Property Name="Distortion2Mix" Type="Real32" Value="0"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
+	</Effects>
+</WwiseDocument>
