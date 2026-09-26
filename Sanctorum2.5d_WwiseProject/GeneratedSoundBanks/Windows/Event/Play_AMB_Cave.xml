@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2314402090" Type="Event" GUID="{FE8082D4-F5A9-404E-BEBE-8AF8EE3C6F3C}" Language="SFX" Hash="{538BCF12-B09A-E255-3E3E-6517BE5D37D4}">
+			<ObjectPath>Play_AMB_Cave</ObjectPath>
+			<ShortName>Play_AMB_Cave</ShortName>
+			<Path>Event/Play_AMB_Cave.bnk</Path>
+			<Media>
+				<File Id="920687586" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Caverna.wav</ShortName>
+					<Path>Media/920687586.wem</Path>
+					<CachePath>1B/{1B875A1D-8DB2-8960-A34C-52CA25D687BE}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2314402090" Name="Play_AMB_Cave" ObjectPath="\Events\Default Work Unit\Play_AMB_Cave" GUID="{FE8082D4-F5A9-404E-BEBE-8AF8EE3C6F3C}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="920687586"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{B7537C87-A045-81B5-92B7-18A64830E18B}</FileHash>
+</SoundBanksInfo>

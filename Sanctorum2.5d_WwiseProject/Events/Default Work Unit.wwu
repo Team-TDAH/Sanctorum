@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3A5BC46B-1E18-45DD-9739-429788577225}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{3A5BC46B-1E18-45DD-9739-429788577225}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_MUS_Game_Start" ID="{DBD9925B-AFC9-494C-9ACF-C7FA19214B99}">
+					<ChildrenList>
+						<Action Name="" ID="{39671BCD-7030-46AE-BC11-B1F2AC5ECCF4}" ShortID="682150950">
+							<PropertyList>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+								<Property Name="FadeInCurve" Type="int16" Value="5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_Game_Start" ID="{A3B35C87-AC1E-4582-81B4-56B2753CBAFA}" WorkUnitID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_MUS_Game_Start" ID="{C11F114F-C21B-4B24-8458-7FE02A6DB232}">
+					<ChildrenList>
+						<Action Name="" ID="{79A75CEA-2A43-4806-81B4-ECBB803E1467}" ShortID="984634543">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Delay" Type="Real64" Value="1"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_Game_Start" ID="{A3B35C87-AC1E-4582-81B4-56B2753CBAFA}" WorkUnitID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_MUS_Angevin_1st_Phase" ID="{1852A187-D678-4D99-94B9-506A2C6B7012}">
+					<ChildrenList>
+						<Action Name="" ID="{16A795EB-9E17-429E-8F3E-BA722D955C18}" ShortID="656170710">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_Angevin_1st_Phase" ID="{B2969961-06E7-4DE1-BCDF-8FFCAE5699F2}" WorkUnitID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_MUS_Angevin_1st_Phase" ID="{6A34E9BD-C768-409E-9CB1-ED817BC09BEC}">
+					<ChildrenList>
+						<Action Name="" ID="{007CE314-F8F5-4751-B1E0-1C80FC0604BB}" ShortID="723531538">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="3"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MUS_Angevin_1st_Phase" ID="{B2969961-06E7-4DE1-BCDF-8FFCAE5699F2}" WorkUnitID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_AMB_Cave" ID="{FE8082D4-F5A9-404E-BEBE-8AF8EE3C6F3C}">
+					<ChildrenList>
+						<Action Name="" ID="{F84EB09A-E7C4-4F82-A108-FE515922B1C4}" ShortID="257668809">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_Cave" ID="{B7001BE6-4157-4BAC-8D4B-948F580CDF9E}" WorkUnitID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_AMB_Cave" ID="{94446DFA-D643-4D82-8D92-1223E7337C01}">
+					<ChildrenList>
+						<Action Name="" ID="{EB03644B-6BF5-46A4-BB14-1815C8F6BADE}" ShortID="840304518">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="AMB_Cave" ID="{B7001BE6-4157-4BAC-8D4B-948F580CDF9E}" WorkUnitID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SFX_Player_Footstep_Stone" ID="{D3A35A2B-8720-4E4E-AB5C-C633DC4E7482}">
+					<ChildrenList>
+						<Action Name="" ID="{A44ED216-6380-4195-AE9D-E58FCDCF9505}" ShortID="239067621">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SFX_Player_Footstep_Stone" ID="{55B1770A-E3D9-4292-AC4F-573A0A4F4043}" WorkUnitID="{53BF60F0-4D8F-4255-A118-83F2B97F4805}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

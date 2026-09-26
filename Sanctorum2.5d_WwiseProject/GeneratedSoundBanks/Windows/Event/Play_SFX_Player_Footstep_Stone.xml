@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2307737092" Type="Event" GUID="{D3A35A2B-8720-4E4E-AB5C-C633DC4E7482}" Language="SFX" Hash="{EBA1F02C-CC5D-F29A-F78F-28D8245BF60C}">
+			<ObjectPath>Play_SFX_Player_Footstep_Stone</ObjectPath>
+			<ShortName>Play_SFX_Player_Footstep_Stone</ShortName>
+			<Path>Event/Play_SFX_Player_Footstep_Stone.bnk</Path>
+			<Media>
+				<File Id="94408691" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_02.wav</ShortName>
+					<Path>Media/94408691.wem</Path>
+					<CachePath>25/{2557AB81-80F9-12C5-16BF-2C9D80AEE42C}.wem</CachePath>
+				</File>
+				<File Id="150194890" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_07.wav</ShortName>
+					<Path>Media/150194890.wem</Path>
+					<CachePath>EB/{EB42DCF9-8CE3-37A1-94EA-2CCE8CB66571}.wem</CachePath>
+				</File>
+				<File Id="193737524" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_08.wav</ShortName>
+					<Path>Media/193737524.wem</Path>
+					<CachePath>E6/{E6FAAF7F-30D0-5BA7-8634-B2C005EEB070}.wem</CachePath>
+				</File>
+				<File Id="209261723" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_10.wav</ShortName>
+					<Path>Media/209261723.wem</Path>
+					<CachePath>CB/{CB41D1B4-B232-63E7-E8EE-AC05D1074DD6}.wem</CachePath>
+				</File>
+				<File Id="304410991" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_06.wav</ShortName>
+					<Path>Media/304410991.wem</Path>
+					<CachePath>26/{26894F3E-243F-6ADB-07DD-940906B67B1B}.wem</CachePath>
+				</File>
+				<File Id="503900180" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_03.wav</ShortName>
+					<Path>Media/503900180.wem</Path>
+					<CachePath>62/{623B645F-2EAD-36B1-85EA-697005625EE4}.wem</CachePath>
+				</File>
+				<File Id="643468274" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_05.wav</ShortName>
+					<Path>Media/643468274.wem</Path>
+					<CachePath>D8/{D8ECBA98-AD13-EB96-A221-C03CB3D2E49F}.wem</CachePath>
+				</File>
+				<File Id="734264734" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_04.wav</ShortName>
+					<Path>Media/734264734.wem</Path>
+					<CachePath>64/{6451F937-033B-4CED-0CAC-A2C3ABA6336F}.wem</CachePath>
+				</File>
+				<File Id="904926012" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_01.wav</ShortName>
+					<Path>Media/904926012.wem</Path>
+					<CachePath>19/{198FD560-5E5A-F6B8-79E6-6780B7FDD6CE}.wem</CachePath>
+				</File>
+				<File Id="945762979" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_09.wav</ShortName>
+					<Path>Media/945762979.wem</Path>
+					<CachePath>47/{47F99963-D039-4370-5650-8130C6247FE7}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2307737092" Name="Play_SFX_Player_Footstep_Stone" ObjectPath="\Events\Default Work Unit\Play_SFX_Player_Footstep_Stone" GUID="{D3A35A2B-8720-4E4E-AB5C-C633DC4E7482}" DurationType="OneShot" DurationMin="0.68375015" DurationMax="0.76346207">
+					<MediaRefs>
+						<MediaRef Id="94408691"/>
+						<MediaRef Id="150194890"/>
+						<MediaRef Id="193737524"/>
+						<MediaRef Id="209261723"/>
+						<MediaRef Id="304410991"/>
+						<MediaRef Id="503900180"/>
+						<MediaRef Id="643468274"/>
+						<MediaRef Id="734264734"/>
+						<MediaRef Id="904926012"/>
+						<MediaRef Id="945762979"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{64336124-B9C3-A564-D7FC-5D27FD1D9BB0}</FileHash>
+</SoundBanksInfo>

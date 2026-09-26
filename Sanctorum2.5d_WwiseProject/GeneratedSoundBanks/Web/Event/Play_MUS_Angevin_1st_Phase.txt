@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2179593007	Play_MUS_Angevin_1st_Phase			\Default Work Unit\Play_MUS_Angevin_1st_Phase	
+
+Effect plug-ins	ID	Name	Type				Notes
+	4269441574	Heavy_Metal	Wwise Flanger			
+

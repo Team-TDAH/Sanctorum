@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="3992594791" Type="Event" GUID="{C11F114F-C21B-4B24-8458-7FE02A6DB232}" Language="SFX" Hash="{BC632266-3C0C-F527-8FD5-410507B15B65}">
+			<ObjectPath>Stop_MUS_Game_Start</ObjectPath>
+			<ShortName>Stop_MUS_Game_Start</ShortName>
+			<Path>Event/Stop_MUS_Game_Start.bnk</Path>
+			<Events>
+				<Event Id="3992594791" Name="Stop_MUS_Game_Start" ObjectPath="\Events\Default Work Unit\Stop_MUS_Game_Start" GUID="{C11F114F-C21B-4B24-8458-7FE02A6DB232}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{7348D4DA-60F6-8858-685C-87760CB26383}</FileHash>
+</SoundBanksInfo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="1198003017" Type="Event" GUID="{DBD9925B-AFC9-494C-9ACF-C7FA19214B99}" Language="SFX" Hash="{BFF5A599-7621-7260-5FC1-E233AE897BB5}">
+			<ObjectPath>Play_MUS_Game_Start</ObjectPath>
+			<ShortName>Play_MUS_Game_Start</ShortName>
+			<Path>Event/Play_MUS_Game_Start.bnk</Path>
+			<Media>
+				<File Id="923414512" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Sola_-Lejos.wav</ShortName>
+					<Path>Media/923414512.wem</Path>
+					<CachePath>76/{7662DCD1-8B9A-0B2E-DFA5-586B9E529606}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1198003017" Name="Play_MUS_Game_Start" ObjectPath="\Events\Default Work Unit\Play_MUS_Game_Start" GUID="{DBD9925B-AFC9-494C-9ACF-C7FA19214B99}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="923414512"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{07C1DEB5-9296-B889-3636-31BECCFA4387}</FileHash>
+</SoundBanksInfo>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Web" BasePlatform="Web" SchemaVersion="16" SoundBankVersion="172">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>../../../Assets/GeneratedSoundBanks/Web</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1198003017" Type="Event" GUID="{DBD9925B-AFC9-494C-9ACF-C7FA19214B99}" Language="SFX" Hash="{BFF5A599-7621-7260-5FC1-E233AE897BB5}">
+			<ObjectPath>Play_MUS_Game_Start</ObjectPath>
+			<ShortName>Play_MUS_Game_Start</ShortName>
+			<Path>Event/Play_MUS_Game_Start.bnk</Path>
+			<Media>
+				<File Id="923414512" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Sola_-Lejos.wav</ShortName>
+					<Path>Media/923414512.wem</Path>
+					<CachePath>76/{7662DCD1-8B9A-0B2E-DFA5-586B9E529606}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1198003017" Name="Play_MUS_Game_Start" ObjectPath="\Events\Default Work Unit\Play_MUS_Game_Start" GUID="{DBD9925B-AFC9-494C-9ACF-C7FA19214B99}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="923414512"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" GUID="{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}" Language="SFX" Hash="{710AE473-5505-9ED8-CBAC-B0A66D2800C8}">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" ObjectPath="\Devices\Default Work Unit\No_Output" GUID="{198169C3-361C-4E2B-B2FB-883BCD70F5C4}" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" ObjectPath="\Devices\Default Work Unit\System" GUID="{E38CFD63-A1C4-4364-B1C1-37F5A4EEEB69}" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="85412153" Name="Ambience" ObjectPath="\Busses\Default Work Unit\Main Audio Bus\Ambience" GUID="{F164595C-AE34-4EC7-AD8B-E5FF1550AC8A}"/>
+				<Bus Id="393239870" Name="SFX" ObjectPath="\Busses\Default Work Unit\Main Audio Bus\SFX" GUID="{79DECA82-1165-41DD-A458-3D32384AD25D}"/>
+				<Bus Id="2246998526" Name="Main Audio Bus" ObjectPath="\Busses\Default Work Unit\Main Audio Bus" GUID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+				<Bus Id="3991942870" Name="Music" ObjectPath="\Busses\Default Work Unit\Main Audio Bus\Music" GUID="{AE6189C2-2309-4474-9AE0-F180DC3558C7}"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="1551221296" Type="Event" GUID="{94446DFA-D643-4D82-8D92-1223E7337C01}" Language="SFX" Hash="{FF98B234-DA15-AB2B-52D5-3F29EC72854A}">
+			<ObjectPath>Stop_AMB_Cave</ObjectPath>
+			<ShortName>Stop_AMB_Cave</ShortName>
+			<Path>Event/Stop_AMB_Cave.bnk</Path>
+			<Events>
+				<Event Id="1551221296" Name="Stop_AMB_Cave" ObjectPath="\Events\Default Work Unit\Stop_AMB_Cave" GUID="{94446DFA-D643-4D82-8D92-1223E7337C01}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2179593007" Type="Event" GUID="{1852A187-D678-4D99-94B9-506A2C6B7012}" Language="SFX" Hash="{99C9F6DB-E58A-ED35-822D-E0EA5F7760CB}">
+			<ObjectPath>Play_MUS_Angevin_1st_Phase</ObjectPath>
+			<ShortName>Play_MUS_Angevin_1st_Phase</ShortName>
+			<Path>Event/Play_MUS_Angevin_1st_Phase.bnk</Path>
+			<Media>
+				<File Id="197270574" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Combate-contra-Angevin.wav</ShortName>
+					<Path>Media/197270574.wem</Path>
+					<CachePath>4B/{4BBEBD3A-7364-BD97-C328-2CE549C3C667}.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="4269441574" Name="Heavy_Metal" ObjectPath="\Effects\Factory Effects\Flanger\Flanging\Heavy_Metal" GUID="{9104321C-9E54-4879-A29A-EF8D46BE9035}" LibName="Wwise Flanger" LibId="8192003"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="2179593007" Name="Play_MUS_Angevin_1st_Phase" ObjectPath="\Events\Default Work Unit\Play_MUS_Angevin_1st_Phase" GUID="{1852A187-D678-4D99-94B9-506A2C6B7012}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="197270574"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4269441574"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2307737092" Type="Event" GUID="{D3A35A2B-8720-4E4E-AB5C-C633DC4E7482}" Language="SFX" Hash="{EBA1F02C-CC5D-F29A-F78F-28D8245BF60C}">
+			<ObjectPath>Play_SFX_Player_Footstep_Stone</ObjectPath>
+			<ShortName>Play_SFX_Player_Footstep_Stone</ShortName>
+			<Path>Event/Play_SFX_Player_Footstep_Stone.bnk</Path>
+			<Media>
+				<File Id="94408691" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_02.wav</ShortName>
+					<Path>Media/94408691.wem</Path>
+					<CachePath>25/{2557AB81-80F9-12C5-16BF-2C9D80AEE42C}.wem</CachePath>
+				</File>
+				<File Id="150194890" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_07.wav</ShortName>
+					<Path>Media/150194890.wem</Path>
+					<CachePath>EB/{EB42DCF9-8CE3-37A1-94EA-2CCE8CB66571}.wem</CachePath>
+				</File>
+				<File Id="193737524" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_08.wav</ShortName>
+					<Path>Media/193737524.wem</Path>
+					<CachePath>E6/{E6FAAF7F-30D0-5BA7-8634-B2C005EEB070}.wem</CachePath>
+				</File>
+				<File Id="209261723" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_10.wav</ShortName>
+					<Path>Media/209261723.wem</Path>
+					<CachePath>CB/{CB41D1B4-B232-63E7-E8EE-AC05D1074DD6}.wem</CachePath>
+				</File>
+				<File Id="304410991" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_06.wav</ShortName>
+					<Path>Media/304410991.wem</Path>
+					<CachePath>26/{26894F3E-243F-6ADB-07DD-940906B67B1B}.wem</CachePath>
+				</File>
+				<File Id="503900180" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_03.wav</ShortName>
+					<Path>Media/503900180.wem</Path>
+					<CachePath>62/{623B645F-2EAD-36B1-85EA-697005625EE4}.wem</CachePath>
+				</File>
+				<File Id="643468274" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_05.wav</ShortName>
+					<Path>Media/643468274.wem</Path>
+					<CachePath>D8/{D8ECBA98-AD13-EB96-A221-C03CB3D2E49F}.wem</CachePath>
+				</File>
+				<File Id="734264734" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_04.wav</ShortName>
+					<Path>Media/734264734.wem</Path>
+					<CachePath>64/{6451F937-033B-4CED-0CAC-A2C3ABA6336F}.wem</CachePath>
+				</File>
+				<File Id="904926012" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_01.wav</ShortName>
+					<Path>Media/904926012.wem</Path>
+					<CachePath>19/{198FD560-5E5A-F6B8-79E6-6780B7FDD6CE}.wem</CachePath>
+				</File>
+				<File Id="945762979" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>SFX_Player_Footstep_Stone_09.wav</ShortName>
+					<Path>Media/945762979.wem</Path>
+					<CachePath>47/{47F99963-D039-4370-5650-8130C6247FE7}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2307737092" Name="Play_SFX_Player_Footstep_Stone" ObjectPath="\Events\Default Work Unit\Play_SFX_Player_Footstep_Stone" GUID="{D3A35A2B-8720-4E4E-AB5C-C633DC4E7482}" DurationType="OneShot" DurationMin="0.68375015" DurationMax="0.76346207">
+					<MediaRefs>
+						<MediaRef Id="94408691"/>
+						<MediaRef Id="150194890"/>
+						<MediaRef Id="193737524"/>
+						<MediaRef Id="209261723"/>
+						<MediaRef Id="304410991"/>
+						<MediaRef Id="503900180"/>
+						<MediaRef Id="643468274"/>
+						<MediaRef Id="734264734"/>
+						<MediaRef Id="904926012"/>
+						<MediaRef Id="945762979"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2314402090" Type="Event" GUID="{FE8082D4-F5A9-404E-BEBE-8AF8EE3C6F3C}" Language="SFX" Hash="{538BCF12-B09A-E255-3E3E-6517BE5D37D4}">
+			<ObjectPath>Play_AMB_Cave</ObjectPath>
+			<ShortName>Play_AMB_Cave</ShortName>
+			<Path>Event/Play_AMB_Cave.bnk</Path>
+			<Media>
+				<File Id="920687586" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Caverna.wav</ShortName>
+					<Path>Media/920687586.wem</Path>
+					<CachePath>1B/{1B875A1D-8DB2-8960-A34C-52CA25D687BE}.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2314402090" Name="Play_AMB_Cave" ObjectPath="\Events\Default Work Unit\Play_AMB_Cave" GUID="{FE8082D4-F5A9-404E-BEBE-8AF8EE3C6F3C}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="920687586"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3275593913" Type="Event" GUID="{6A34E9BD-C768-409E-9CB1-ED817BC09BEC}" Language="SFX" Hash="{EC2F5BC3-54A2-C3D3-9D31-63F6452583B9}">
+			<ObjectPath>Stop_MUS_Angevin_1st_Phase</ObjectPath>
+			<ShortName>Stop_MUS_Angevin_1st_Phase</ShortName>
+			<Path>Event/Stop_MUS_Angevin_1st_Phase.bnk</Path>
+			<Events>
+				<Event Id="3275593913" Name="Stop_MUS_Angevin_1st_Phase" ObjectPath="\Events\Default Work Unit\Stop_MUS_Angevin_1st_Phase" GUID="{6A34E9BD-C768-409E-9CB1-ED817BC09BEC}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3992594791" Type="Event" GUID="{C11F114F-C21B-4B24-8458-7FE02A6DB232}" Language="SFX" Hash="{BC632266-3C0C-F527-8FD5-410507B15B65}">
+			<ObjectPath>Stop_MUS_Game_Start</ObjectPath>
+			<ShortName>Stop_MUS_Game_Start</ShortName>
+			<Path>Event/Stop_MUS_Game_Start.bnk</Path>
+			<Events>
+				<Event Id="3992594791" Name="Stop_MUS_Game_Start" ObjectPath="\Events\Default Work Unit\Stop_MUS_Game_Start" GUID="{C11F114F-C21B-4B24-8458-7FE02A6DB232}" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{1F670470-62AD-66AC-8637-64B0F148021F}</FileHash>
+</SoundBanksInfo>

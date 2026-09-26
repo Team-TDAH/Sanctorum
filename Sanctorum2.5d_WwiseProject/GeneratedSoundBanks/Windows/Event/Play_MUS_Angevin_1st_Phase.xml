@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
+	<SoundBanks>
+		<SoundBank Id="2179593007" Type="Event" GUID="{1852A187-D678-4D99-94B9-506A2C6B7012}" Language="SFX" Hash="{99C9F6DB-E58A-ED35-822D-E0EA5F7760CB}">
+			<ObjectPath>Play_MUS_Angevin_1st_Phase</ObjectPath>
+			<ShortName>Play_MUS_Angevin_1st_Phase</ShortName>
+			<Path>Event/Play_MUS_Angevin_1st_Phase.bnk</Path>
+			<Media>
+				<File Id="197270574" Language="SFX" Streaming="false" Location="Loose">
+					<ShortName>Combate-contra-Angevin.wav</ShortName>
+					<Path>Media/197270574.wem</Path>
+					<CachePath>4B/{4BBEBD3A-7364-BD97-C328-2CE549C3C667}.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="4269441574" Name="Heavy_Metal" ObjectPath="\Effects\Factory Effects\Flanger\Flanging\Heavy_Metal" GUID="{9104321C-9E54-4879-A29A-EF8D46BE9035}" LibName="Wwise Flanger" LibId="8192003"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="2179593007" Name="Play_MUS_Angevin_1st_Phase" ObjectPath="\Events\Default Work Unit\Play_MUS_Angevin_1st_Phase" GUID="{1852A187-D678-4D99-94B9-506A2C6B7012}" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="197270574"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4269441574"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{70A61A04-5DFC-1D43-D4F1-416580F9F59E}</FileHash>
+</SoundBanksInfo>
