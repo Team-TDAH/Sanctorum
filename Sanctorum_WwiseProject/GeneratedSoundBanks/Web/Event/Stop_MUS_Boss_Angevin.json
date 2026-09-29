@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Web",
+  "BasePlatform": "Web",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2666496546",
+    "Type": "Event",
+    "GUID": "{AED2B73F-31B4-4A4E-AD17-9F6B11AC8AE3}",
+    "Language": "SFX",
+    "Hash": "{B3C000A7-3396-87C4-FD32-26F8C21860FE}",
+    "ObjectPath": "Stop_MUS_Boss_Angevin",
+    "ShortName": "Stop_MUS_Boss_Angevin",
+    "Path": "Event/Stop_MUS_Boss_Angevin.bnk",
+    "Events": [
+     {
+      "Id": "2666496546",
+      "Name": "Stop_MUS_Boss_Angevin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_MUS_Boss_Angevin",
+      "GUID": "{AED2B73F-31B4-4A4E-AD17-9F6B11AC8AE3}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{903D3C8B-2832-2DA6-8B31-727EE74A86DC}"
+ }
+}

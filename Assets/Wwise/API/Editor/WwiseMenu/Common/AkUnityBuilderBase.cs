@@ -54,13 +54,11 @@ public class AkUnityIntegrationBuilderBase
 		var fi = new System.IO.FileInfo(configPath);
 		if (fi.Exists)
 		{
-			var msg = string.Format("Found preference file: {0}. Use build variables defined in it.", configPath);
-			WwiseLogger.Log(msg);
+			WwiseLogger.LogFormat(LogLevel.Log, "Found preference file: {0}. Use build variables defined in it.", configPath);
 		}
 		else
 		{
-			var msg = string.Format("Preference file: {0} is unavailable. Need user input.", configPath);
-			WwiseLogger.Log(msg);
+			WwiseLogger.LogFormat(LogLevel.Log, "Preference file: {0} is unavailable. Need user input.", configPath);
 
 			m_wwiseSdkDir = UnityEditor.EditorUtility.OpenFolderPanel("Choose Wwise SDK folder", ".", "");
 
@@ -117,8 +115,8 @@ public class AkUnityIntegrationBuilderBase
 				{
 					UnityEditor.AssetDatabase.Refresh();
 
-					WwiseLogger.Error(string.Format(
-						"Build process failed with exception: {}. Check detailed logs under the Logs folder.", ex));
+					WwiseLogger.LogFormat(LogLevel.Error,
+						"Build process failed with exception: {0}. Check detailed logs under the Logs folder.", ex);
 					UnityEditor.EditorUtility.ClearProgressBar();
 				}
 			}

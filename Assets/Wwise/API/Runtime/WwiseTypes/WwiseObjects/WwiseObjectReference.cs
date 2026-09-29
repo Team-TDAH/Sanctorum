@@ -272,7 +272,7 @@ public abstract class WwiseObjectReference : UnityEngine.ScriptableObject
 		}
 		catch
 		{
-			WwiseLogger.Warning("Invalid guid for WwiseObjectReference of type <WwiseObjectType." + wwiseObjectType + ">.");
+			WwiseLogger.LogFormat(LogLevel.Warning, "Invalid guid for WwiseObjectReference of type <WwiseObjectType.{0}>.", wwiseObjectType);
 			return null;
 		}
 
@@ -422,7 +422,7 @@ public abstract class WwiseObjectReference : UnityEngine.ScriptableObject
 		var objectReference = FindOrCreateWwiseObject(wwiseObjectType, data.objectName, guid);
 		if (objectReference && objectReference.Id != formattedId)
 		{
-			WwiseLogger.Warning("ID mismatch for WwiseObjectReference of type <WwiseObjectType." + wwiseObjectType + ">. Expected <" + formattedId + ">. Found <" + objectReference.Id + ">.");
+			WwiseLogger.LogFormat(LogLevel.Warning, "ID mismatch for WwiseObjectReference of type <WwiseObjectType.{0}>. Expected <{1}>. Found <{2}>.", wwiseObjectType, formattedId, objectReference.Id);
 		}
 
 		return objectReference;

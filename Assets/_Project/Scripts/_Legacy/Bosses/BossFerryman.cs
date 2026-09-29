@@ -106,6 +106,17 @@ public class BossFerryman : MonoBehaviour
     {
         //le avisamos al spawner de la escena destino por que conexion llegamos
         PendingConnectionId = connectionId;
+
+        if (nextSceneName == "L5 - Bossroom")
+        {
+            GameAudio.Instance.StopAmbientCave();
+        }
+
+        if (nextSceneName == "L6 - Cave")
+        {
+            GameAudio.Instance.PlayAmbientCave();
+        }
+
         //!!!!!!!! aca va la animacion de transicion
         SceneManager.LoadScene(nextSceneName);
     }

@@ -146,7 +146,11 @@ public class AkInitializer : UnityEngine.MonoBehaviour
 
 		InitializeInitializationSettings();
 #if AK_WWISE_ADDRESSABLES && UNITY_ADDRESSABLES && UNITY_EDITOR
+	#if UNITY_6000_0_OR_NEWER
+		var bankHolder = UnityEngine.Object.FindFirstObjectByType<AK.Wwise.Unity.WwiseAddressables.InitBankHolder>();
+	#else
 		var bankHolder = UnityEngine.Object.FindObjectOfType<AK.Wwise.Unity.WwiseAddressables.InitBankHolder>();
+	#endif
 		if (bankHolder == null)
 		{
 			if (AkUtilities.IsRunningTest())
@@ -338,7 +342,7 @@ public class AkInitializer : UnityEngine.MonoBehaviour
 
 	public void Migrate15()
 	{
-		WwiseLogger.Log("AkInitializer.Migrate15 for " + gameObject.name);
+		WwiseLogger.LogFormat(LogLevel.Log, "AkInitializer.Migrate15 for {0}", gameObject.name);
 
 		if (migration15data != null)
 		{

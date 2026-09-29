@@ -13,7 +13,6 @@ public class MainMenuUIScript : MonoBehaviour
     [SerializeField] private CanvasGroup continueCanvasGroup;
     private float disabledAlpha = 0.4f;
 
-
     private void Start()
     {
         //para q el boton continue solo funque si hay partida guardada
@@ -28,7 +27,9 @@ public class MainMenuUIScript : MonoBehaviour
     public void OnConfirmNewGame()
     {
         PlayerPrefs.DeleteKey("savefile");
+        GameAudio.Instance.StopMenuMusic();
         SceneManager.LoadScene(firstSceneName);
+        GameAudio.Instance.PlayAmbientCave();
     }
     //funciona igual q como lo tenia antes
     public void OnContinuePressed()
@@ -42,7 +43,10 @@ public class MainMenuUIScript : MonoBehaviour
             if (data != null && !string.IsNullOrEmpty(data.currentScene))
                 targetScene = data.currentScene;
         }
+
+        GameAudio.Instance.StopMenuMusic();
         SceneManager.LoadScene(targetScene);
+        GameAudio.Instance.PlayAmbientCave();
     }
     public void OnQuitPressed()
     {

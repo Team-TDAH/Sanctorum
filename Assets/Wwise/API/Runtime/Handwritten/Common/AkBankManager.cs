@@ -91,7 +91,7 @@ public static class AkBankManager
 		var result = AkUnitySoundEngine.LoadBank("Init.bnk", out BankID);
 		if (result != AKRESULT.AK_Success)
 		{
-			WwiseLogger.Error("Failed load Init.bnk with result: " + result);
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed load Init.bnk with result: {0}", result);
 		}
 	}
 
@@ -141,7 +141,7 @@ public static class AkBankManager
 			}
 
 			handle = new AsyncBankHandle(name, callback, bankType);
-			m_BankHandles.Add(name, handle);
+			m_BankHandles.Add(GetBankHandleName(name, bankType), handle);
 		}
 		return handle.LoadBank();
 	}
@@ -209,7 +209,7 @@ public static class AkBankManager
 			if (remove)
 			{
 				lock (m_BankHandles)
-					m_BankHandles.Remove(bankName);
+					m_BankHandles.Remove(GetBankHandleName(bankName, m_BankType));
 			}
 		}
 
@@ -230,7 +230,7 @@ public static class AkBankManager
 		protected void LogLoadResult(AKRESULT result)
 		{
 			if (result != AKRESULT.AK_Success && AkUnitySoundEngine.IsInitialized())
-				WwiseLogger.Warning("Bank " + bankName + " failed to load (" + result + ")");
+				WwiseLogger.LogFormat(LogLevel.Warning, "Bank {0} failed to load ({1})", bankName, result);
 		}
 	}
 
@@ -254,7 +254,7 @@ public static class AkBankManager
 
 				if (in_eLoadResult != AKRESULT.AK_BankAlreadyLoaded)
 					lock (m_BankHandles)
-						m_BankHandles.Remove(handle.bankName);
+						m_BankHandles.Remove(GetBankHandleName(handle.bankName, handle.m_BankType));
 			}
 
 			if (callback != null)

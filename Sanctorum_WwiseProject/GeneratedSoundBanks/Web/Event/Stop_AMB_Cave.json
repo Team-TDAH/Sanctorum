@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Web",
+  "BasePlatform": "Web",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1551221296",
+    "Type": "Event",
+    "GUID": "{39BB7EA2-637B-412B-B929-0BE864E9DE41}",
+    "Language": "SFX",
+    "Hash": "{CEC9FBD0-B113-4757-0617-C678343DED8D}",
+    "ObjectPath": "Stop_AMB_Cave",
+    "ShortName": "Stop_AMB_Cave",
+    "Path": "Event/Stop_AMB_Cave.bnk",
+    "Events": [
+     {
+      "Id": "1551221296",
+      "Name": "Stop_AMB_Cave",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_AMB_Cave",
+      "GUID": "{39BB7EA2-637B-412B-B929-0BE864E9DE41}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{12808CEF-1991-ABFE-45E2-CF86F548CADE}"
+ }
+}

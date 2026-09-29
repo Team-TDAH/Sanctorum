@@ -24,8 +24,9 @@ Copyright (c) 2026 Audiokinetic Inc.
 /// - AK::SoundEngine::DynamicDialogue
 /// - AK::SoundEngine::Query
 /// - AK::SpatialAudio
- 
+
 using AK.Wwise.Unity.Logging;
+using UnityEngine;
 
 public partial class AkUnitySoundEngine
 {
@@ -59,11 +60,23 @@ public partial class AkUnitySoundEngine
 	/// </summary>
 	/// <param name="gameObject">The Unity Game Object.</param>
 	/// <returns>The AkGameObjectID used by the sound engine.</returns>
-	public delegate ulong GameObjectHashFunction(UnityEngine.GameObject gameObject);
+	public delegate ulong GameObjectHashFunction(UnityEngine.Object gameObject);
 
-	private static ulong InternalGameObjectHash(UnityEngine.GameObject gameObject)
+	private static ulong InternalGameObjectHash(UnityEngine.Object gameObject)
 	{
-		return gameObject == null ? AK_INVALID_GAME_OBJECT : (ulong) gameObject.GetInstanceID();
+		ulong GameObjectHash = AK_INVALID_GAME_OBJECT;
+		if (gameObject != null)
+		{
+#if UNITY_6000_4_OR_NEWER
+			GameObjectHash = EntityId.ToULong(gameObject.GetEntityId());
+#elif UNITY_6000_2_OR_NEWER
+			GameObjectHash = (ulong)(int)gameObject.GetEntityId();
+#else
+			GameObjectHash = (ulong) gameObject.GetInstanceID();
+#endif
+		}
+
+		return GameObjectHash;
 	}
 
 	/// <summary>
@@ -80,7 +93,7 @@ public partial class AkUnitySoundEngine
 	/// <summary>
 	///     The hash function used to convert a Unity Game Object into an AkGameObjectID used by the sound engine.
 	/// </summary>
-	public static ulong GetAkGameObjectID(UnityEngine.GameObject gameObject)
+	public static ulong GetAkGameObjectID(UnityEngine.Object gameObject)
 	{
 		return gameObjectHash(gameObject);
 	}
@@ -182,7 +195,7 @@ public partial class AkUnitySoundEngine
 	                string expectedPath = System.IO.Path.Combine(UnityEngine.Application.dataPath, "Wwise", "Version.txt");
 	                AkUtilities.FixSlashes(ref expectedPath);
 	                expectedPath = expectedPath.Substring(0, expectedPath.Length-1); //Fix slashes add a trailing slash, remove it
-	                WwiseLogger.Warning($"Wwise Version file not found or empty. Expected location: {expectedPath}");
+	                WwiseLogger.LogFormat(LogLevel.Warning, "Wwise Version file not found or empty. Expected location: {0}", expectedPath);
 	            }
 	            else
 	            {
@@ -224,7 +237,7 @@ public partial class AkUnitySoundEngine
 	    }
 	    catch (System.Exception ex)
 	    {
-	       WwiseLogger.Error($"Error reading or parsing Wwise Version.txt: {ex.Message}");
+	       WwiseLogger.LogFormat(LogLevel.Error, "Error reading or parsing Wwise Version.txt: {0}", ex.Message);
 	    }
 
 	    return string.Empty;

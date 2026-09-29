@@ -39,7 +39,7 @@ public static class AkDelegates
                 // If the Unity object is null/destroyed, unsubscribe and skip
                 if (unityTarget == null)
                 {
-                    WwiseLogger.Log($"Removing stale delegate from Action. Method: {del.Method.Name}, Target ID: {unityTarget.GetInstanceID()}");
+                    WwiseLogger.LogFormat(LogLevel.Log, "Removing stale delegate from Action. Method: {0}", del.Method.Name);
                     action -= (Action)del;
                     continue;
                 }
@@ -51,7 +51,7 @@ public static class AkDelegates
             }
             catch (MissingReferenceException missingReferenceException)
             {
-                WwiseLogger.Error($"Missing Reference Exception caught during safe Invoke. Method: {del.Method.Name}. Error: {missingReferenceException.Message}");
+                WwiseLogger.LogFormat(LogLevel.Error, "Missing Reference Exception caught during safe Invoke. Method: {0}. Error: {1}", del.Method.Name, missingReferenceException.Message);
                 if (del.Target is UnityEngine.Object unityTargetOnException && unityTargetOnException == null)
                 {
                     action -= (Action)del;
@@ -59,7 +59,7 @@ public static class AkDelegates
             }
             catch (Exception ex)
             {
-                WwiseLogger.Error($"Unexpected exception during safe Invoke. Method: {del.Method.Name}. Error: {ex.Message}");
+                WwiseLogger.LogFormat(LogLevel.Error, "Exception during safe Invoke. Method: {0}. Error: {1}", del.Method.Name, ex.Message);
             }
         }
     }

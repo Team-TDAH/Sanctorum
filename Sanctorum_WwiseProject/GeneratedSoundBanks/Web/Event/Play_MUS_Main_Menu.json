@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Web",
+  "BasePlatform": "Web",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "560608461",
+    "Type": "Event",
+    "GUID": "{494DC3F5-CBD5-49E1-95D2-3F8B35F82864}",
+    "Language": "SFX",
+    "Hash": "{8812F3AD-B390-3C00-BEBF-0BD36C40C6FA}",
+    "ObjectPath": "Play_MUS_Main_Menu",
+    "ShortName": "Play_MUS_Main_Menu",
+    "Path": "Event/Play_MUS_Main_Menu.bnk",
+    "Media": [
+     {
+      "Id": "431859488",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "10.-Moonlit-Journey-_Loop_.wav",
+      "Path": "Media/431859488.wem",
+      "CachePath": "E4/{E4BC2174-559E-6D68-1394-8DD696450927}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "560608461",
+      "Name": "Play_MUS_Main_Menu",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_MUS_Main_Menu",
+      "GUID": "{494DC3F5-CBD5-49E1-95D2-3F8B35F82864}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "431859488"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{49DBDD90-95EA-6F12-0660-2502888D12B0}"
+ }
+}

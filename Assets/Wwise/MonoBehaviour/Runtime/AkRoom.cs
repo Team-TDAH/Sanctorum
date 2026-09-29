@@ -311,7 +311,7 @@ public class AkRoom : AkTriggerHandler
 		}
 		else
 		{
-			WwiseLogger.Warning(name + " has an invalid collider for wet transmission. Wet Transmission will be disabled.");
+			WwiseLogger.LogFormat(LogLevel.Warning, "{0} has an invalid collider for wet transmission. Wet Transmission will be disabled.", name);
 			geometryID = AkSurfaceReflector.INVALID_GEOMETRY_ID;
 		}
 	}
@@ -377,7 +377,7 @@ public class AkRoom : AkTriggerHandler
 		}
 		else
 		{
-			WwiseLogger.Warning(name + " has an invalid collider for wet transmission. Wet Transmission will be disabled.");
+			WwiseLogger.LogFormat(LogLevel.Warning, "{0} has an invalid collider for wet transmission. Wet Transmission will be disabled.", name);
 			geometryID = AkSurfaceReflector.INVALID_GEOMETRY_ID;
 		}
 	}
@@ -659,7 +659,7 @@ public class AkRoom : AkTriggerHandler
 
 		if (transitionRegionWidth < 0.0f)
 		{
-			WwiseLogger.Warning("SetReverbZone: Transition region width is a negative number. It has been clamped to 0.");
+			WwiseLogger.Log("SetReverbZone: Transition region width is a negative number. It has been clamped to 0.");
 			transitionRegionWidth = 0.0f;
 		}
 

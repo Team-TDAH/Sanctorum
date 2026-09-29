@@ -32,7 +32,7 @@ public class AkUnityAssetsInstaller
 		var fi = new System.IO.FileInfo(srcFilePath);
 		if (!fi.Exists)
 		{
-			WwiseLogger.Error(string.Format("Failed to copy. Source is missing: {0}.", srcFilePath));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to copy. Source is missing: {0}.", srcFilePath);
 			return false;
 		}
 
@@ -48,7 +48,7 @@ public class AkUnityAssetsInstaller
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error(string.Format("Error during installation: {0}.", ex.Message));
+			WwiseLogger.LogFormat(LogLevel.Error, "Error during installation: {0}.", ex.Message);
 			return false;
 		}
 
@@ -61,7 +61,7 @@ public class AkUnityAssetsInstaller
 		var fi = new System.IO.FileInfo(srcFilePath);
 		if (!fi.Exists)
 		{
-			WwiseLogger.Error(string.Format("Failed to overwrite. Source is missing: {0}.", srcFilePath));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to overwrite. Source is missing: {0}.", srcFilePath);
 			return false;
 		}
 
@@ -77,7 +77,7 @@ public class AkUnityAssetsInstaller
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error(string.Format("Error during installation: {0}.", ex.Message));
+			WwiseLogger.LogFormat(LogLevel.Error, "Error during installation: {0}.", ex.Message);
 			return false;
 		}
 
@@ -90,7 +90,7 @@ public class AkUnityAssetsInstaller
 		var fi = new System.IO.FileInfo(srcFilePath);
 		if (!fi.Exists)
 		{
-			WwiseLogger.Error(string.Format("Failed to move. Source is missing: {0}.", srcFilePath));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to move. Source is missing: {0}.", srcFilePath);
 			return;
 		}
 
@@ -106,7 +106,7 @@ public class AkUnityAssetsInstaller
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error(string.Format("Error during installation: {0}.", ex.Message));
+			WwiseLogger.LogFormat(LogLevel.Error, "Error during installation: {0}.", ex.Message);
 		}
 	}
 
@@ -116,7 +116,7 @@ public class AkUnityAssetsInstaller
 	{
 		if (!srcDir.Exists)
 		{
-			WwiseLogger.Error(string.Format("Failed to copy. Source is missing: {0}.", srcDir));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to copy. Source is missing: {0}.", srcDir);
 			return false;
 		}
 
@@ -151,7 +151,7 @@ public class AkUnityAssetsInstaller
 			}
 			catch (System.Exception ex)
 			{
-				WwiseLogger.Error(string.Format("Error during installation: {0}.", ex.Message));
+				WwiseLogger.LogFormat(LogLevel.Error, "Error during installation: {0}.", ex.Message);
 				return false;
 			}
 		}
@@ -190,8 +190,8 @@ public class AkUnityPluginInstallerBase : AkUnityAssetsInstaller
 			new System.IO.DirectoryInfo(pluginDest), m_excludes);
 		if (!isSuccess)
 		{
-			WwiseLogger.Error(string.Format("Failed to install plugin for {0} ({1}) from {2} to {3}.",
-				m_platform, config, pluginSrc, pluginDest));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to install plugin for {0} ({1}) from {2} to {3}.",
+				m_platform, config, pluginSrc, pluginDest);
 			UnityEditor.EditorUtility.ClearProgressBar();
 			return false;
 		}
@@ -200,8 +200,8 @@ public class AkUnityPluginInstallerBase : AkUnityAssetsInstaller
 		UnityEditor.AssetDatabase.Refresh();
 
 		UnityEditor.EditorUtility.ClearProgressBar();
-		WwiseLogger.Log(string.Format("Plugin for {0} {1} installed from {2} to {3}.", m_platform, config,
-			pluginSrc, pluginDest));
+		WwiseLogger.LogFormat(LogLevel.Log, "Plugin for {0} {1} installed from {2} to {3}.", m_platform, config,
+			pluginSrc, pluginDest);
 
 		return true;
 	}
@@ -219,8 +219,8 @@ public class AkUnityPluginInstallerBase : AkUnityAssetsInstaller
 			new System.IO.DirectoryInfo(pluginDest), m_excludes);
 		if (!isSuccess)
 		{
-			WwiseLogger.Error(string.Format("Failed to install plugin for {0} ({1}, {2}) from {3} to {4}.",
-				m_platform, arch, config, pluginSrc, pluginDest));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to install plugin for {0} ({1}, {2}) from {3} to {4}.",
+				m_platform, arch, config, pluginSrc, pluginDest);
 			UnityEditor.EditorUtility.ClearProgressBar();
 			return false;
 		}
@@ -229,8 +229,8 @@ public class AkUnityPluginInstallerBase : AkUnityAssetsInstaller
 		UnityEditor.AssetDatabase.Refresh();
 
 		UnityEditor.EditorUtility.ClearProgressBar();
-		WwiseLogger.Log(string.Format("Plugin for {0} {1} {2} installed from {3} to {4}.", m_platform, arch,
-			config, pluginSrc, pluginDest));
+		WwiseLogger.LogFormat(LogLevel.Log, "Plugin for {0} {1} {2} installed from {3} to {4}.", m_platform, arch,
+			config, pluginSrc, pluginDest);
 
 		return true;
 	}
@@ -338,7 +338,7 @@ public class AkDocHelper
 		var fi = new System.IO.FileInfo(docPath);
 		if (!fi.Exists)
 		{
-			WwiseLogger.Error(string.Format("Failed to find documentation: {0}. Aborted.", docPath));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to find documentation: {0}. Aborted.", docPath);
 			return string.Empty;
 		}
 

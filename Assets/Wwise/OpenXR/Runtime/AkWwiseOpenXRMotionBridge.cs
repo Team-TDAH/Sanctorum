@@ -52,7 +52,7 @@ namespace AK.Wwise.Unity.OpenXR
                 XrResult result = getProcAddr(instance, namePtr, ref functionPtr);
                 if (result != XrResult.Success)
                 {
-                    WwiseLogger.Warning($"[AkWwiseOpenXRMotionBridge] Failed to get function pointer for {functionName}: {result}");
+                    WwiseLogger.LogFormat(LogLevel.Warning, "[AkWwiseOpenXRMotionBridge] Failed to get function pointer for {0}: {1}", functionName, result);
                     return IntPtr.Zero;
                 }
             }
@@ -97,7 +97,7 @@ namespace AK.Wwise.Unity.OpenXR
             }
             catch (Exception ex)
             {
-                WwiseLogger.Error($"[AkWwiseOpenXRMotionBridge] Exception during initialization: {ex.Message}");
+                WwiseLogger.LogFormat(LogLevel.Error, "[AkWwiseOpenXRMotionBridge] Exception during initialization: {0}", ex.Message);
                 return false;
             }
         }

@@ -72,7 +72,7 @@ public static class AkWwiseProjectInfo
 			}
 			catch (System.Exception e)
 			{
-				WwiseLogger.Error("Unable to load Wwise Data: " + e);
+				WwiseLogger.LogFormat(LogLevel.Error, "Unable to load Wwise Data: {0}", e);
 			}
 		}
 

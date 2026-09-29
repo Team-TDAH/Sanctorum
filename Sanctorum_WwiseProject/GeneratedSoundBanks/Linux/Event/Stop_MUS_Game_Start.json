@@ -1,0 +1,33 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Linux",
+  "BasePlatform": "Linux",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "3992594791",
+    "Type": "Event",
+    "GUID": "{260CC762-EC93-4A00-B290-C6101A78D839}",
+    "Language": "SFX",
+    "Hash": "{2D5FF23F-C05F-61F6-DE9D-57069EB75BCC}",
+    "ObjectPath": "Stop_MUS_Game_Start",
+    "ShortName": "Stop_MUS_Game_Start",
+    "Path": "Event/Stop_MUS_Game_Start.bnk",
+    "Events": [
+     {
+      "Id": "3992594791",
+      "Name": "Stop_MUS_Game_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_MUS_Game_Start",
+      "GUID": "{260CC762-EC93-4A00-B290-C6101A78D839}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{31872196-136E-F337-D7CB-EF3ABD31443E}"
+ }
+}

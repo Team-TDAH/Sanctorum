@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "2314402090",
+    "Type": "Event",
+    "GUID": "{11A09D89-6990-45AC-B3F6-98B29223A28E}",
+    "Language": "SFX",
+    "Hash": "{A75CE9E2-7838-E74B-33C7-4A4964EBCCD0}",
+    "ObjectPath": "Play_AMB_Cave",
+    "ShortName": "Play_AMB_Cave",
+    "Path": "Event/Play_AMB_Cave.bnk",
+    "Media": [
+     {
+      "Id": "236323094",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Caverna.wav",
+      "Path": "Media/236323094.wem",
+      "CachePath": "A9/{A96C4C51-87B7-1B18-F2D0-6CA2F0657B05}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2314402090",
+      "Name": "Play_AMB_Cave",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_AMB_Cave",
+      "GUID": "{11A09D89-6990-45AC-B3F6-98B29223A28E}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "236323094"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{B5690381-8D60-0C13-16CD-1BC481649A9A}"
+ }
+}

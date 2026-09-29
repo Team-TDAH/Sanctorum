@@ -151,6 +151,10 @@ public class AkSoundEngineController
 			{
 				OnEnableEditorListener(akInitializer.gameObject);
 			}
+			if (AkUnitySoundEngineInitialization.Instance.ShouldKeepSoundEngineEnabled())
+			{
+				return;
+			}
 			if (AkUnitySoundEngineInitialization.Instance.ResetSoundEngine(UnityEngine.Application.isPlaying || UnityEditor.BuildPipeline.isBuildingPlayer))
 			{
 				EnableEditorLateUpdate();

@@ -15,9 +15,10 @@ public enum AkRoomDistanceBehavior {
   /// This room is subtracted from the shape of parents and overlapping rooms of lower priority.
   /// Distance attenuation is applied to other rooms when the listener is in this room, because this room is a distinct space.
   AkRoomDistanceBehavior_Subtract,
-  /// [\ref Experimental] This room does not participate in the distance calculation of other rooms.
+  /// [\ref Experimental] This room is not included in the distance calculation of other rooms.
   /// Distance attenuation does not apply to this room's parents, or overlapping sections of lower priority rooms,
   /// because this room does not form a distinct space and is not subtracted from the shape of other rooms.
+  /// Diffraction, transmission loss, and other attenuations are not affected.
   AkRoomDistanceBehavior_Exclude,
   AkRoomDistanceBehavior_Default = AkRoomDistanceBehavior_Subtract
 }

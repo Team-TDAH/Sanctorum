@@ -36,7 +36,7 @@ public static class AddressableUpdater
         string addressablesGitHubLink = "https://github.com/audiokinetic/WwiseUnityAddressables.git#";
         if (!File.Exists(manifestPath))
         {
-            WwiseLogger.Error($"Wwise Addressables Updater: {manifestPath} not found.");
+            WwiseLogger.LogFormat(LogLevel.Error, "Wwise Addressables Updater: {0} not found.", manifestPath);
             return;
         }
         try
@@ -87,16 +87,16 @@ public static class AddressableUpdater
             {
                 File.WriteAllLines(manifestPath, lines);
                 AssetDatabase.Refresh(); // Important to refresh Unity's asset database
-                WwiseLogger.Log($"Wwise Addressables Updater: Successfully updated the Wwise Addressable Package to {shortWwiseVersion}.");
+                WwiseLogger.LogFormat(LogLevel.Log, "Wwise Addressables Updater: Successfully updated the Wwise Addressable Package to {0}.", shortWwiseVersion);
             }
             else
             {
-                WwiseLogger.Log($"Wwise Addressables Updater: Already up to date. Current version {shortWwiseVersion}.");
+                WwiseLogger.LogFormat(LogLevel.Log, "Wwise Addressables Updater: Already up to date. Current version {0}.", shortWwiseVersion);
             }
         }
         catch (System.Exception e)
         {
-            WwiseLogger.Error($"Wwise Addressables Updater: Error processing JSON file: {e.Message}");
+            WwiseLogger.LogFormat(LogLevel.Error, "Wwise Addressables Updater: Error processing JSON file: {0}", e.Message);
         }
     }
 #endif

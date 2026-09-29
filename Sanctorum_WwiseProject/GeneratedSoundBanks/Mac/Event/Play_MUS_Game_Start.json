@@ -1,0 +1,48 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1198003017",
+    "Type": "Event",
+    "GUID": "{A8AB449F-7EF5-4F06-A518-973C89496076}",
+    "Language": "SFX",
+    "Hash": "{E885DD42-FEB1-5AEA-D680-C7635F3DA215}",
+    "ObjectPath": "Play_MUS_Game_Start",
+    "ShortName": "Play_MUS_Game_Start",
+    "Path": "Event/Play_MUS_Game_Start.bnk",
+    "Media": [
+     {
+      "Id": "391704435",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Sola_-Lejos.wav",
+      "Path": "Media/391704435.wem",
+      "CachePath": "9F/{9FDE073D-FE4D-9A35-74BE-FFCF443A4B3D}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1198003017",
+      "Name": "Play_MUS_Game_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_MUS_Game_Start",
+      "GUID": "{A8AB449F-7EF5-4F06-A518-973C89496076}",
+      "DurationType": "OneShot",
+      "DurationMin": "155.3502",
+      "DurationMax": "155.3502",
+      "MediaRefs": [
+       {
+        "Id": "391704435"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{1F6A6D6E-D2FD-9508-7F1F-60CDAFFDBDA9}"
+ }
+}

@@ -173,7 +173,7 @@ internal class AkPlatformPluginList
 				}
 				catch (System.Exception ex)
 				{
-					WwiseLogger.Error(pluginFile + " could not be parsed. " + ex.Message);
+					WwiseLogger.LogFormat(LogLevel.Error, "{0} could not be parsed. {1}", pluginFile, ex.Message);
 				}
 			}
 
@@ -274,7 +274,7 @@ internal class AkPlatformPluginList
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error("Plugins could not be parsed. " + ex.Message);
+			WwiseLogger.LogFormat(LogLevel.Error, "Plugins could not be parsed. {0}", ex.Message);
 		}
 
 		return newPlugins;

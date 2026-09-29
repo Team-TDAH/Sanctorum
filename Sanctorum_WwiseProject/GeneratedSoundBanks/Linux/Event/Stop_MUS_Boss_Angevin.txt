@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2666496546	Stop_MUS_Boss_Angevin			\Default Work Unit\Stop_MUS_Boss_Angevin	
+

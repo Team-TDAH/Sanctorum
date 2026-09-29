@@ -59,7 +59,7 @@ public class AkWindowsPluginActivator : AkPlatformPluginActivator
 	{
 		if (pluginImporterInformation.PluginArch != "x86" && pluginImporterInformation.PluginArch != "x86_64")
 		{
-			WwiseLogger.Log("Architecture not found: " + pluginImporterInformation.PluginArch);
+			WwiseLogger.LogFormat(LogLevel.Log, "Architecture not found: {0}", pluginImporterInformation.PluginArch);
 			return false;
 		}
 

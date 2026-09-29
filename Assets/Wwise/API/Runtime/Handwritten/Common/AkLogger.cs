@@ -64,7 +64,7 @@ public class AkLogger
 
 	public static void Message(string message)
 	{
-		WwiseLogger.LogFormat(message);
+		WwiseLogger.LogFormat(LogLevel.Log, message);
 	}
 
 	public static void Warning(string message)

@@ -152,7 +152,7 @@ public class AkWwiseJSONBuilder : UnityEditor.AssetPostprocessor
 		}
 		catch (System.Exception e)
 		{
-			WwiseLogger.Log("Exception occured while parsing SoundbanksInfo.json: " + e.ToString());
+			WwiseLogger.LogFormat(LogLevel.Log, "Exception occured while parsing SoundbanksInfo.json: {0}", e.ToString());
 			return false;
 		}
 	}
@@ -259,7 +259,7 @@ public class AkWwiseJSONBuilder : UnityEditor.AssetPostprocessor
 			}
 			else
 			{
-				WwiseLogger.Log("Could not parse float number " + s);
+				WwiseLogger.LogFormat(LogLevel.Log, "Could not parse float number {0}", s);
 				return 0.0f;
 			}
 		}

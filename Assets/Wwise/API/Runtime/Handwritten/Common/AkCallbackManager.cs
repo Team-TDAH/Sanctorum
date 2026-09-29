@@ -287,8 +287,7 @@ public static class AkCallbackManager
 				string soundBankPath = System.IO.Path.Combine(AkBasePathGetter.GetPlatformBasePath(), "SoundbanksInfo.xml");
 				if (!System.IO.File.Exists(soundBankPath))
 				{
-					WwiseLogger.Warning("The XMLTranslator has been disabled since the SoundbanksInfo.xml couldn't be located at " + soundBankPath + ". To remove the warning," +
-						" either disable the XMLTranslator by going to Project Settings -> Wwise Integration and setting XML Translator Timeout to 0 or generate the xml file by editing the wwise project settings.");
+					WwiseLogger.LogFormat(LogLevel.Warning, "The XMLTranslator has been disabled since the SoundbanksInfo.xml couldn't be located at {0}. To remove the warning, either disable the XMLTranslator by going to Project Settings -> Wwise Integration and setting XML Translator Timeout to 0 or generate the xml file by editing the wwise project settings.", soundBankPath);
 					XmlTimeout = 0;
 				}
 			}
@@ -351,25 +350,29 @@ public static class AkCallbackManager
 				}
 				catch (System.ArgumentNullException)
 				{
-					WwiseLogger.Warning(s_gID + " was null.");
+					WwiseLogger.LogFormat(LogLevel.Warning, "{0} was null.", s_gID);
 				}
 				catch (System.ArgumentException)
 				{
-					WwiseLogger.Warning(s_gID + " is not a number.");
+					WwiseLogger.LogFormat(LogLevel.Warning, "{0} is not a number.", s_gID);
 				}
 				catch (System.FormatException)
 				{
-					WwiseLogger.Warning("Unable to parse " + s_gID + ".");
+					WwiseLogger.LogFormat(LogLevel.Warning, "Unable to parse {0}.", s_gID);
 				}
 				catch (System.OverflowException)
 				{
-					WwiseLogger.Warning(s_gID + " is out of range of the UInt64 type.");
+					WwiseLogger.LogFormat(LogLevel.Warning, "{0} is out of range of the UInt64 type.", s_gID);
 				}
 				bool gameIdResolved = false;
 #if UNITY_EDITOR
 				if (gId != AkUnitySoundEngine.AK_INVALID_GAME_OBJECT)
 				{
-#if UNITY_6000_3_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
+					var obj =
+						UnityEditor.EditorUtility.EntityIdToObject(EntityId.FromULong( AkMonitoringCallbackInfo.gameObjID)) as
+							UnityEngine.GameObject;
+#elif UNITY_6000_3_OR_NEWER
 					var obj =
 						UnityEditor.EditorUtility.EntityIdToObject((int)AkMonitoringCallbackInfo.gameObjID) as
 							UnityEngine.GameObject;
@@ -463,7 +466,7 @@ public static class AkCallbackManager
 						BankCallbackPackage bankPkg = null;
 						if (!m_mapBankCallbacks.TryGetValue((int) pPackage, out bankPkg))
 						{
-							WwiseLogger.Error("BankCallbackPackage not found for <" + pPackage + ">.");
+							WwiseLogger.LogFormat(LogLevel.Error, "BankCallbackPackage not found for <{0}>.", pPackage);
 							break;
 						}
 
@@ -480,7 +483,7 @@ public static class AkCallbackManager
 						EventCallbackPackage eventPkg = null;
 						if (!m_mapEventCallbacks.TryGetValue((int) pPackage, out eventPkg))
 						{
-							WwiseLogger.Error("EventCallbackPackage not found for <" + pPackage + ">.");
+							WwiseLogger.LogFormat(LogLevel.Error, "EventCallbackPackage not found for <{0}>.", pPackage);
 							break;
 						}
 
@@ -539,7 +542,7 @@ public static class AkCallbackManager
 								break;
 
 							default:
-								WwiseLogger.Error("Undefined callback type <" + eType + "> received. Callback object possibly corrupted.");
+								WwiseLogger.LogFormat(LogLevel.Error, "Undefined callback type <{0}> received. Callback object possibly corrupted.", eType);
 								break;
 						}
 

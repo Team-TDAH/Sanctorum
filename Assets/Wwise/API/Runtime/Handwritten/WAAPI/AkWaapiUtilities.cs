@@ -834,7 +834,7 @@ private static async void Loop()
         }
         catch (Exception e)
         {
-	        WwiseLogger.Error($"Log Parsing Failed: Could not deserialize JSON.\nError: {e.Message}");
+	        WwiseLogger.LogFormat(LogLevel.Error, "Log Parsing Failed: Could not deserialize JSON.\nError: {0}", e.Message);
             return;
         }
 
@@ -865,15 +865,13 @@ private static async void Loop()
 
         if (issues.Count > 0)
         {
-            string header = $"SoundBanks generation FAILED with {errorCount} Error(s) and {warningCount} Warning(s):";
-            string combinedLog = header + "\n" + string.Join("\n", issues);
             if (errorCount > 0)
             {
-	            WwiseLogger.Error(combinedLog);
+	            WwiseLogger.LogFormat(LogLevel.Error, "SoundBanks generation FAILED with {0} Error(s) and {1} Warning(s):\n{2}", errorCount, warningCount, string.Join("\n", issues));
             }
             else
             {
-	            WwiseLogger.Warning(combinedLog);
+	            WwiseLogger.LogFormat(LogLevel.Warning, "SoundBanks generation FAILED with {0} Error(s) and {1} Warning(s):\n{2}", errorCount, warningCount, string.Join("\n", issues));
             }
         }
         else
@@ -934,7 +932,7 @@ private static async void Loop()
 			}
 			catch (System.Exception e)
 			{
-				WwiseLogger.Error($"Failed to open Explorer when opening a work unit in the file explorer: {e.Message}");
+				WwiseLogger.LogFormat(LogLevel.Error, "Failed to open Explorer when opening a work unit in the file explorer: {0}", e.Message);
 			}
 #elif UNITY_EDITOR_OSX
 			string arguments = $"-R \"{filePath}\"";
@@ -944,7 +942,7 @@ private static async void Loop()
 		    }
 		    catch (System.Exception e)
 		    {
-		        WwiseLogger.Error($"macOS failed to reveal a work unit in Finder: {e.Message}");
+		        WwiseLogger.LogFormat(LogLevel.Error, "macOS failed to reveal a work unit in Finder: {0}", e.Message);
 		    }
 #endif
 		}

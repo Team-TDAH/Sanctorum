@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{19EF20E7-C08A-4762-BFAC-43A98AC63E2B}" SchemaVersion="133">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{19EF20E7-C08A-4762-BFAC-43A98AC63E2B}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Music_Volume" ID="{42923CB1-5E08-4CC5-92D9-C6A079B9E19C}"/>
+				<GameParameter Name="Ambient_Volume" ID="{02AE3A82-0B4B-480C-9FA6-1CAF67E0FEC7}"/>
+				<GameParameter Name="SFX_Volume" ID="{EE29BC7C-67A0-4167-9D94-B7FA1EFB2582}"/>
+				<GameParameter Name="Menu_Volume" ID="{2B9C70E8-B420-4946-AD89-AA0EF2DD8AFE}"/>
+				<GameParameter Name="General_Volume" ID="{D803B6E0-DE1E-4220-9863-E25CB60F4EEA}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

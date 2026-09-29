@@ -32,7 +32,7 @@ public abstract class AkTriggerHandler : UnityEngine.MonoBehaviour
 
 	private bool didDestroy;
 
-	///List containing the enabled triggers.
+	[UnityEngine.Tooltip("List containing the enabled triggers.")]
 	public System.Collections.Generic.List<int> triggerList = new System.Collections.Generic.List<int> { START_TRIGGER_ID };
 
 	///This property is usefull only when used with colliders.  When enabled, the target of the action will be the other colliding object.  When disabled, it will be the current object.

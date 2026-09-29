@@ -57,8 +57,8 @@ internal static class AkWwiseIDConverter
 				if (process.ExitCode == 0)
 				{
 					UnityEditor.EditorUtility.DisplayProgressBar(s_progTitle, progMsg, 1.0f);
-					WwiseLogger.Log(string.Format(
-						"SoundBank ID conversion succeeded. Find generated Unity script under {0}.", s_bankDir));
+					WwiseLogger.LogFormat(LogLevel.Log,
+						"SoundBank ID conversion succeeded. Find generated Unity script under {0}.", s_bankDir);
 				}
 				else
 					WwiseLogger.Error("Conversion failed.");
@@ -70,9 +70,9 @@ internal static class AkWwiseIDConverter
 				UnityEditor.AssetDatabase.Refresh();
 
 				UnityEditor.EditorUtility.ClearProgressBar();
-				WwiseLogger.Error(string.Format(
-					"SoundBank ID conversion process failed with exception: {}. Check detailed logs under the folder: Assets/Wwise/Logs.",
-					ex));
+				WwiseLogger.LogFormat(LogLevel.Error,
+					"SoundBank ID conversion process failed with exception: {0}. Check detailed logs under the folder: Assets/Wwise/Logs.",
+					ex);
 			}
 
 			UnityEditor.EditorUtility.ClearProgressBar();

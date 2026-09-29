@@ -1,0 +1,3 @@
+Event	ID	Name			Wwise Object Path	Notes
+	191827280	Play_MUS_Boss_Angevin			\Default Work Unit\Play_MUS_Boss_Angevin	
+

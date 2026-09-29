@@ -19,6 +19,11 @@ Copyright (c) 2026 Audiokinetic Inc.
 using System;
 using System.Linq;
 using AK.Wwise.Unity.Logging;
+
+#if UNITY_6000_5_OR_NEWER
+using UnityEngine.Assemblies;
+#endif
+
 #if UNITY_EDITOR
 using System.IO;
 using UnityEditor;
@@ -227,15 +232,15 @@ public partial class AkUtilities
 		var output = ExecuteCommandLine(command, arguments);
 		if (output.Contains("Process completed successfully."))
 		{
-			WwiseLogger.LogFormat("SoundBanks generation successful:\n{0}", output);
+			WwiseLogger.LogFormat(LogLevel.Log, "SoundBanks generation successful:\n{0}", output);
 		}
 		else if (output.Contains("Process completed with warning"))
 		{
-			WwiseLogger.WarningFormat("SoundBanks generation has warning(s):\n{0}", output);
+			WwiseLogger.LogFormat(LogLevel.Warning, "SoundBanks generation has warning(s):\n{0}", output);
 		}
 		else
 		{
-			WwiseLogger.ErrorFormat("SoundBanks generation error:\n{0}", output);
+			WwiseLogger.LogFormat(LogLevel.Error, "SoundBanks generation error:\n{0}", output);
 		}
 		GeneratingSoundBanks = false;
 		UnityEditor.AssetDatabase.Refresh();
@@ -353,7 +358,7 @@ public partial class AkUtilities
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error("Error while reading project " + WwiseProjectPath + ". Exception: " + ex.Message);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error while reading project {0}. Exception: {1}", WwiseProjectPath, ex.Message);
 		}
 	}
 	
@@ -409,7 +414,7 @@ public partial class AkUtilities
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error("Error while reading project " + WwiseProjectPath + ". Exception: " + ex.Message);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error while reading project {0}. Exception: {1}", WwiseProjectPath, ex.Message);
 		}
 	}
 	
@@ -463,7 +468,7 @@ public partial class AkUtilities
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error("Error while reading project " + WwiseProjectPath + ". Exception: " + ex.Message);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error while reading project {0}. Exception: {1}", WwiseProjectPath, ex.Message);
 		}
 	}
 
@@ -527,7 +532,7 @@ public partial class AkUtilities
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error("Error while reading project " + WwiseProjectPath + ". Exception: " + ex.Message);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error while reading project {0}. Exception: {1}", WwiseProjectPath, ex.Message);
 		}
 	}
 	
@@ -565,7 +570,7 @@ public partial class AkUtilities
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error("Error while reading project " + WwiseProjectPath + ". Exception: " + ex.Message);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error while reading project {0}. Exception: {1}", WwiseProjectPath, ex.Message);
 		}
 	}
 
@@ -588,7 +593,7 @@ public partial class AkUtilities
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error("Error while reading project " + WwiseProjectPath + ". Exception: " + ex.Message);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error while reading project {0}. Exception: {1}", WwiseProjectPath, ex.Message);
 		}
 	}
 
@@ -809,7 +814,7 @@ public partial class AkUtilities
 			var destFilePath = System.IO.Path.Combine(destDirName, file.Name);
 			if (System.IO.File.Exists(destFilePath))
 			{
-				WwiseLogger.WarningFormat("Destination file path will be overwritten: {0}", destFilePath);
+				WwiseLogger.LogFormat(LogLevel.Warning, "Destination file path will be overwritten: {0}", destFilePath);
 			}
 
 			file.CopyTo(destFilePath, true);
@@ -856,7 +861,7 @@ public partial class AkUtilities
 			destFilePath = System.IO.Path.Combine(destDirName, file.Name);
 			if (System.IO.File.Exists(destFilePath))
 			{
-				WwiseLogger.WarningFormat("Destination file path will be overwritten: {0}", destFilePath);
+				WwiseLogger.LogFormat(LogLevel.Warning, "Destination file path will be overwritten: {0}", destFilePath);
 			}
 
 			source = System.IO.Path.Combine("Assets", AkUtilities.MakeRelativePath(UnityEngine.Application.dataPath, file.FullName));
@@ -865,7 +870,7 @@ public partial class AkUtilities
 			error = AssetDatabase.MoveAsset(source, destFilePath);
 			if (!string.IsNullOrEmpty(error))
 			{
-				WwiseLogger.ErrorFormat("Error while attempting to move <{0}> to <{1}>: {2}", source, destFilePath, error);
+				WwiseLogger.LogFormat(LogLevel.Error, "Error while attempting to move <{0}> to <{1}>: {2}", source, destFilePath, error);
 			}
 
 		}
@@ -886,7 +891,7 @@ public partial class AkUtilities
 
 			if (!string.IsNullOrEmpty(error))
 			{
-				WwiseLogger.ErrorFormat("Error while attempting to move <{0}> to <{1}>: {2}", source, destSubDirName, error);
+				WwiseLogger.LogFormat(LogLevel.Error, "Error while attempting to move <{0}> to <{1}>: {2}", source, destSubDirName, error);
 			}
 		}
 
@@ -912,7 +917,7 @@ public partial class AkUtilities
 			var error = UnityEditor.AssetDatabase.CreateFolder(parentFolder, folders[i]);
 			if (string.IsNullOrEmpty(error))
 			{
-				WwiseLogger.LogFormat("Created folder <{0}> in <{0}>", folders[i], parentFolder);
+				WwiseLogger.LogFormat(LogLevel.Log, "Created folder <{0}> in <{0}>", folders[i], parentFolder);
 				created = true;
 				continue;
 			}
@@ -946,7 +951,7 @@ public partial class AkUtilities
 
 		if (!AssetDatabase.IsValidFolder(oldPath))
 		{
-			WwiseLogger.WarningFormat("Refusing to move nonexistent folder <{0}>", oldPath);
+			WwiseLogger.LogFormat(LogLevel.Warning, "Refusing to move nonexistent folder <{0}>", oldPath);
 			return false;
 		}
 
@@ -960,7 +965,7 @@ public partial class AkUtilities
 				return true;
 			}
 
-			WwiseLogger.ErrorFormat("Error while attempting to rename folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error while attempting to rename folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
 			return false;
 		}
 
@@ -975,7 +980,7 @@ public partial class AkUtilities
 			return true;
 		}
 
-		WwiseLogger.WarningFormat("Error while attempting to move folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
+		WwiseLogger.LogFormat(LogLevel.Warning, "Error while attempting to move folder <{0}> to <{1}>: {2}", oldPath, newPath, error);
 		return false;
 	}
 
@@ -1141,11 +1146,9 @@ public partial class AkUtilities
 		var overlap = relativePathFolders.Intersect(rootPathFolders);
 		if (overlap.Count() > 0)
 		{
-			WwiseLogger.Warning("AkUtilities.GetPathInPackage(): relativePath contains overlapping folder names with root path.\nrelativePath: "
-				+ relativePath
-				+ "\nroot path: "
-				+ rootpath
-				+ "\n This could cause issues with plugins activation and packaging.");
+			WwiseLogger.LogFormat(LogLevel.Warning,
+				"AkUtilities.GetPathInPackage(): relativePath contains overlapping folder names with root path.\nrelativePath: {0}\nroot path: {1}\n This could cause issues with plugins activation and packaging.",
+				relativePath, rootpath);
 		}
 
 		return System.IO.Path.Combine(rootpath, relativePath);
@@ -1154,8 +1157,13 @@ public partial class AkUtilities
 	public static bool IsRunningTest()
 	{
 		// Check for the presence of the main NUnit framework assembly.
+#if UNITY_6000_5_OR_NEWER
+		return CurrentAssemblies.GetLoadedAssemblies()
+			.Any(a => a.GetName().Name == "nunit.framework");
+#else
 		return AppDomain.CurrentDomain.GetAssemblies()
 			.Any(a => a.GetName().Name == "nunit.framework");
+#endif
 	}
 
 	/// <summary>

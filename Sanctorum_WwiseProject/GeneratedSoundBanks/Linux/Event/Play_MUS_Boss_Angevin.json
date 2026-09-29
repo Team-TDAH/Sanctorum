@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Linux",
+  "BasePlatform": "Linux",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "191827280",
+    "Type": "Event",
+    "GUID": "{022A6D6A-48E1-4EA6-9207-D75B5525637C}",
+    "Language": "SFX",
+    "Hash": "{97B84A2B-CF61-B42F-BCBA-E872E7601F54}",
+    "ObjectPath": "Play_MUS_Boss_Angevin",
+    "ShortName": "Play_MUS_Boss_Angevin",
+    "Path": "Event/Play_MUS_Boss_Angevin.bnk",
+    "Media": [
+     {
+      "Id": "764765838",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Combate-contra-Angevin.wav",
+      "Path": "Media/764765838.wem",
+      "CachePath": "70/{70BD09E0-A8F3-EE80-4D39-8FEC6931B81A}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "191827280",
+      "Name": "Play_MUS_Boss_Angevin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_MUS_Boss_Angevin",
+      "GUID": "{022A6D6A-48E1-4EA6-9207-D75B5525637C}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "764765838"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{6737777A-BCB4-72DA-027F-F0B9A92A968C}"
+ }
+}
