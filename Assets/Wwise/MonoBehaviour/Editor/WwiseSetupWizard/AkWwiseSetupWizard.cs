@@ -163,7 +163,9 @@ public class WwiseSetupWizard
 		foreach (var objectType in wwiseComponentTypes)
 		{
 			// Get all objects in the scene with the specified type.
-#if UNITY_6000_0_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
+			var objects = UnityEngine.Object.FindObjectsByType(objectType);
+#elif UNITY_6000_0_OR_NEWER
 			var objects = UnityEngine.Object.FindObjectsByType(objectType, FindObjectsSortMode.None);
 #else
 			var objects = UnityEngine.Object.FindObjectsOfType(objectType);
@@ -295,13 +297,13 @@ public class WwiseSetupWizard
 			// migration loop, we need to get a valid array of MonoBehaviours again, because it might
 			// have been invalidated by the call to MigrateObject. We then migrate the objects that
 			// need migration by making sure their InstanceID is in the list of unmigrated MonoBehaviours.
-			var instanceIds = new System.Collections.Generic.List<int>();
+			var instanceIds = new System.Collections.Generic.List<ulong>();
 			foreach (var obj in objects)
 			{
 				if (obj == null)
 					continue;
 
-				var id = obj.GetInstanceID();
+				var id = AkUnitySoundEngine.GetAkGameObjectID(obj);
 				if (!instanceIds.Contains(id))
 					instanceIds.Add(id);
 			}
@@ -309,8 +311,14 @@ public class WwiseSetupWizard
 			for (; instanceIds.Count > 0; instanceIds.RemoveAt(0))
 			{
 				var id = instanceIds[0];
-				var obj = UnityEditor.EditorUtility.InstanceIDToObject(id);
-				if (obj && obj.GetInstanceID() == id)
+#if UNITY_6000_4_OR_NEWER
+				var obj = UnityEditor.EditorUtility.EntityIdToObject(EntityId.FromULong(id));
+#elif UNITY_6000_3_OR_NEWER
+				var obj = UnityEditor.EditorUtility.EntityIdToObject((int)id);
+#else
+				var obj = UnityEditor.EditorUtility.InstanceIDToObject((int)id);
+#endif
+				if (obj && AkUnitySoundEngine.GetAkGameObjectID(obj) == id)
 				{
 					MigrateObject(obj);
 				}
@@ -415,13 +423,13 @@ public class WwiseSetupWizard
 			// migration loop, we need to get a valid array of MonoBehaviours again, because it might
 			// have been invalidated by the call to MigrateObject. We then migrate the objects that
 			// need migration by making sure their InstanceID is in the list of unmigrated MonoBehaviours.
-			var instanceIds = new System.Collections.Generic.List<int>();
+			var instanceIds = new System.Collections.Generic.List<ulong>();
 			foreach (var obj in objects)
 			{
 				if (obj == null)
 					continue;
 
-				var id = obj.GetInstanceID();
+				var id = AkUnitySoundEngine.GetAkGameObjectID(obj);
 				if (!instanceIds.Contains(id))
 					instanceIds.Add(id);
 			}
@@ -429,8 +437,14 @@ public class WwiseSetupWizard
 			for (; instanceIds.Count > 0; instanceIds.RemoveAt(0))
 			{
 				var id = instanceIds[0];
-				var obj = UnityEditor.EditorUtility.InstanceIDToObject(id);
-				if (obj && obj.GetInstanceID() == id)
+#if UNITY_6000_4_OR_NEWER
+				var obj = UnityEditor.EditorUtility.EntityIdToObject(EntityId.FromULong(id));
+#elif UNITY_6000_3_OR_NEWER
+				var obj = UnityEditor.EditorUtility.EntityIdToObject((int)id);
+#else
+				var obj = UnityEditor.EditorUtility.InstanceIDToObject((int)id);
+#endif
+				if (obj && AkUnitySoundEngine.GetAkGameObjectID(obj) == id)
 				{
 					MigrateObject(obj);
 				}
@@ -667,7 +681,9 @@ public class WwiseSetupWizard
 	private static void CreateWwiseGlobalObject()
 	{
 		// Look for a game object which has the initializer component
-#if UNITY_6000_0_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
+		var AkInitializers = UnityEngine.Object.FindObjectsByType<AkInitializer>();
+#elif UNITY_6000_0_OR_NEWER
 		var AkInitializers = UnityEngine.Object.FindObjectsByType<AkInitializer>(FindObjectsSortMode.None);
 #else
 		var AkInitializers = UnityEngine.Object.FindObjectsOfType<AkInitializer>();
@@ -757,7 +773,9 @@ public class WwiseSetupWizard
 		// on the first scene of a new project
 		if (camera == null)
 		{
-#if UNITY_6000_0_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
+			var cameraArray = UnityEngine.Object.FindObjectsByType<UnityEngine.Camera>();
+#elif UNITY_6000_0_OR_NEWER
 			var cameraArray = UnityEngine.Object.FindObjectsByType<UnityEngine.Camera>(FindObjectsSortMode.None);
 #else
 			var cameraArray = UnityEngine.Object.FindObjectsOfType<UnityEngine.Camera>();

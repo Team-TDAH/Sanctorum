@@ -40,7 +40,9 @@ public class WwiseEventReference : WwiseObjectReference
 	public override WwiseObjectType WwiseObjectType { get { return WwiseObjectType.Event; } }
 	public bool IsInUserDefinedSoundBank = false;
 	private uint m_BankID = AkUnitySoundEngine.AK_INVALID_UNIQUE_ID;
+#if UNITY_EDITOR
 	private bool pendingEnable = false;
+#endif
 	[System.NonSerialized]
 	public bool IsAutoBankLoaded = false;
 
@@ -73,7 +75,7 @@ public class WwiseEventReference : WwiseObjectReference
 		var result = AkUnitySoundEngine.PrepareEvent(AkPreparationType.Preparation_Load, new string[] { DisplayName }, 1);
 		if (result != AKRESULT.AK_Success)
 		{
-			WwiseLogger.Error("PrepareEvent for " + DisplayName + " failed with result: " + result + ". If the event is in a User Defined Soundbank, make sure" + " to check the \"Is In User-Defined SoundBank\" box in the editor.");
+			WwiseLogger.LogFormat(LogLevel.Error, "PrepareEvent for {0} failed with result: {1}. If the event is in a User Defined Soundbank, make sure to check the \"Is In User-Defined SoundBank\" box in the editor.", DisplayName, result);
 		}
 	}
 
@@ -153,13 +155,13 @@ public class WwiseEventReference : WwiseObjectReference
 		{
 			AutoBank.IsAutoBank = !IsInUserDefinedSoundBank;
 			AutoBank.BankType = (uint)AkBankTypeEnum.AkBankType_Event;
-			AkAddressableBankManager.Instance.LoadBank(AutoBank, false, false, loadAsync:true);
+			await AkAddressableBankManager.Instance.LoadBank(AutoBank, false, false, loadAsync:true);
 			WwiseEventReferencesManager.Instance.AddReference(this);
 		}
 		
 		else
 		{
-			WwiseLogger.Warning("Wwise Addressable asset for AutoBank: " + DisplayName + " couldn't be found. If the event is in a User-Defined Soundbank, make sure to check the \"Is In User-Defined SoundBank\" box in the editor.");
+			WwiseLogger.LogFormat(LogLevel.Warning, "Wwise Addressable asset for AutoBank: {0} couldn't be found. If the event is in a User-Defined Soundbank, make sure to check the \"Is In User-Defined SoundBank\" box in the editor.", DisplayName);
 		}
 	}
 #else
@@ -204,9 +206,9 @@ public class WwiseEventReference : WwiseObjectReference
 #if WWISE_ADDRESSABLES_24_1_OR_LATER
 		if (AutoBank != null && AutoBank.LoadState == BankLoadState.Loading)
 			return;
-		LoadAutoBankAsync();
+		_ = LoadAutoBankAsync();
 #else
-		WwiseLogger.Error("Auto Bank is not supported with Addressables prior to the Wwise Addressables Package 24.1. Please update your wwise Addressables package or add the event: " + DisplayName +" to an user-defined soundbank in Wwise Authoring.");
+		WwiseLogger.LogFormat(LogLevel.Error, "Auto Bank is not supported with Addressables prior to the Wwise Addressables Package 24.1. Please update your wwise Addressables package or add the event: {0} to an user-defined soundbank in Wwise Authoring.", DisplayName);
 #endif //WWISE_ADDRESSABLES_24_1_OR_LATER
 #else
 		LoadAutoBankAsync();

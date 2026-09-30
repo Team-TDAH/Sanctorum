@@ -94,11 +94,11 @@ namespace AK.Wwise
 			{
 				if (objRef)
 				{
-					WwiseLogger.Log("WwiseObjectReference already set to <" + objRef.DisplayName + "> on <" + wwiseObjRefProperty.serializedObject.targetObject + "> for type <" + objRef.WwiseObjectType + ">.");
+					WwiseLogger.LogFormat(LogLevel.Log, "WwiseObjectReference already set to <{0}> on <{1}> for type <{2}>.", objRef.DisplayName, wwiseObjRefProperty.serializedObject.targetObject, objRef.WwiseObjectType);
 				}
 				else
 				{
-					WwiseLogger.Log("WwiseObjectReference already set to <null> on <" + wwiseObjRefProperty.serializedObject.targetObject + ">.");
+					WwiseLogger.LogFormat(LogLevel.Log, "WwiseObjectReference already set to <null> on <{0}>.", wwiseObjRefProperty.serializedObject.targetObject);
 				}
 				return false;
 			}
@@ -107,20 +107,20 @@ namespace AK.Wwise
 			{
 				if (objRef)
 				{
-					WwiseLogger.Warning("Overwriting WwiseObjectReference on <" + wwiseObjRefProperty.serializedObject.targetObject + "> for type <" + objRef.WwiseObjectType + "> from <" + previousObjectReference.DisplayName + "> to <" + objRef.DisplayName + ">.");
+					WwiseLogger.LogFormat(LogLevel.Warning, "Overwriting WwiseObjectReference on <{0}> for type <{1}> from <{2}> to <{3}>.", wwiseObjRefProperty.serializedObject.targetObject, objRef.WwiseObjectType, previousObjectReference.DisplayName, objRef.DisplayName);
 				}
 				else
 				{
-					WwiseLogger.Warning("Overwriting WwiseObjectReference on <" + wwiseObjRefProperty.serializedObject.targetObject + "> from <" + previousObjectReference.DisplayName + "> to <null>.");
+					WwiseLogger.LogFormat(LogLevel.Warning, "Overwriting WwiseObjectReference on <{0}> from <{1}> to <null>.", wwiseObjRefProperty.serializedObject.targetObject, previousObjectReference.DisplayName);
 				}
 			}
 			else if (objRef)
 			{
-				WwiseLogger.Log("Setting WwiseObjectReference on <" + wwiseObjRefProperty.serializedObject.targetObject + "> for type <" + objRef.WwiseObjectType + "> to <" + objRef.DisplayName + ">.");
+				WwiseLogger.LogFormat(LogLevel.Log, "Setting WwiseObjectReference on <{0}> for type <{1}> to <{2}>.", wwiseObjRefProperty.serializedObject.targetObject, objRef.WwiseObjectType, objRef.DisplayName);
 			}
 			else
 			{
-				WwiseLogger.Log("Setting WwiseObjectReference on <" + wwiseObjRefProperty.serializedObject.targetObject + "> to <null>.");
+				WwiseLogger.LogFormat(LogLevel.Log, "Setting WwiseObjectReference on <{0}> to <null>.", wwiseObjRefProperty.serializedObject.targetObject);
 			}
 
 			wwiseObjRefProperty.objectReferenceValue = objRef;
@@ -196,7 +196,7 @@ namespace AK.Wwise
 			if (valueGuid == null)
 			{
 				var serializedObject = wwiseObjectReferenceProperty.serializedObject;
-				WwiseLogger.Log("No data to migrate <" + wwiseObjectType + "> on <" + serializedObject.targetObject.GetType() + ">.");
+				WwiseLogger.LogFormat(LogLevel.Log, "No data to migrate <{0}> on <{1}>.", wwiseObjectType, serializedObject.targetObject.GetType());
 				return false;
 			}
 
@@ -219,7 +219,7 @@ namespace AK.Wwise
 			if (valueGuid == null || groupGuid == null)
 			{
 				var serializedObject = wwiseObjectReferenceProperty.serializedObject;
-				WwiseLogger.Log("No data to migrate <" + wwiseObjectType + "> on <" + serializedObject.targetObject.GetType() + ">.");
+				WwiseLogger.LogFormat(LogLevel.Log, "No data to migrate <{0}> on <{1}>.", wwiseObjectType, serializedObject.targetObject.GetType());
 				return false;
 			}
 

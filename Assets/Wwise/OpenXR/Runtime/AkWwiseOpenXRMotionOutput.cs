@@ -79,7 +79,7 @@ namespace AK.Wwise.Unity.OpenXR
             var outputSettings = new AkOutputSettings(MotionSharesetName);
             if (AkUnitySoundEngine.AddOutput(outputSettings, out m_motionOutputDeviceId) == AKRESULT.AK_Success)
             {
-                WwiseLogger.Verbose($"[AkWwiseOpenXRMotionOutput] Successfully added Motion output device (ID: {m_motionOutputDeviceId})");
+                WwiseLogger.LogFormat(LogLevel.Verbose, "[AkWwiseOpenXRMotionOutput] Successfully added Motion output device (ID: {0})", m_motionOutputDeviceId);
             }
             else
             {

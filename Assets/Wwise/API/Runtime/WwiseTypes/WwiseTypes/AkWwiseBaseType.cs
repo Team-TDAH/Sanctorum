@@ -65,7 +65,7 @@ namespace AK.Wwise
 			if (IsValid())
 				return true;
 
-			WwiseLogger.Warning("Wwise ID has not been resolved. Consider picking a new " + GetType().Name + ".");
+			WwiseLogger.LogFormat(LogLevel.Warning, "Wwise ID has not been resolved. Consider picking a new {0}.", GetType().Name);
 			return false;
 		}
 
@@ -73,7 +73,7 @@ namespace AK.Wwise
 		{
 #if UNITY_EDITOR
 			if (result != AKRESULT.AK_Success && AkUnitySoundEngine.IsInitialized())
-				WwiseLogger.Warning("Unsuccessful call made on " + GetType().Name + ".");
+				WwiseLogger.LogFormat(LogLevel.Warning, "Unsuccessful call made on {0}.", GetType().Name);
 #endif
 		}
 

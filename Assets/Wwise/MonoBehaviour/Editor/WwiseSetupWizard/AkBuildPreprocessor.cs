@@ -99,7 +99,7 @@ public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuild, U
 	{
 		if (string.IsNullOrEmpty(platformName))
 		{
-			WwiseLogger.ErrorFormat("Could not determine platform name for <{0}> platform", platformName);
+			WwiseLogger.LogFormat(LogLevel.Error, "Could not determine platform name for <{0}> platform", platformName);
 			return false;
 		}
 
@@ -122,11 +122,11 @@ public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuild, U
 		if (!AkUtilities.DirectoryCopy(sourceFolder, destinationFolder, true))
 		{
 			destinationFolder = null;
-			WwiseLogger.ErrorFormat("Could not copy SoundBank folder for <{0}> platform", platformName);
+			WwiseLogger.LogFormat(LogLevel.Error, "Could not copy SoundBank folder for <{0}> platform", platformName);
 			return false;
 		}
 
-		WwiseLogger.Log($"Copied SoundBank folder from <{sourceFolder}> to streaming assets folder <{destinationFolder}> for <{platformName}> platform build");
+		WwiseLogger.LogFormat(LogLevel.Log, "Copied SoundBank folder from <{0}> to streaming assets folder <{1}> for <{2}> platform build", sourceFolder, destinationFolder, platformName);
 		return true;
 	}
 
@@ -137,7 +137,7 @@ public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuild, U
 			return;
 
 		System.IO.Directory.Delete(destinationFolder, true);
-		WwiseLogger.LogFormat("Deleting streaming assets folder <{0}>", destinationFolder);
+		WwiseLogger.LogFormat(LogLevel.Log, "Deleting streaming assets folder <{0}>", destinationFolder);
 	}
 
 	public void OnPreprocessBuildInternal(UnityEditor.BuildTarget target, string path)
@@ -148,7 +148,7 @@ public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuild, U
 		{
 			if (!CopySoundbanks(AkWwiseEditorSettings.Instance.GenerateSoundBanksAsPreBuildStep, platformName, ref destinationSoundBankFolder))
 			{
-				WwiseLogger.ErrorFormat("SoundBank folder has not been copied for <{0}> target at <{1}>. This will likely result in a build without sound!!!", target, path);
+				WwiseLogger.LogFormat(LogLevel.Error, "SoundBank folder has not been copied for <{0}> target at <{1}>. This will likely result in a build without sound!!!", target, path);
 			}
 		}
 #endif

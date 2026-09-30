@@ -220,7 +220,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 			string currentClassName;
 			if (m_PlatformSettingsClassNames.TryGetValue(platformName, out currentClassName) && currentClassName == className)
 			{
-				WwiseLogger.Warning("The class <" + currentClassName + "> is being replaced by <" + className + "> for the reference platform: " + platformName);
+				WwiseLogger.LogFormat(LogLevel.Warning, "The class <{0}> is being replaced by <{1}> for the reference platform: {2}", currentClassName, className, platformName);
 				return;
 			}
 
@@ -316,7 +316,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 				return platformSettings;
 		}
 
-		WwiseLogger.Warning("Platform specific settings cannot be found for <" + platformName + ">. Using global settings.");
+		WwiseLogger.LogFormat(LogLevel.Warning, "Platform specific settings cannot be found for <{0}>. Using global settings.", platformName);
 		return instance;
 	}
 
@@ -476,7 +476,7 @@ public class AkWwiseInitializationSettings : AkCommonPlatformSettings
 				if (!instance.InvalidReferencePlatforms.Contains(referencePlatform))
 				{
 					instance.InvalidReferencePlatforms.Add(referencePlatform);
-					WwiseLogger.Error("A class has not been registered for the reference platform: " + referencePlatform + ". Has the platform been added to your Wwise Integration?");
+					WwiseLogger.LogFormat(LogLevel.Error, "A class has not been registered for the reference platform: {0}. Has the platform been added to your Wwise Integration?", referencePlatform);
 				}
 				continue;
 			}

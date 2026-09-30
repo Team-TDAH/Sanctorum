@@ -83,7 +83,7 @@ public partial class AkBasePathGetter
 			return TargetPlatforms[target];
 		}
 		
-		WwiseLogger.Warning($"Target {target.ToString()} is not supported by default by Wwise. Make sure to create a custom script and subscribe to GetCustomTargetPlatformName delegate to add it. ");
+		WwiseLogger.LogFormat(LogLevel.Warning, "Target {0} is not supported by default by Wwise. Make sure to create a custom script and subscribe to GetCustomTargetPlatformName delegate to add it. ", target.ToString());
 
 		return string.Empty;
 	}
@@ -138,7 +138,7 @@ public partial class AkBasePathGetter
 		if (string.IsNullOrEmpty(sourcePlatformBasePath))
 		{
 			if (LogWarnings)
-				WwiseLogger.ErrorFormat("Could not find source folder for <{0}> platform. Did you remember to generate your banks?", platformName);
+				WwiseLogger.LogFormat(LogLevel.Error, "Could not find source folder for <{0}> platform. Did you remember to generate your banks?", platformName);
 
 			destinationPlatformBasePath = string.Empty;
 			return false;
@@ -148,7 +148,7 @@ public partial class AkBasePathGetter
 		if (string.IsNullOrEmpty(destinationPlatformBasePath))
 		{
 			if (LogWarnings)
-				WwiseLogger.ErrorFormat("Could not find destination folder for <{0}> platform", platformName);
+				WwiseLogger.LogFormat(LogLevel.Error, "Could not find destination folder for <{0}> platform", platformName);
 
 			return false;
 		}
@@ -275,7 +275,7 @@ public partial class AkBasePathGetter
 		{
 			tempSoundBankBasePath = System.IO.Path.GetFullPath(System.IO.Path.Combine(tempPersistentDataPath, persistentDataSubfolder));
 			if (LogWarnings)
-				WwiseLogger.LogFormat("Using persistentDataPath. SoundBanks base path set to <{0}>.", tempSoundBankBasePath);
+				WwiseLogger.LogFormat(LogLevel.Log, "Using persistentDataPath. SoundBanks base path set to <{0}>.", tempSoundBankBasePath);
 		}
 		else
 		{
@@ -291,7 +291,7 @@ public partial class AkBasePathGetter
 #else
 					var format = "Could not locate the SoundBanks in {0}. Did you make sure to copy them to the StreamingAssets folder?";
 #endif
-					WwiseLogger.ErrorFormat(format, tempSoundBankBasePath);
+					WwiseLogger.LogFormat(LogLevel.Error, format, tempSoundBankBasePath);
 				}
 			}
 #endif

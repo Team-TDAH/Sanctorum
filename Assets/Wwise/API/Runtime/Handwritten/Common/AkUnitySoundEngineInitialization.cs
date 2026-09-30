@@ -45,7 +45,7 @@ public class AkUnitySoundEngineInitialization
 
 	public bool InitializeSoundEngine()
 	{
-		WwiseLogger.LogFormat("Wwise(R) SDK Version {0}.", AkUnitySoundEngine.WwiseVersion);
+		WwiseLogger.LogFormat(LogLevel.Log, "Wwise(R) SDK Version {0}.", AkUnitySoundEngine.WwiseVersion);
 		
 #if UNITY_ANDROID && ! UNITY_EDITOR
 		//Obtains the Android Java Object "currentActivity" in order to set it for the android io hook initialization
@@ -63,7 +63,7 @@ public class AkUnitySoundEngineInitialization
 		}
 		catch (Exception ex)
 		{
-			WwiseLogger.Error($"Failed to pass activity to native code: {ex.Message}");
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to pass activity to native code: {0}", ex.Message);
 		}
 #endif
 #if UNITY_OPENHARMONY && !UNITY_EDITOR
@@ -78,7 +78,7 @@ public class AkUnitySoundEngineInitialization
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error($"Failed to pass applicationContext to native code: {ex.Message}");
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to pass applicationContext to native code: {0}", ex.Message);
 		}
 #endif
 		var activePlatformSettings = AkWwiseInitializationSettings.ActivePlatformSettings;
@@ -89,7 +89,7 @@ public class AkUnitySoundEngineInitialization
 		handle.Free();
 		if (initResult != AKRESULT.AK_Success)
 		{
-			WwiseLogger.Error($"Failed to initialize the sound engine. Reason: {initResult}");
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to initialize the sound engine. Reason: {0}", initResult);
 			AkUnitySoundEngine.Term();
 			return false;
 		}
@@ -143,7 +143,7 @@ public class AkUnitySoundEngineInitialization
 			var format = "Failed to set SoundBanks base path to <{0}>. Make sure SoundBank path is correctly set under Edit > Project Settings > Wwise > Initialization.";
 #endif
 			// It might be normal for SetBasePath to return AK_PathNotFound on Android. Silence the error log to avoid confusion.
-			WwiseLogger.ErrorFormat(format, soundBankBasePath);
+			WwiseLogger.LogFormat(LogLevel.Error, format, soundBankBasePath);
 #endif
 #endif
 		}
@@ -190,7 +190,7 @@ public class AkUnitySoundEngineInitialization
 
 	public bool ResetSoundEngine(bool isInPlayMode)
 	{
-		if (isInPlayMode)
+		if (isInPlayMode && AkUnitySoundEngine.IsInitialized())
 		{
 			ClearBanks();
 			LoadInitBank();

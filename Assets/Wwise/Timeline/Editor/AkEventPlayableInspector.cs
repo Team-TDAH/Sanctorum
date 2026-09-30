@@ -137,13 +137,13 @@ public class AkEventPlayableInspector : UnityEditor.Editor
 
 			var path = UnityEditor.AssetDatabase.GUIDToAssetPath(guid);
 			var objects = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(path);
-			var instanceIds = new System.Collections.Generic.List<int>();
+			var instanceIds = new System.Collections.Generic.List<ulong>();
 			foreach (var obj in objects)
 			{
 				if (obj == null)
 					continue;
 
-				var id = obj.GetInstanceID();
+				var id = AkUnitySoundEngine.GetAkGameObjectID(obj);
 				if (!instanceIds.Contains(id))
 					instanceIds.Add(id);
 			}
@@ -154,7 +154,7 @@ public class AkEventPlayableInspector : UnityEditor.Editor
 				objects = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(path);
 				foreach (var obj in objects)
 				{
-					if (obj && obj.GetInstanceID() == id)
+					if (obj && AkUnitySoundEngine.GetAkGameObjectID(obj) == id)
 					{
 						var playable = obj as AkEventPlayable;
 						if (playable)

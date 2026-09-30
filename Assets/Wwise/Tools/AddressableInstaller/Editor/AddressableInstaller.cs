@@ -24,6 +24,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEditor.Callbacks;
 using AK.Wwise.Unity.Logging;
+using LogLevel = AK.Wwise.Unity.Logging.LogLevel;
 using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 
 #if AK_WWISE_ADDRESSABLES
@@ -168,17 +169,17 @@ public static class AddressableInstaller
     /// <param name="errorMsg">The message to log</param>
     public static void LogError(string source, string errorMsg)
     {
-        WwiseLogger.Error($"{source}: {errorMsg}");
+        WwiseLogger.LogFormat(LogLevel.Error, "{0}: {1}", source, errorMsg);
     }
 
     public static void LogWarning(string source, string errorMsg)
     {
-        WwiseLogger.Warning($"{source}: {errorMsg}");
+        WwiseLogger.LogFormat(LogLevel.Warning, "{0}: {1}", source, errorMsg);
     }
 
     public static void Log(string source, string errorMsg)
     {
-        WwiseLogger.Log($"{source}: {errorMsg}");
+        WwiseLogger.LogFormat(LogLevel.Log, "{0}: {1}", source, errorMsg);
     }
     private static AddRequest _addRequest;
 
@@ -397,7 +398,7 @@ public static class AddressableInstaller
         }
         else
         {
-            WwiseLogger.Error($"Invalid package source: {packageSource}. Ensure it is a valid Git URL or local path.");
+            WwiseLogger.LogFormat(LogLevel.Error, "Invalid package source: {0}. Ensure it is a valid Git URL or local path.", packageSource);
             return false;
         }
 
@@ -410,7 +411,7 @@ public static class AddressableInstaller
     /// <param name="url">The Git URL of the package.</param>
     private static void InstallFromUrl(string url)
     {
-        WwiseLogger.Log($"Installing package from Git URL: {url}");
+        WwiseLogger.LogFormat(LogLevel.Log, "Installing package from Git URL: {0}", url);
         _addRequest = Client.Add(url);
         EditorApplication.update += Progress;
     }
@@ -473,11 +474,11 @@ public static class AddressableInstaller
         {
             if (_addRequest.Status == StatusCode.Success)
             {
-                WwiseLogger.Log($"Successfully installed package: {_addRequest.Result.packageId}");
+                WwiseLogger.LogFormat(LogLevel.Log, "Successfully installed package: {0}", _addRequest.Result.packageId);
             }
             else if (_addRequest.Status >= StatusCode.Failure)
             {
-                WwiseLogger.Error($"Failed to install package: {_addRequest.Error.message}");
+                WwiseLogger.LogFormat(LogLevel.Error, "Failed to install package: {0}", _addRequest.Error.message);
             }
 
             EditorApplication.update -= Progress;
@@ -521,7 +522,7 @@ public static class AddressableInstaller
 
         if (targetObject == null)
         {
-            WwiseLogger.Error($"GameObject '{targetObjectName}' not found in the scene.");
+            WwiseLogger.LogFormat(LogLevel.Error, "GameObject '{0}' not found in the scene.", targetObjectName);
             return;
         }
 
@@ -530,11 +531,11 @@ public static class AddressableInstaller
         if (component != null)
         {
             UnityEngine.GameObject.DestroyImmediate(component);
-            WwiseLogger.Log($"Removed component '{targetComponentName}' from '{targetObjectName}'.");
+            WwiseLogger.LogFormat(LogLevel.Log, "Removed component '{0}' from '{1}'.", targetComponentName, targetObjectName);
         }
         else
         {
-            WwiseLogger.Warning($"Component '{targetComponentName}' not found on '{targetObjectName}'.");
+            WwiseLogger.LogFormat(LogLevel.Warning, "Component '{0}' not found on '{1}'.", targetComponentName, targetObjectName);
         }
     }
     
@@ -557,16 +558,16 @@ public static class AddressableInstaller
         {
             if (AssetDatabase.DeleteAsset(folderPath))
             {
-                WwiseLogger.Log($"Folder deleted: {folderPath}");
+                WwiseLogger.LogFormat(LogLevel.Log, "Folder deleted: {0}", folderPath);
             }
             else
             {
-                WwiseLogger.Error($"Failed to delete folder: {folderPath}");
+                WwiseLogger.LogFormat(LogLevel.Error, "Failed to delete folder: {0}", folderPath);
             }
         }
         else
         {
-            WwiseLogger.Error($"Folder does not exist: {folderPath}");
+            WwiseLogger.LogFormat(LogLevel.Error, "Folder does not exist: {0}", folderPath);
         }
     }
     

@@ -169,7 +169,7 @@ public class WwiseSettings
 		}
 		catch
 		{
-			WwiseLogger.ErrorFormat("Unable to save settings to file <{0}>. Please ensure that this file path can be written to.", Path);
+			WwiseLogger.LogFormat(LogLevel.Error, "Unable to save settings to file <{0}>. Please ensure that this file path can be written to.", Path);
 		}
 
 		if (WwiseLoggerSettings.Instance.LogLevel != LogLevel)
@@ -253,7 +253,7 @@ public class AkWwiseEditorSettings
 			rootOutputPath = FixTemporaryProjectRelativePath(rootOutputPath);
 			AkWwiseEditorSettings.Instance.RootOutputPath = rootOutputPath;
 			AkWwiseEditorSettings.Instance.SaveSettings();
-			WwiseLogger.Log($"MIGRATION: migrating RootOutputPath to {rootOutputPath}");
+			WwiseLogger.LogFormat(LogLevel.Log, "MIGRATION: migrating RootOutputPath to {0}", rootOutputPath);
 		}
 	}
 

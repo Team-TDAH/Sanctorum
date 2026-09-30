@@ -144,7 +144,9 @@ public class AkEnvironmentPortalInspector : UnityEditor.Editor
 		var myCollider = m_envPortal.gameObject.GetComponent<UnityEngine.Collider>();
 		if (myCollider == null)
 			return;
-#if UNITY_6000_0_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
+		var environments = FindObjectsByType<AkEnvironment>();		
+#elif UNITY_6000_0_OR_NEWER
 		var environments = FindObjectsByType<AkEnvironment>(FindObjectsSortMode.None);
 #else
 		var environments = FindObjectsOfType<AkEnvironment>();

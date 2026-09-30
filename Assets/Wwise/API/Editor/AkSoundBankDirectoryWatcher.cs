@@ -115,7 +115,7 @@ namespace Wwise.API.Editor.SoundBankDirectoryWatcher.Common
 						userWarning = "Ensure that the Root Output Path in the Integration Settings matches the Root Output Path in the Wwise Project Settings on the SoundBanks tab, then regenerate the SoundBanks.";
 					}
 
-					WwiseLogger.Error("Cannot find ProjectInfo.json at " + filename + ". " + userWarning);
+					WwiseLogger.LogFormat(LogLevel.Error, "Cannot find ProjectInfo.json at {0}. {1}", filename, userWarning);
 				}
 
 				initCallbackRequired = true;

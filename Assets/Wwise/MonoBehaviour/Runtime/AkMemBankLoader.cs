@@ -128,7 +128,7 @@ public class AkMemBankLoader : UnityEngine.MonoBehaviour
 		uint BankType;
         var result = AkUnitySoundEngine.LoadBankMemoryView(ms_pInMemoryBankPtr, uInMemoryBankSize, out ms_bankID, out BankType);
 		if (result != AKRESULT.AK_Success)
-			WwiseLogger.Error("AkMemBankLoader: bank loading failed with result " + result);
+			WwiseLogger.LogFormat(LogLevel.Error, "AkMemBankLoader: bank loading failed with result {0}", result);
 	}
 
 	private void DoLoadBank(string in_bankPath)

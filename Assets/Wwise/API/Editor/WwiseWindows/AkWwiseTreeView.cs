@@ -756,7 +756,7 @@ public class AkWwiseTreeView : WwiseTreeView
 
 		if (path == string.Empty)
 		{
-			WwiseLogger.Log($"No references to {item.displayName} in scene.");
+			WwiseLogger.LogFormat(LogLevel.Log, "No references to {0} in scene.", item.displayName);
 			return;
 		}
 
@@ -853,7 +853,7 @@ public class AkWwiseTreeView : WwiseTreeView
 
 		if (newName.Trim().Length >= MAX_NAME_LENGTH)
 		{
-			WwiseLogger.Warning($"Names must be less than {MAX_NAME_LENGTH} characters long.");
+			WwiseLogger.LogFormat(LogLevel.Warning, "Names must be less than {0} characters long.", MAX_NAME_LENGTH);
 			return false;
 		}
 
@@ -985,7 +985,7 @@ public class AkWwisePickerIcons
 		}
 		catch (System.Exception ex)
 		{
-			WwiseLogger.Error(string.Format("Failed to find local texture: {0}", ex));
+			WwiseLogger.LogFormat(LogLevel.Error, "Failed to find local texture: {0}", ex);
 			return null;
 		}
 	}

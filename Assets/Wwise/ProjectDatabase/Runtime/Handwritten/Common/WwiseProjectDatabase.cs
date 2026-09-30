@@ -38,7 +38,7 @@ public partial class WwiseProjectDatabase
         directory += "/Mac/DSP";
 #endif
         
-        WwiseLogger.Error($"{libraryName} could not be found. Please check the parent folder {directory}. If the {Path.GetExtension(libraryName)} is missing, try 1. Modifying the Wwise Project or 2. Copying the {libraryName} directly from the SDK\\platform_architecture\\Profile\\bin folder of your Wwise installation into {directory}.");
+        WwiseLogger.LogFormat(LogLevel.Error, "{0} could not be found. Please check the parent folder {1}. If the {2} is missing, try 1. Modifying the Wwise Project or 2. Copying the {0} directly from the SDK\\platform_architecture\\Profile\\bin folder of your Wwise installation into {1}.", libraryName, directory, Path.GetExtension(libraryName));
     }
 
     public static void LogProjectDatabaseDLLException(System.Exception e)
@@ -49,7 +49,7 @@ public partial class WwiseProjectDatabase
         }
         else
         {
-            WwiseLogger.Error($"The project database dll encountered the following error: {e.Message}" );
+            WwiseLogger.LogFormat(LogLevel.Error, "The project database dll encountered the following error: {0}", e.Message);
         }
     }
     public static void InitCheckUp(string inDirectoryPath)

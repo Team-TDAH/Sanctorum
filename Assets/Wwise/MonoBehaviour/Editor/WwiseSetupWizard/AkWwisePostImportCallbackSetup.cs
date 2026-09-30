@@ -72,7 +72,7 @@ public class AkWwisePostImportCallbackSetup
 		}
 		catch (System.Exception e)
 		{
-			WwiseLogger.Error("Error during migration: " + e);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error during migration: {0}", e);
 		}
 	}
 
@@ -104,7 +104,7 @@ public class AkWwisePostImportCallbackSetup
 		}
 		catch (System.Exception e)
 		{
-			WwiseLogger.Error("Error during migration: " + e);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error during migration: {0}", e);
 		}
 	}
 
@@ -250,7 +250,7 @@ public class AkWwisePostImportCallbackSetup
 
 		if (!regexMatchResult.Success || regexMatchResult.Groups.Count < 3 || regexMatchResult.Groups[1].Captures.Count < 1 || regexMatchResult.Groups[2].Captures.Count < 1)
 		{
-			WwiseLogger.Error("Error parsing wwiseExecuteMethod parameter: " + method);
+			WwiseLogger.LogFormat(LogLevel.Error, "Error parsing wwiseExecuteMethod parameter: {0}", method);
 			return;
 		}
 
@@ -280,7 +280,7 @@ public class AkWwisePostImportCallbackSetup
 
 			if (methodToExecute == null)
 			{
-				WwiseLogger.Error("Error in AkWwisePostImportCallbackSetup::ExecuteMethod(): Could not find method: " + method);
+				WwiseLogger.LogFormat(LogLevel.Error, "Error in AkWwisePostImportCallbackSetup::ExecuteMethod(): Could not find method: {0}", method);
 				return;
 			}
 
@@ -288,7 +288,7 @@ public class AkWwisePostImportCallbackSetup
 		}
 		catch (System.Exception e)
 		{
-			WwiseLogger.Error("Exception caught when calling " + method + ": " + e);
+			WwiseLogger.LogFormat(LogLevel.Error, "Exception caught when calling {0}: {1}", method, e);
 		}
 	}
 
@@ -315,7 +315,9 @@ public class AkWwisePostImportCallbackSetup
 
 		var settings = AkWwiseEditorSettings.Instance;
 		// Look for a game object which has the initializer component
-#if UNITY_6000_0_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
+		var AkInitializers = Object.FindObjectsByType<AkInitializer>();
+#elif UNITY_6000_0_OR_NEWER
 		var AkInitializers = Object.FindObjectsByType<AkInitializer>(FindObjectsSortMode.None);
 #else
 		var AkInitializers = Object.FindObjectsOfType<AkInitializer>();
@@ -324,7 +326,7 @@ public class AkWwisePostImportCallbackSetup
 		{
 			if (settings.CreateWwiseGlobal)
 			{
-				WwiseLogger.LogFormat("No Wwise object in the scene ({0}), creating one.", s_CurrentScene);
+				WwiseLogger.LogFormat(LogLevel.Log, "No Wwise object in the scene ({0}), creating one.", s_CurrentScene);
 				//No Wwise object in this scene, create one so that the sound engine is initialized and terminated properly even if the scenes are loaded
 				//in the wrong order.
 				var objWwise = new UnityEngine.GameObject("WwiseGlobal");
@@ -349,19 +351,19 @@ public class AkWwisePostImportCallbackSetup
 			{
 				if (!Initializer.InitializationSettings)
 				{
-					WwiseLogger.LogFormat("Initializing {0} (GO {1}).", Initializer.name, Initializer.gameObject.name);
+					WwiseLogger.LogFormat(LogLevel.Log, "Initializing {0} (GO {1}).", Initializer.name, Initializer.gameObject.name);
 					Initializer.InitializeInitializationSettings();
 				}
 			}
 		}
 		else if (settings.CreateWwiseGlobal == false && AkInitializers[0].gameObject.name == "WwiseGlobal")
 		{
-			WwiseLogger.LogFormat("CreateWwiseGlobal is false. Removing the AkInitializer in scene ({0}).", s_CurrentScene);
+			WwiseLogger.LogFormat(LogLevel.Log, "CreateWwiseGlobal is false. Removing the AkInitializer in scene ({0}).", s_CurrentScene);
 			UnityEditor.Undo.DestroyObjectImmediate(AkInitializers[0].gameObject);
 		}
 
 #if AK_WWISE_ADDRESSABLES && UNITY_ADDRESSABLES
-		var bankHolder = UnityEngine.Object.FindObjectOfType<AK.Wwise.Unity.WwiseAddressables.InitBankHolder>();
+		var bankHolder = UnityEngine.Object.FindFirstObjectByType<AK.Wwise.Unity.WwiseAddressables.InitBankHolder>();
 		if (bankHolder == null)
 		{
 			UnityEngine.GameObject wwiseGlobalObject = UnityEngine.GameObject.Find("WwiseGlobal");

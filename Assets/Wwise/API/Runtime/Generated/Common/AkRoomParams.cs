@@ -115,7 +115,7 @@ public class AkRoomParams : global::System.IDisposable {
   }
 
   /// Associate a priority with this room. Room priority is used by the room containment system to disambiguate cases where an object is inside several rooms at the same time. In this case, the room with the higher priority is selected.
-  /// Default priority is 100.
+  /// Default priority is 100. The outdoor Room ignores ``AkRoomParams::RoomPriority`` and always has the lowest possible priority of -FLT_MAX.
   /// If several rooms have the same highest room priority, the inner one is selected.
   public float RoomPriority { set { AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_RoomPriority_set(swigCPtr, value); }  get { return AkUnitySoundEnginePINVOKE.CSharp_AkRoomParams_RoomPriority_get(swigCPtr); } 
   }

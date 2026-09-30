@@ -129,7 +129,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 
 	public ulong GetID()
 	{
-		return (ulong)GetInstanceID();
+		return AkUnitySoundEngine.GetAkGameObjectID(this);
 	}
 
 	/// <summary>
@@ -183,7 +183,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 		}
 		else
 		{
-			WwiseLogger.LogFormat("SetGeometry({0}): No valid triangle was found. Geometry was not set", mesh.name);
+			WwiseLogger.LogFormat(LogLevel.Log, "SetGeometry({0}): No valid triangle was found. Geometry was not set", mesh.name);
 			return false;
 		}
 	}
@@ -251,7 +251,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 		var numTriangles = mesh.triangles.Length / 3;
 		if ((mesh.triangles.Length % 3) != 0)
 		{
-			WwiseLogger.LogFormat("SetGeometryFromMesh({0}): Wrong number of triangles", mesh.name);
+			WwiseLogger.LogFormat(LogLevel.Log, "SetGeometryFromMesh({0}): Wrong number of triangles", mesh.name);
 		}
 
 		geometryData.surfaces = new AkAcousticSurfaceArray(surfaceCount);
@@ -266,7 +266,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 			var triangleCount = triangles.Length / 3;
 			if ((triangles.Length % 3) != 0)
 			{
-				WwiseLogger.LogFormat("SetGeometryFromMesh({0}): Wrong number of triangles in submesh {1}", mesh.name, s);
+				WwiseLogger.LogFormat(LogLevel.Log, "SetGeometryFromMesh({0}): Wrong number of triangles in submesh {1}", mesh.name, s);
 			}
 
 			AK.Wwise.AcousticTexture acousticTexture = null;
@@ -301,7 +301,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 				}
 				else
 				{
-					WwiseLogger.LogFormat("SetGeometryFromMesh({0}): Skipped degenerate triangle({1}, {2}, {3}) in submesh {4}", mesh.name, 3 * i + 0, 3 * i + 1, 3 * i + 2, s);
+					WwiseLogger.LogFormat(LogLevel.Log, "SetGeometryFromMesh({0}): Skipped degenerate triangle({1}, {2}, {3}) in submesh {4}", mesh.name, 3 * i + 0, 3 * i + 1, 3 * i + 2, s);
 				}
 			}
 		}
@@ -356,7 +356,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 
 		if (Mesh == null)
 		{
-			WwiseLogger.LogFormat("SetGeometry({0}): No mesh found!", gameObject.name);
+			WwiseLogger.LogFormat(LogLevel.Log, "SetGeometry({0}): No mesh found!", gameObject.name);
 			return;
 		}
 
@@ -580,7 +580,13 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 	[System.Obsolete(AkUnitySoundEngine.Deprecation_2019_2_0)]
 	public static ulong GetAkGeometrySetID(UnityEngine.MeshFilter meshFilter)
 	{
+#if UNITY_6000_4_OR_NEWER
+		return UnityEngine.EntityId.ToULong(meshFilter.GetEntityId());
+#elif UNITY_6000_2_OR_NEWER
+		return (ulong)(int)meshFilter.GetEntityId();
+#else
 		return (ulong)meshFilter.GetInstanceID();
+#endif
 	}
 
 	[System.Obsolete(AkUnitySoundEngine.Deprecation_2019_2_0)]
@@ -598,7 +604,7 @@ public class AkSurfaceReflector : UnityEngine.MonoBehaviour
 
 		if (meshFilter == null)
 		{
-			WwiseLogger.LogFormat("AddGeometrySet: No mesh found!");
+			WwiseLogger.LogFormat(LogLevel.Log, "AddGeometrySet: No mesh found!");
 			return;
 		}
 

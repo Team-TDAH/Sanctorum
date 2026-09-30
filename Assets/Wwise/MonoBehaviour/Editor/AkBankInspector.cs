@@ -87,7 +87,7 @@ public class AkBankInspector : AkBaseInspector
 			}
 			catch (System.Exception e)
 			{
-				WwiseLogger.Log("Could not delete existing decoded SoundBank. Please delete it manually. " + e);
+				WwiseLogger.LogFormat(LogLevel.Log, "Could not delete existing decoded SoundBank. Please delete it manually. {0}", e);
 			}
 		}
 #endif

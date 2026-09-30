@@ -176,6 +176,7 @@ public class AkAudioListener : UnityEngine.MonoBehaviour
 		return akGameObjectID;
 	}
 
+	[System.Serializable]
 	public class BaseListenerList
 	{
 		// @todo: Use HashSet<ulong> and CopyTo() with a private ulong[]
@@ -277,7 +278,7 @@ public class AkAudioListener : UnityEngine.MonoBehaviour
 	public void Migrate14()
 	{
 		var wasDefaultListener = listenerId == 0;
-		WwiseLogger.Log("AkAudioListener.Migrate14 for " + gameObject.name);
+		WwiseLogger.LogFormat(LogLevel.Log, "AkAudioListener.Migrate14 for {0}", gameObject.name);
 		isDefaultListener = wasDefaultListener;
 	}
 

@@ -401,7 +401,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 #if UNITY_EDITOR
 	public void Migrate9()
 	{
-		WwiseLogger.Log("AkGameObj.Migrate9 for " + gameObject.name);
+		WwiseLogger.LogFormat(LogLevel.Log, "AkGameObj.Migrate9 for {0}", gameObject.name);
 
 		const int ALL_LISTENER_MASK = (1 << AK_NUM_LISTENERS) - 1;
 		if ((listenerMask & ALL_LISTENER_MASK) == ALL_LISTENER_MASK)
@@ -410,7 +410,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 
 	public void Migrate10()
 	{
-		WwiseLogger.Log("AkGameObj.Migrate10 for " + gameObject.name);
+		WwiseLogger.LogFormat(LogLevel.Log, "AkGameObj.Migrate10 for {0}", gameObject.name);
 
 		if (m_posOffsetData != null)
 		{
@@ -430,7 +430,9 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 			var fullSceneListenerMask = 0;
 
 			// Get all AkAudioListeners in the scene.
-#if UNITY_6000_0_OR_NEWER
+#if UNITY_6000_4_OR_NEWER
+			var listenerObjects = FindObjectsByType<AkAudioListener>();
+#elif UNITY_6000_0_OR_NEWER
 			var listenerObjects = FindObjectsByType<AkAudioListener>(FindObjectsSortMode.None);
 #else
 			var listenerObjects = FindObjectsOfType<AkAudioListener>();
@@ -444,10 +446,10 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 					if (akGameObj)
 					{
 						akGameObj.isEnvironmentAware = false;
-						WwiseLogger.Log("Added AkGameObj to <" + listener.gameObject.name + ">.");
+						WwiseLogger.LogFormat(LogLevel.Log, "Added AkGameObj to <{0}>.", listener.gameObject.name);
 					}
 					else
-						WwiseLogger.Error("Failed to add AkGameObj to <" + listener.gameObject.name + ">.");
+						WwiseLogger.LogFormat(LogLevel.Error, "Failed to add AkGameObj to <{0}>.", listener.gameObject.name);
 				}
 
 				var listenerId = listener.listenerId;
@@ -460,7 +462,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 					fullSceneListenerMask |= 1 << listenerId;
 				}
 				else
-					WwiseLogger.Error("Invalid listenerId <" + listenerId + "> found during migration.");
+					WwiseLogger.LogFormat(LogLevel.Error, "Invalid listenerId <{0}> found during migration.", listenerId);
 			}
 
 			if (fullSceneListenerMask == 0)
@@ -474,8 +476,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 				{
 					if (listeners[ii] != null && listeners[ii].Count > 1)
 					{
-						WwiseLogger.Warning("Multiple listeners <" + listeners[ii].Count +
-						                             "> with same listenerId <" + ii + "> found during migration.");
+						WwiseLogger.LogFormat(LogLevel.Warning, "Multiple listeners <{0}> with same listenerId <{1}> found during migration.", listeners[ii].Count, ii);
 					}
 				}
 
@@ -513,7 +514,7 @@ public class AkGameObj : UnityEngine.MonoBehaviour
 
 	public void Migrate14()
 	{
-		WwiseLogger.Log("AkGameObj.Migrate14 for " + gameObject.name);
+		WwiseLogger.LogFormat(LogLevel.Log, "AkGameObj.Migrate14 for {0}", gameObject.name);
 
 		if (migration14data != null)
 			migration14data.Migrate(this);

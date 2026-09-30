@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Play_SFX_Player_Footstep_Stone
   id: 2307737092
   guid: D3A35A2B-8720-4E4E-AB5C-C633DC4E7482
-  IsInUserDefinedSoundBank: 0
+  IsInUserDefinedSoundBank: 1

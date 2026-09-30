@@ -89,7 +89,7 @@ public static class AddressableAssetBuilder
             return;
         }
 
-        WwiseLogger.Log($"Using build script: {buildScript.Name}");
+        WwiseLogger.LogFormat(LogLevel.Log, "Using build script: {0}", buildScript.Name);
         // Start the Addressables build process
         WwiseLogger.Log("Starting Addressables build...");
         AddressableAssetSettings.BuildPlayerContent();
@@ -110,7 +110,7 @@ public static class AddressableAssetBuilder
         if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
-            WwiseLogger.Log($"Created folder: {folderPath}");
+            WwiseLogger.LogFormat(LogLevel.Log, "Created folder: {0}", folderPath);
         }
 
         // Check if the asset already exists
@@ -126,7 +126,7 @@ public static class AddressableAssetBuilder
         AssetDatabase.CreateAsset(newAsset, assetPath);
         AssetDatabase.SaveAssets();
 
-        WwiseLogger.Log("Created BuildScriptWwisePacked.asset at " + assetPath);
+        WwiseLogger.LogFormat(LogLevel.Log, "Created BuildScriptWwisePacked.asset at {0}", assetPath);
     }
     
     /// <summary>
@@ -168,7 +168,7 @@ public static class AddressableAssetBuilder
         EditorUtility.SetDirty(settings);
         AssetDatabase.SaveAssets();
 
-        WwiseLogger.Log($"Added build script to Addressables settings: {assetPath}");
+        WwiseLogger.LogFormat(LogLevel.Log, "Added build script to Addressables settings: {0}", assetPath);
     }
 
     /// <summary>
@@ -217,7 +217,7 @@ public static class AddressableAssetBuilder
         settings.DataBuilders.Remove(customBuildScript);
         EditorUtility.SetDirty(settings);
         AssetDatabase.SaveAssets();
-        WwiseLogger.Log($"Removed build script from Addressables settings: {assetPath}");
+        WwiseLogger.LogFormat(LogLevel.Log, "Removed build script from Addressables settings: {0}", assetPath);
     }
 }
 #endif

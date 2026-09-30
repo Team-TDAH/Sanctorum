@@ -83,7 +83,18 @@ namespace AK.Wwise.Unity.Logging
         public LogLevel LogLevel
         {
             get => m_logLevel;
-            set => m_logLevel = value;
+            set
+            {
+                m_logLevel = value;
+                WwiseLogger.RefreshLogLevel();
+            }
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            WwiseLogger.RefreshLogLevel();
+        }
+#endif
     }
 }

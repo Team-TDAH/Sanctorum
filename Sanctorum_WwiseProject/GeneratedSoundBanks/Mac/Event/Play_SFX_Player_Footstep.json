@@ -1,0 +1,183 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1324249654",
+    "Type": "Event",
+    "GUID": "{6FABB533-7DCD-4DB7-B2C4-4BE2A67D421B}",
+    "Language": "SFX",
+    "Hash": "{CBBB11E3-1419-C57D-3D64-5556C6397AE1}",
+    "ObjectPath": "Play_SFX_Player_Footstep",
+    "ShortName": "Play_SFX_Player_Footstep",
+    "Path": "Event/Play_SFX_Player_Footstep.bnk",
+    "Media": [
+     {
+      "Id": "46898318",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_01.wav",
+      "Path": "Media/46898318.wem",
+      "CachePath": "D2/{D212D2A5-DC8A-FC8E-A79F-05E64C4F551E}.wem"
+     },
+     {
+      "Id": "114273092",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_09.wav",
+      "Path": "Media/114273092.wem",
+      "CachePath": "80/{803AE9D2-E2D0-E2AC-C468-E70D15CDC7AD}.wem"
+     },
+     {
+      "Id": "252429088",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_08.wav",
+      "Path": "Media/252429088.wem",
+      "CachePath": "7A/{7A650D99-765F-2416-CFB7-4F347A445F47}.wem"
+     },
+     {
+      "Id": "526882062",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_04.wav",
+      "Path": "Media/526882062.wem",
+      "CachePath": "9C/{9C555288-1B7D-DF2D-D4A1-8557CBF76F84}.wem"
+     },
+     {
+      "Id": "635137536",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_03.wav",
+      "Path": "Media/635137536.wem",
+      "CachePath": "CD/{CD677F01-0B3A-1F6F-52A6-B7B0178AEA7A}.wem"
+     },
+     {
+      "Id": "826066511",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_02.wav",
+      "Path": "Media/826066511.wem",
+      "CachePath": "72/{720DE763-7E54-8CBB-5901-73B74EECE703}.wem"
+     },
+     {
+      "Id": "849666610",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_07.wav",
+      "Path": "Media/849666610.wem",
+      "CachePath": "B3/{B34D8F54-BD8C-4CF5-BA62-1D7A34D5FA7C}.wem"
+     },
+     {
+      "Id": "989207412",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_06.wav",
+      "Path": "Media/989207412.wem",
+      "CachePath": "C5/{C51E9D9F-4BC3-DC9C-F863-85EDC7133E87}.wem"
+     },
+     {
+      "Id": "1015682697",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_10.wav",
+      "Path": "Media/1015682697.wem",
+      "CachePath": "E8/{E8FEE37B-1E86-8583-0D68-7E139091C5F8}.wem"
+     },
+     {
+      "Id": "1024947071",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "SFX_Player_Footstep_Stone_05.wav",
+      "Path": "Media/1024947071.wem",
+      "CachePath": "B5/{B5F75359-9186-EED0-400B-6D6562C303F7}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1324249654",
+      "Name": "Play_SFX_Player_Footstep",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SFX_Player_Footstep",
+      "GUID": "{6FABB533-7DCD-4DB7-B2C4-4BE2A67D421B}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6453742",
+      "DurationMax": "0.7206122",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "Switch",
+         "GroupId": "2385628198",
+         "Id": "1216965916",
+         "GUID": "{471A8981-2708-446D-AC0F-27991A072A6E}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "46898318"
+         },
+         {
+          "Id": "114273092"
+         },
+         {
+          "Id": "252429088"
+         },
+         {
+          "Id": "526882062"
+         },
+         {
+          "Id": "635137536"
+         },
+         {
+          "Id": "826066511"
+         },
+         {
+          "Id": "849666610"
+         },
+         {
+          "Id": "989207412"
+         },
+         {
+          "Id": "1015682697"
+         },
+         {
+          "Id": "1024947071"
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "SwitchGroups": [
+     {
+      "Id": "2385628198",
+      "Name": "Footsteps",
+      "ObjectPath": "\\Switches\\Default Work Unit\\Footsteps",
+      "GUID": "{5C78A0CC-F7CA-45FE-A87A-8776AEEAF19D}",
+      "Switches": [
+       {
+        "Id": "1216965916",
+        "Name": "Stone",
+        "ObjectPath": "\\Switches\\Default Work Unit\\Footsteps\\Stone",
+        "GUID": "{471A8981-2708-446D-AC0F-27991A072A6E}"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0247F113-9A19-6952-9E29-D71415E9E301}"
+ }
+}
